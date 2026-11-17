@@ -71,7 +71,7 @@
     }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
     targets.forEach((t) => io.observe(t));
     const qio = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { glitch(e.target); qio.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('in'); glitch(e.target); qio.unobserve(e.target); }
     }), { threshold: 0.6 });
     $$('.quote .glitch').forEach((q) => qio.observe(q));
   }
