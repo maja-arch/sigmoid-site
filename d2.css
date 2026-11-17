@@ -87,7 +87,6 @@ button{font:inherit;color:inherit}
 .hero-title .ln>span{display:block;transform:translateY(105%);transition:transform 1.2s var(--ease)}
 .hero-title .ln:nth-child(2)>span{transition-delay:.1s;padding-left:12vw}
 .hero-title .ln:nth-child(3)>span{transition-delay:.2s}
-.is-ready .hero-title .ln>span{transform:none}
 .hero-foot{display:flex;align-items:center;gap:var(--gap);margin-top:clamp(20px,3vw,36px)}
 .hero-scroll{margin-left:auto;font:500 11px var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--light-2);display:flex;align-items:center;gap:10px}
 .hero-scroll:after{content:"";width:1px;height:36px;background:linear-gradient(var(--card),transparent);animation:drip 2.2s var(--ease) infinite}
@@ -450,3 +449,151 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 .spark{background:var(--ink)}
 .cookie .btn-outline:after{background:var(--card)}
 .quote .glitch.huge{line-height:.94}
+
+
+/* =====================================================================
+   ROUND 3: hero slider from Design 1, ticker, counters, animated logo,
+   outline hover on buttons.
+   ===================================================================== */
+:root{--graphite:#373636;--platinum:#F1F2F2;--brown:#373636}
+/* ---------- hero: smaller title, no highlight, slides ---------- */
+.hero-intro{display:block;width:min(100%,520px);margin-left:auto}
+.hero-lede{font:300 clamp(17px,1.35vw,21px)/1.4 var(--text);color:var(--light-2);min-height:4.2em}
+.hero-title{font-size:clamp(46px,8vw,148px);line-height:.88}
+.hero-title .ln:nth-child(2)>span{padding-left:8vw}
+.hero-title.is-in .ln>span{transform:none}
+.hero-title.is-out .ln>span{transform:translateY(-105%);transition:transform .45s cubic-bezier(.6,0,.8,.3);transition-delay:0s!important}
+.hero-foot{margin-top:clamp(24px,3vw,40px)}
+.hero-nav{display:flex;align-items:stretch;gap:clamp(16px,3vw,40px);margin-top:clamp(28px,3.4vw,52px)}
+.hero-tabs{flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.4vw,20px)}
+.hero-tab{position:relative;display:flex;align-items:center;gap:12px;padding:18px 0 4px;border:0;background:none;color:var(--light-2);text-align:left;cursor:pointer;font:inherit;transition:color .3s}
+.hero-tab:hover,.hero-tab[aria-selected=true]{color:var(--ink)}
+.hero-tab-bar{position:absolute;left:0;right:0;top:0;height:1px;background:rgba(55,54,54,.18);overflow:hidden}
+.hero-tab-bar i{position:absolute;inset:0;right:100%;background:var(--ink)}
+.hero-tab.is-done .hero-tab-bar i{right:0}
+.hero-tab[aria-selected=true] .hero-tab-bar i{right:0;background:linear-gradient(90deg,var(--green),var(--ink))}
+.hero.is-autoplay .hero-tab[aria-selected=true] .hero-tab-bar i{right:100%;animation:tab-progress var(--slide-dur,7000ms) linear forwards}
+.hero.is-paused .hero-tab-bar i,.hero.is-paused .hero-timer-bar i{animation-play-state:paused!important}
+@keyframes tab-progress{to{right:0}}
+.hero-tab svg{flex:none;width:28px;height:28px;fill:var(--ink);transition:transform .6s var(--ease),fill .3s}
+.hero-tab[aria-selected=true] svg{fill:var(--green);transform:rotate(-18deg)}
+.hero-tab-text{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hero-tab-num{font:300 13px/1 var(--display);letter-spacing:.06em}
+.hero-tab-label{font:500 11px/1.25 var(--text);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-timer{display:flex;align-items:center;gap:14px;padding-top:12px;font:300 18px/24px var(--display);font-variant-numeric:tabular-nums}
+.hero-timer-cur{font-weight:400}.hero-timer-total{opacity:.6}
+.hero-timer-bar{position:relative;width:clamp(80px,9vw,160px);height:1px;background:rgba(55,54,54,.18);overflow:hidden}
+.hero-timer-bar i{position:absolute;inset:0;background:linear-gradient(90deg,var(--green),var(--ink));transform:scaleX(0);transform-origin:left}
+.hero.is-autoplay .hero-timer-bar i{animation:timer-fill var(--slide-dur,7000ms) linear forwards}
+@keyframes timer-fill{to{transform:scaleX(1)}}
+.hero-arrows{display:flex;gap:8px;align-items:center;padding-top:8px}
+.hero-arrow{position:relative;isolation:isolate;display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;background:var(--ink);color:var(--ink);clip-path:var(--decagon);font-size:18px;cursor:pointer}
+.hero-arrow:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--decagon);transition:inset .25s var(--ease)}
+.hero-arrow:hover:not(:disabled):before{inset:2px}
+.hero-arrow span{transition:transform .35s var(--ease)}
+.hero-next:hover span{transform:translateX(3px)}.hero-prev:hover:not(:disabled) span{transform:translateX(-3px)}
+.hero-arrow:disabled{opacity:.3;cursor:default}
+@media(max-width:1020px){.hero-tab-label{display:none}}
+@media(max-width:800px){
+  .hero-intro{width:100%}
+  .hero-title .ln:nth-child(2)>span{padding-left:0}
+  .hero-nav{gap:10px}.hero-tabs{gap:6px}
+  .hero-tab{flex-direction:column;align-items:flex-start;gap:8px;padding-top:14px}.hero-tab svg{width:22px;height:22px}
+  .hero-timer{display:none}.hero-arrow{width:40px;height:40px;font-size:15px}
+}
+
+/* ---------- ticker (text strip) from Design 1 ---------- */
+.ticker{overflow:hidden;background:var(--bone);color:var(--midnight)}
+.ticker-track{display:flex;width:max-content;padding:14px 0;animation:ticker var(--ticker-dur,40s) linear infinite}
+.ticker-set{display:flex;align-items:center;flex:none;gap:clamp(16px,1.6vw,28px);padding-right:clamp(16px,1.6vw,28px)}
+.ticker span{font:400 clamp(15px,1.7vw,26px)/1 var(--display);letter-spacing:.02em;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
+.ticker svg{width:clamp(16px,1.5vw,22px);height:clamp(16px,1.5vw,22px);color:var(--graphite);flex:none;animation:icon-spin 6s var(--ease-io) infinite}
+.ticker svg:nth-of-type(2n){animation-delay:-3s}
+@keyframes icon-spin{0%,20%{transform:rotate(0)}50%,70%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes ticker{to{transform:translateX(-50%)}}
+/* ---------- ticker icons: motion copied from the Figma "Visual Language - dinamic" GIFs ----------
+   Graphite decagon, symbol cut out in the strip colour (bone). Each icon has its own loop,
+   timed like the GIFs: software 4.2s, embedded 2.2s, robotics 4.2s, mechatronics 2.68s. */
+.ticker svg.ticon{width:clamp(20px,1.9vw,30px);height:clamp(20px,1.9vw,30px);overflow:visible;color:var(--bone);animation:none;transform:none}
+.ticon .tdec{fill:var(--graphite)}
+.ticon *{transform-box:view-box;transform-origin:50px 50px}
+.ti-sw .sw-dot,.ti-sw .sw-rays,.ti-em .tsym,.ti-rb .rb-body,.ti-rb .rb-slot,.ti-mx .tdec,.ti-mx .mx-gap{animation:var(--a) var(--d) cubic-bezier(.65,0,.35,1) infinite}
+
+/* Software: a dot appears, eight rays grow out of it, hold, rays pull back, dot closes */
+.ti-sw{--d:4.2s}
+.ti-sw .sw-dot{--a:sw-dot}
+.ti-sw .sw-rays{--a:sw-rays;fill:none;stroke:currentColor;stroke-width:6;stroke-dasharray:1 1}
+@keyframes sw-dot{0%,6%{transform:scale(0)}10%{transform:scale(.55)}14%,85%{transform:scale(1)}90%{transform:scale(.55)}95%,100%{transform:scale(0)}}
+@keyframes sw-rays{0%,14%{stroke-dashoffset:1}26%,79%{stroke-dashoffset:0}86%,100%{stroke-dashoffset:1}}
+
+/* Embedded: brackets open out of a small diamond in the centre, hold, then close away */
+.ti-em{--d:2.2s}
+.ti-em .tsym{--a:em;fill:none;stroke:currentColor;stroke-width:7;stroke-linejoin:miter}
+.ti-em .em-l,.ti-em .em-r{animation:var(--d) cubic-bezier(.65,0,.35,1) infinite}
+.ti-em .em-l{animation-name:em-l}.ti-em .em-r{animation-name:em-r}
+@keyframes em{0%,11%{transform:scale(0);opacity:0}14%{opacity:1}25%,78%{transform:scale(1);opacity:1}85%,100%{transform:scale(0);opacity:0}}
+@keyframes em-l{0%,13%{transform:translateX(12px)}26%,76%{transform:none}84%,100%{transform:translateX(12px)}}
+@keyframes em-r{0%,13%{transform:translateX(-12px)}26%,76%{transform:none}84%,100%{transform:translateX(-12px)}}
+
+/* Robotics: the slot slides in from the right, the hand tilts, grips (slot narrows), lets go */
+.ti-rb{--d:4.2s}
+.ti-rb .rb-body{--a:rb-body}
+.ti-rb .rb-slot{--a:rb-slot;fill:currentColor;transform-origin:50px 50px}
+@keyframes rb-body{0%,40%{transform:rotate(0)}47%,74%{transform:rotate(10deg)}86%,100%{transform:rotate(0)}}
+@keyframes rb-slot{0%,6%{transform:translateX(56px)}13%{transform:none}52%{transform:none}62%,66%{transform:scaleY(.35)}72%,90%{transform:none}97%,100%{transform:translateX(56px)}}
+
+/* Mechatronics: the ring splits along the middle, the halves part, then close again */
+.ti-mx{--d:2.68s}
+.ti-mx .tdec{--a:mx-body}
+.ti-mx .mx-hole{fill:currentColor}
+.ti-mx .mx-gap{--a:mx-gap;fill:currentColor}
+@keyframes mx-gap{0%{transform:scaleY(0)}6%{transform:scaleY(.45)}13%,46%{transform:scaleY(1)}52%{transform:scaleY(.25)}58%,100%{transform:scaleY(0)}}
+@keyframes mx-body{0%{transform:scaleY(1)}13%,46%{transform:scaleY(1.05)}58%,100%{transform:scaleY(1)}}
+
+/* stagger the four icons so they don't all start together */
+.ticker-set .ti-em *{animation-delay:.6s}
+.ticker-set .ti-rb *{animation-delay:1.2s}
+.ticker-set .ti-mx *{animation-delay:1.8s}
+
+@media(prefers-reduced-motion:reduce){
+  .ticon *{animation:none!important}
+  .ti-sw .sw-rays{stroke-dashoffset:0}
+}
+.ticker{position:relative;z-index:1}
+
+/* ---------- About: light 15+, counters like Design 1 with bone fill ---------- */
+#about .giant{font-weight:300}
+.counters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;margin-top:clamp(28px,3vw,44px)}
+.counter{--c:14px;position:relative;isolation:isolate;display:flex;align-items:center;gap:18px;min-height:150px;padding:22px 24px;background:rgba(55,54,54,.45);clip-path:var(--facet)}
+.counter:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bone);clip-path:var(--facet);--c:13.4px}
+.counter-icon{flex:none;width:52px;height:52px;fill:var(--ink);transition:transform .8s var(--ease),fill .4s}
+.counter-icon.is-green{fill:var(--green)}
+.counter:hover .counter-icon{transform:rotate(72deg);fill:var(--green)}
+.counter-label{max-width:150px;font:400 13px/1.35 var(--text);letter-spacing:.06em;text-transform:uppercase}
+.counter-num{margin-left:auto;display:flex;align-items:flex-start;font:300 clamp(64px,6vw,112px)/.8 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.counter-num sup{font-size:.4em;line-height:1;color:var(--green);font-weight:400;margin-left:2px}
+@media(max-width:1180px){.counters{grid-template-columns:1fr}.counter{min-height:120px}}
+
+/* ---------- big animated Sigmoid logo in the side card ---------- */
+.side-logo{width:clamp(110px,10vw,150px);height:auto;margin:22px 0 4px;fill:var(--ink);overflow:visible;animation:logo-turn 28s linear infinite}
+.side-logo path{transform-box:fill-box;transform-origin:center;opacity:0;transform:scale(.2) rotate(-40deg);
+  transition:opacity .5s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--i) * 40ms);
+  animation:facet 4.2s ease-in-out infinite;animation-delay:calc(var(--i) * -150ms)}
+.in .side-logo path{opacity:1;transform:none}
+.side-card:hover .side-logo path{transform:scale(.86)}
+@keyframes facet{0%,100%{fill:var(--ink)}45%{fill:var(--ink)}55%{fill:var(--green)}65%{fill:var(--ink)}}
+@keyframes logo-turn{to{transform:rotate(360deg)}}
+
+/* ---------- buttons: hover = outline in brown-graphite, no fill sweep ---------- */
+.pill:before{display:none}
+.pill:after{transition:inset .25s var(--ease),opacity .25s var(--ease)}
+.pill:hover,a:hover>.pill,.pill:focus-visible{color:var(--ink)}
+.pill:hover:after,a:hover>.pill:after,.pill:focus-visible:after{inset:1.5px}
+.pill:hover,a:hover>.pill{background:var(--brown)}
+.pill-green:after{display:block;opacity:0;background:var(--bg)}
+.pill-green:hover,a:hover>.pill-green{color:var(--ink)}
+.pill-green:hover:after,a:hover>.pill-green:after{opacity:1}
+.hd-nav .pill:hover{background:none}
+.hd-nav .pill:after{transition:transform .4s var(--ease)}
+.hd-menu:hover{background:var(--brown)}
