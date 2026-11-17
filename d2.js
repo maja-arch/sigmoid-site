@@ -115,12 +115,20 @@
     const fill = () => {
       [...track.children].slice(1).forEach((n) => track.removeChild(n));
       const setW = base.getBoundingClientRect().width || 1;
-      const perHalf = Math.max(1, Math.ceil(innerWidth / setW));
+      // one spare set on top of what the screen needs, so the strip never shows a gap
+      const perHalf = Math.max(1, Math.ceil(innerWidth / setW)) + 1;
       for (let i = 1; i < perHalf * 2; i++) track.append(base.cloneNode(true));
-      track.style.setProperty('--ticker-dur', `${(setW * perHalf) / 60}s`);
+      track.style.setProperty('--ticker-dur', `${(setW * perHalf) / 110}s`); // ~110px per second
+      lastW = setW;
     };
+    let lastW = 0;
     fill();
     if (document.fonts) document.fonts.ready.then(fill);
+    // refill whenever the first set changes width (e.g. when Oswald finishes loading)
+    if ('ResizeObserver' in window) new ResizeObserver(() => {
+      const w = base.getBoundingClientRect().width;
+      if (Math.abs(w - lastW) > 1) fill();
+    }).observe(base);
     let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fill, 200); });
   }
 
@@ -217,4 +225,40 @@
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   addEventListener('resize', update);
   update();
+})();
+
+/* "compounds": decodes through 0/1 and letters, settles, repeats */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const GLYPHS = '0101010110ABCDEFGHKMNOPRSTUXZ';
+  document.querySelectorAll('[data-scramble]').forEach((el) => {
+    const word = el.textContent;
+    el.setAttribute('aria-label', word);
+    const lock = () => { el.style.width = ''; el.style.width = `${el.getBoundingClientRect().width}px`; };
+    lock();
+    if (document.fonts) document.fonts.ready.then(lock);
+    addEventListener('resize', lock);
+    const run = () => {
+      el.classList.add('is-run');
+      const q = [...word].map((c, i) => ({ c, s: i * 2 + ((Math.random() * 6) | 0), e: 0 }));
+      q.forEach((o) => { o.e = o.s + 10 + ((Math.random() * 14) | 0); });
+      let f = 0;
+      const tick = () => {
+        let done = 0;
+        el.innerHTML = q.map((o) => {
+          if (f >= o.e) { done++; return o.c; }
+          if (f < o.s) return o.c;
+          const g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+          return /[01]/.test(g) ? `<span class="bit">${g}</span>` : g;
+        }).join('');
+        f++;
+        if (done < q.length) setTimeout(() => requestAnimationFrame(tick), 40);
+        else { el.textContent = word; el.classList.remove('is-run'); setTimeout(run, 2600); }
+      };
+      tick();
+    };
+    // start when the About card is on screen
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); setTimeout(run, 600); } });
+    io.observe(el);
+  });
 })();

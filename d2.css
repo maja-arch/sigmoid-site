@@ -576,14 +576,11 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 @media(max-width:1180px){.counters{grid-template-columns:1fr}.counter{min-height:120px}}
 
 /* ---------- big animated Sigmoid logo in the side card ---------- */
-.side-logo{width:clamp(110px,10vw,150px);height:auto;margin:22px 0 4px;fill:var(--ink);overflow:visible;animation:logo-turn 28s linear infinite}
-.side-logo path{transform-box:fill-box;transform-origin:center;opacity:0;transform:scale(.2) rotate(-40deg);
-  transition:opacity .5s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--i) * 40ms);
-  animation:facet 4.2s ease-in-out infinite;animation-delay:calc(var(--i) * -150ms)}
-.in .side-logo path{opacity:1;transform:none}
-.side-card:hover .side-logo path{transform:scale(.86)}
-@keyframes facet{0%,100%{fill:var(--ink)}45%{fill:var(--ink)}55%{fill:var(--green)}65%{fill:var(--ink)}}
-@keyframes logo-turn{to{transform:rotate(360deg)}}
+.side-logo{width:clamp(110px,10vw,150px);height:auto;margin:22px 0 4px;overflow:visible}
+/* Figma "Proposal 01 - logo animation": flat green decagon, facets shade in from the bottom, hold (3s loop) */
+.side-logo path{opacity:0;animation:facet-in 3s cubic-bezier(.4,0,.2,1) infinite;animation-delay:var(--d,0s)}
+.side-logo path.base{opacity:var(--o);animation:none}
+@keyframes facet-in{0%,13%{opacity:0}34%,94%{opacity:var(--o)}100%{opacity:0}}
 
 /* ---------- buttons: hover = outline in brown-graphite, no fill sweep ---------- */
 .pill:before{display:none}
@@ -597,3 +594,20 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 .hd-nav .pill:hover{background:none}
 .hd-nav .pill:after{transition:transform .4s var(--ease)}
 .hd-menu:hover{background:var(--brown)}
+
+
+/* ---------- round 4 ---------- */
+:root{color-scheme:light}
+.hero-title,.hero-title .ln>span{color:var(--ink)}
+/* About "15+": smaller, tighter, nothing clipped */
+#about .giant{font-size:clamp(84px,10.5vw,190px);line-height:.92;letter-spacing:-.045em;padding:.02em .04em .04em 0}
+/* "compounds": digital decode loop, width locked so nothing moves */
+.scramble{display:inline-block;white-space:nowrap;vertical-align:bottom}
+.scramble.is-run{color:var(--ink)}
+.scramble .bit{color:var(--green)}
+/* faster ticker */
+@media(prefers-reduced-motion:reduce){.side-logo path{opacity:var(--o)!important}}
+/* counters: outline only, platinum inside (no bone fill), dark icons */
+.counter{background:rgba(55,54,54,.5)}
+.counter:before{background:var(--bg)}
+.counter-icon.is-green{fill:var(--ink)}
