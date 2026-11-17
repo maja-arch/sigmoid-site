@@ -611,3 +611,10 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 .counter{background:rgba(55,54,54,.5)}
 .counter:before{background:var(--bg)}
 .counter-icon.is-green{fill:var(--ink)}
+
+/* buttons: thin 1px outline on hover (corners matched), arrow stays still */
+.pill:after{--c:calc(var(--pc,9px) - .42px)}
+.pill:hover:after,a:hover>.pill:after,.pill:focus-visible:after{inset:1px}
+.pill .arr,.pill:hover .arr,a:hover .pill .arr{transform:none!important;transition:none}
+.hero-arrow:hover:not(:disabled):before{inset:1px}
+.hero-arrow span,.hero-arrow:hover span{transform:none!important}
