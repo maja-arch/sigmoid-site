@@ -367,3 +367,86 @@ mark{padding:0 .05em;background:linear-gradient(var(--green),var(--green)) 0 61%
   .steps-intro{order:0}
   .pill{height:46px}
 }
+
+/* =====================================================================
+   COLOURS FROM DESIGN 1: light platinum page, graphite ink, bone
+   surfaces, dark primary buttons, green highlights, 8 grid hairlines.
+   ===================================================================== */
+:root{
+  --bg:#F1F2F2;
+  --light-2:rgba(55,54,54,.78);   /* secondary text, now on light */
+  --line-d:rgba(55,54,54,.2);
+  --gridline:rgba(55,54,54,.07);
+}
+body{background:var(--bg);color:var(--ink)}
+main,.ft{position:relative;z-index:1}
+body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-index:0;content:"";pointer-events:none;
+  border-left:1px solid var(--gridline);border-right:1px solid var(--gridline);
+  background:repeating-linear-gradient(90deg,transparent 0 calc(12.5% - 1px),var(--gridline) calc(12.5% - 1px) 12.5%)}
+@media(max-width:800px){body:before{background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--gridline) calc(25% - 1px) 25%)}}
+::selection{background:#D9D6C9;color:#373636}
+.card ::selection{background:#D9D6C9;color:#373636}
+
+/* cards: platinum with a 1px graphite edge that follows the cut corners */
+.card{position:relative;isolation:isolate;background:rgba(55,54,54,.32)}
+.card:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--facet);--c:calc(var(--card-c,14px) - .6px);transition:background .45s var(--ease)}
+.side-card,.ft-bar{--card-c:12px}
+.card-lime{background:var(--lime)}
+.card-lime:before{background:var(--lime)}
+.hd-brand{background:none}
+.hd-brand:before{display:none}
+.ft-mark{background:var(--bone)}
+.ft-mark:before{background:var(--bone)}
+.xp:hover:before,.way:hover:before{background:#fff}
+.ind:hover{background:var(--green)}
+.ind:hover:before{background:var(--green)}
+
+/* hero on light */
+.hero-intro p{color:var(--light-2)}
+.hero-mark{fill:var(--ink);opacity:calc(.045 + var(--p,0) * .04)}
+.hero-scroll{color:var(--light-2)}
+.hero-scroll:after{background:linear-gradient(var(--ink),transparent)}
+
+/* buttons, Design 1 colours: dark primary, outline secondary, green on hover */
+.pill{background:rgba(55,54,54,.55);color:var(--ink)}
+.pill:after{position:absolute;inset:1px;z-index:-2;content:"";background:var(--bg);clip-path:var(--facet);--c:calc(var(--pc,9px) - .6px)}
+.pill-sm,.pill-list .pill{--pc:7px}
+.pill:before{background:var(--ink)}
+.pill:hover,a:hover>.pill,.pill:focus-visible{color:var(--bg)}
+.pill-green{background:var(--ink);color:var(--bg)}
+.pill-green:after{display:none}
+.pill-green:before{background:var(--green)}
+.pill-green:hover,a:hover>.pill-green{color:var(--ink)}
+.pill-ghost{background:rgba(55,54,54,.55);color:var(--ink)}
+.pill-ghost:after{background:var(--bg)}
+.pill-ghost:before{background:var(--ink)}
+.pill-ghost:hover{color:var(--bg)}
+.xp .pill{background:rgba(55,54,54,.55)}
+.xp .pill:after{background:var(--bone)}
+/* header: plain links with the green triangle, as in Design 1 */
+.hd{background:rgba(241,242,242,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.hd-nav .pill{background:none;padding:0 10px}
+.hd-nav .pill:after{position:static;inset:auto;z-index:auto;background:var(--green);clip-path:polygon(0 0,0 100%,100% 100%);--c:0}
+.hd-nav .pill:before{display:none}
+.hd-nav .pill:hover{color:var(--ink)}
+.hd-nav .pill:hover:after{background:var(--ink)}
+.hd-menu{background:var(--ink);color:var(--bg)}
+.hd-menu:after{display:none}
+.menu{background:var(--bg)}
+
+/* glitch slices: green + midnight read on light */
+.glitch:after{color:var(--midnight)}
+
+/* project visuals keep the brand fills; dark one uses midnight as before */
+.v-dark .tab{color:rgba(241,242,242,.8)}
+
+/* footer on bone, like the Design 1 CTA band */
+.ft{margin-top:clamp(40px,6vw,96px);padding-top:clamp(56px,7vw,110px);background:var(--bone)}
+.ft-list a span:first-child,.ft-links a{color:var(--light-2)}
+.ft-links a:hover,.ft-list a:hover{color:var(--ink)}
+.ft-bar:before{background:var(--bg)}
+.dec-link polygon{stroke:var(--ink)}
+.dec-link:hover polygon{fill:var(--green);stroke:var(--green)}
+.spark{background:var(--ink)}
+.cookie .btn-outline:after{background:var(--card)}
+.quote .glitch.huge{line-height:.94}
