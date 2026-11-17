@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sigmoid | Button proposals</title><link rel="stylesheet" href="styles.css">
+<style>
+/* ---------- shared button engine: shape comes from --shape (clip-path) ---------- */
+.bx{--h:52px;--c:10px;--bd:var(--midnight);--bg:var(--platinum);--fg:var(--midnight);
+  position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  height:var(--h);padding:0 calc(var(--c) + 22px);border:0;cursor:pointer;
+  font:500 13px/1 var(--font-text);letter-spacing:var(--tr-label);text-transform:uppercase;color:var(--fg);
+  background:var(--bd);clip-path:var(--shape);transition:color .3s var(--ease)}
+.bx:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--shape);transition:background .3s var(--ease)}
+.bx .icon{width:18px;height:18px;transition:transform .5s var(--ease)}
+.bx:hover .icon{transform:rotate(36deg)}
+.bx .arr{display:inline-block;transition:transform .35s var(--ease)}
+.bx:hover .arr{transform:translate(3px,-3px)}
+/* variants */
+.bx.solid{--bd:var(--midnight);--bg:var(--midnight);--fg:var(--platinum)}
+.bx.solid:hover{--bg:var(--sigmoid-green);--bd:var(--sigmoid-green);--fg:var(--midnight)}
+.bx.ghost:hover{--bg:var(--midnight);--fg:var(--platinum)}
+.bx.lime{--bd:var(--lime-cream);--bg:var(--lime-cream);--fg:var(--midnight)}
+.bx.lime:hover{--bg:var(--midnight);--fg:var(--lime-cream)}
+.bx.sm{--h:40px;--c:8px;font-size:12px}
+
+/* A: FACET (all four corners cut, like the decagon facets) */
+.shape-a{--shape:polygon(var(--c) 0,calc(100% - var(--c)) 0,100% var(--c),100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,var(--c) 100%,0 calc(100% - var(--c)),0 var(--c))}
+/* B: PRISM (pointed ends, elongated hexagon) */
+.shape-b{--shape:polygon(calc(var(--h) * .32) 0,calc(100% - var(--h) * .32) 0,100% 50%,calc(100% - var(--h) * .32) 100%,calc(var(--h) * .32) 100%,0 50%)}
+/* C: NOTCH (one cut corner, top-right: directional, "next step") */
+.shape-c{--shape:polygon(0 0,calc(100% - var(--c) * 1.4) 0,100% calc(var(--c) * 1.4),100% 100%,0 100%)}
+/* icon button: decagon (same geometry as the visual-language icons) */
+.bx-dec{--s:48px;--bd:var(--midnight);--bg:var(--platinum);--fg:var(--midnight);position:relative;isolation:isolate;width:var(--s);height:var(--s);display:inline-grid;place-items:center;border:0;cursor:pointer;color:var(--fg);font-size:18px;background:var(--bd);
+  --shape:polygon(50% 0,79.4% 9.5%,97.6% 34.5%,97.6% 65.5%,79.4% 90.5%,50% 100%,20.6% 90.5%,2.4% 65.5%,2.4% 34.5%,20.6% 9.5%);clip-path:var(--shape);transition:color .3s}
+.bx-dec:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--shape);transition:background .3s}
+.bx-dec:hover{--bg:var(--midnight);--fg:var(--platinum)}
+.bx-dec.solid{--bg:var(--midnight);--fg:var(--platinum)}
+.bx-dec.solid:hover{--bg:var(--sigmoid-green);--bd:var(--sigmoid-green);--fg:var(--midnight)}
+
+/* page layout */
+.bp{padding:calc(var(--header-h) + 48px) 0 96px}
+.bp .sub{max-width:640px;color:var(--muted-ink);margin:0 0 48px}
+.opt{display:grid;grid-template-columns:280px 1fr;gap:40px;padding:40px 0;border-top:var(--rule)}
+.opt:last-of-type{border-bottom:var(--rule)}
+.opt h2{font-size:var(--fs-h3);margin:6px 0 10px}
+.opt p{color:var(--muted-ink);font-size:var(--fs-small);margin:0}
+.rec{display:inline-block;margin-top:14px;padding:5px 10px;background:var(--sigmoid-green);color:var(--midnight);font:500 11px/1 var(--font-text);letter-spacing:.06em;text-transform:uppercase}
+.demo{display:flex;flex-direction:column;gap:22px}
+.line{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.dark{padding:24px;background:var(--midnight)}
+.dark .bx.ghost{--bd:var(--platinum);--bg:var(--midnight);--fg:var(--platinum)}
+.dark .bx.ghost:hover{--bg:var(--platinum);--fg:var(--midnight)}
+@media(max-width:820px){.opt{grid-template-columns:1fr;gap:20px}.line .bx:not(.sm){width:100%}}
+</style></head><body class="home">
+<header><a class="logo" href="index.html"><img src="logo.svg" alt="Sigmoid" width="757" height="164"></a><nav class="nav"><a href="index.html">Home</a><a href="typography.html">Type scale</a></nav></header>
+<main class="wrap bp">
+<p class="eyebrow">Design system</p>
+<h1>Button proposals</h1>
+<p class="sub t-lead">Three shapes taken from the logo: the faceted, polygonal symbol and the decagon icons. All three use the same colours and type: Roboto 500, uppercase, 13px. Hover over them to see the states.</p>
+
+<section class="opt">
+  <div><span class="t-label">Option A</span><h2>Facet</h2><p>All four corners are cut at 45°, like the facets on the decagon icons. It reads as angular but stays calm and readable, so it is the safest choice for the whole site.</p><span class="rec">Recommended</span></div>
+  <div class="demo">
+    <div class="line"><a class="bx shape-a solid" href="#">View success stories <span class="arr">↗</span></a><a class="bx shape-a ghost" href="#">Discuss a project <span class="arr">↗</span></a></div>
+    <div class="line"><a class="bx shape-a ghost" href="#"><span class="icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 329 346" fill="currentColor"><g transform="translate(0 346) rotate(-90)"><path d="M33.0414 266.255L119.386 328.974H136.296V170.203C136.296 151.652 151.31 136.635 169.857 136.635C188.404 136.635 203.418 151.652 203.418 170.203V329H226.588L312.933 266.281L346 164.591L312.985 62.8226L226.485 0L119.36 0.0519624L32.9895 62.8745L0 164.591L33.0414 266.281V266.255Z"/></g></svg></span>Robotics</a><a class="bx shape-a solid sm" href="#">Small <span class="arr">↗</span></a><a class="bx shape-a ghost sm" href="#">Small <span class="arr">↗</span></a></div>
+    <div class="line dark"><a class="bx shape-a lime" href="#">Discuss a project <span class="arr">↗</span></a><a class="bx shape-a ghost" href="#">About Sigmoid <span class="arr">↗</span></a></div>
+  </div>
+</section>
+
+<section class="opt">
+  <div><span class="t-label">Option B</span><h2>Prism</h2><p>Pointed ends, like an elongated hexagon. This is the most angular option and the most recognisable, but it is louder and takes more horizontal space. Best kept for one or two main CTAs.</p></div>
+  <div class="demo">
+    <div class="line"><a class="bx shape-b solid" href="#">View success stories <span class="arr">↗</span></a><a class="bx shape-b ghost" href="#">Discuss a project <span class="arr">↗</span></a></div>
+    <div class="line"><a class="bx shape-b ghost" href="#"><span class="icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371 355" fill="currentColor"><path d="M333.818 66.5885L240.132 0L125.781 1.1605L33.7735 69.7898L0 179.237L36.971 288.163L130.698 354.832L245.288 353.671L337.136 285.002L370.869 175.475L333.818 66.5885ZM162.553 225.656L145.526 241.863L81.0964 176.315L151.561 110.407L166.829 127.054L112.432 176.035C119.346 182.718 162.553 225.616 162.553 225.616V225.656ZM220.787 242.504L206.438 225.696C206.438 225.696 249.644 182.798 256.559 176.115L202.162 127.134L216.191 110.487L287.215 176.195L220.787 242.504Z"/></svg></span>Embedded</a><a class="bx shape-b solid sm" href="#">Small <span class="arr">↗</span></a><a class="bx shape-b ghost sm" href="#">Small <span class="arr">↗</span></a></div>
+    <div class="line dark"><a class="bx shape-b lime" href="#">Discuss a project <span class="arr">↗</span></a><a class="bx shape-b ghost" href="#">About Sigmoid <span class="arr">↗</span></a></div>
+  </div>
+</section>
+
+<section class="opt">
+  <div><span class="t-label">Option C</span><h2>Notch</h2><p>A single cut corner at top right, in the direction of the ↗ arrow. It feels technical and minimal, like a label or a tag on a technical drawing.</p></div>
+  <div class="demo">
+    <div class="line"><a class="bx shape-c solid" href="#">View success stories <span class="arr">↗</span></a><a class="bx shape-c ghost" href="#">Discuss a project <span class="arr">↗</span></a></div>
+    <div class="line"><a class="bx shape-c ghost" href="#"><span class="icon"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 378 360" fill="currentColor"><path d="M341.075 68.4496L246.974 0H130.14L83.0889 34.2106L36.0382 68.4212L0 179.404L35.9816 290.471L130.253 359.034L247.002 358.977L341.132 290.414L377.085 179.432L341.075 68.4496ZM299.46 188.477H209.35L274.462 253.694L262.289 265.887L196.214 199.706V290.585H178.974V200.67L113.862 265.887L101.688 253.694L166.801 188.477H77.6535V171.209H167.763L102.651 105.992L114.824 93.7992L179.002 158.081V68.4496H196.243V159.045L261.355 93.8275L273.528 106.02L208.416 171.237H299.488V188.506L299.46 188.477Z"/></svg></span>Software</a><a class="bx shape-c solid sm" href="#">Small <span class="arr">↗</span></a><a class="bx shape-c ghost sm" href="#">Small <span class="arr">↗</span></a></div>
+    <div class="line dark"><a class="bx shape-c lime" href="#">Discuss a project <span class="arr">↗</span></a><a class="bx shape-c ghost" href="#">About Sigmoid <span class="arr">↗</span></a></div>
+  </div>
+</section>
+
+<section class="opt">
+  <div><span class="t-label">For any option</span><h2>Decagon icon button</h2><p>Arrows for the slider, "back to top" and menu, using the exact decagon from the icons. It works with A, B and C.</p></div>
+  <div class="demo">
+    <div class="line"><button class="bx-dec" aria-label="Previous">←</button><button class="bx-dec" aria-label="Next">→</button><button class="bx-dec solid" aria-label="Back to top">↑</button><button class="bx-dec" aria-label="Menu">☰</button></div>
+  </div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sigmoid | Type scale</title><link rel="stylesheet" href="styles.css">
+<style>
+.ts{padding:clamp(48px,6vw,96px) 0}
+.ts .sub{max-width:620px;color:var(--muted-ink);margin:0 0 56px}
+.group{margin:72px 0 0}
+.group>.t-label{display:block;margin-bottom:16px;color:var(--muted-ink)}
+.row{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:baseline;padding:28px 0;border-top:var(--rule)}
+.row:last-child{border-bottom:var(--rule)}
+.meta{display:flex;flex-direction:column;gap:4px}
+.meta .t-label{color:var(--midnight)}
+.meta code{font-size:12px;color:var(--muted-ink)}
+.s{margin:0;color:var(--midnight)}
+.s.measure{max-width:640px}
+.fonts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.font-card{padding:32px;border:var(--rule);border-radius:12px}
+.font-card .big{display:block;margin:12px 0 8px;font-size:clamp(72px,9vw,140px);line-height:1}
+.dark-demo{padding:32px;border-radius:12px;background:var(--midnight);color:var(--platinum)}
+.palette{display:flex;gap:12px;flex-wrap:wrap}
+.palette div{flex:1 1 150px;height:110px;padding:12px;border:var(--rule);border-radius:10px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.palette code{font-size:11px;opacity:.75}
+@media(max-width:720px){.row{grid-template-columns:1fr;gap:10px}.fonts{grid-template-columns:1fr}}
+</style></head><body>
+<header><a class="logo" href="index.html"><img src="logo.svg" alt="Sigmoid" width="757" height="164"></a><nav class="nav"><a href="index.html">Home</a><a class="contact-nav" href="contact.html">Contact us ↗</a></nav></header>
+<main class="wrap ts">
+<p class="eyebrow">Design system</p>
+<h1>Type scale</h1>
+<p class="sub t-lead">Oswald for headings and numerals, Roboto for text and interface. Sizes are fluid between 375px and 1440px. Every value is a token in <code>:root</code> of styles.css. Each style also has a <code>.t-*</code> class for when the HTML level and the look differ.</p>
+
+<!-- FONTS -->
+<div class="fonts">
+  <div class="font-card"><span class="t-label">Primary · Headings</span><span class="big" style="font-family:var(--font-heading);font-weight:500">Aa</span><b class="t-h5" style="display:block">Oswald</b><span class="t-caption">300 Light · 400 Regular · 500 Medium · 600 · 700</span></div>
+  <div class="font-card"><span class="t-label">Secondary · Text</span><span class="big" style="font-family:var(--font-text);font-weight:300">Aa</span><b class="t-h5" style="display:block">Roboto</b><span class="t-caption">300 Light · 400 Regular · 500 Medium · 700 Bold</span></div>
+</div>
+
+<!-- HEADINGS -->
+<section class="group">
+<span class="t-label">Headings · Oswald</span>
+<div class="row"><div class="meta"><span class="t-label">Display</span><code>.t-display</code><code>56 → 112px · 500 · lh 1.0 · -0.01em</code></div><p class="s t-display">Manufacturing</p></div>
+<div class="row"><div class="meta"><span class="t-label">H1</span><code>h1 · .t-h1</code><code>44 → 88px · 500 · lh 1.08 · -0.01em</code></div><h1 class="s">Engineering shaped around the challenge</h1></div>
+<div class="row"><div class="meta"><span class="t-label">H2</span><code>h2 · .t-h2</code><code>34 → 60px · 500 · lh 1.08 · -0.005em</code></div><h2 class="s">What are you trying to solve?</h2></div>
+<div class="row"><div class="meta"><span class="t-label">H3</span><code>h3 · .t-h3</code><code>28 → 42px · 400 · lh 1.15</code></div><h3 class="s">Robotic hand for automated grocery handling</h3></div>
+<div class="row"><div class="meta"><span class="t-label">H4</span><code>h4 · .t-h4</code><code>22 → 30px · 400 · lh 1.15</code></div><h4 class="s">Trial / initial engagement</h4></div>
+<div class="row"><div class="meta"><span class="t-label">H5</span><code>h5 · .t-h5</code><code>19 → 22px · 500 · lh 1.25 · +0.005em</code></div><h5 class="s">Embedded systems &amp; firmware</h5></div>
+<div class="row"><div class="meta"><span class="t-label">H6</span><code>h6 · .t-h6</code><code>15px · 500 · uppercase · +0.08em</code></div><h6 class="s">Robotics · Mechatronics · Embedded</h6></div>
+<div class="row"><div class="meta"><span class="t-label">Numeral</span><code>.t-numeral</code><code>56 → 96px · 300 · lh 0.9</code></div><p class="s t-numeral">15+ &nbsp;04 &nbsp;01</p></div>
+</section>
+
+<!-- TEXT -->
+<section class="group">
+<span class="t-label">Text · Roboto</span>
+<div class="row"><div class="meta"><span class="t-label">Lead</span><code>.t-lead</code><code>18 → 22px · 300 · lh 1.5</code></div><p class="s measure t-lead">We help companies develop software, products and systems with the engineering expertise each project requires.</p></div>
+<div class="row"><div class="meta"><span class="t-label">Body</span><code>p · .t-body</code><code>17px · 400 · lh 1.6</code></div><p class="s measure t-body">One challenge can call for several disciplines. We bring the right ones together and keep them connected to the same outcome. <strong>Bold (700)</strong> is used for emphasis inside running text.</p></div>
+<div class="row"><div class="meta"><span class="t-label">Small</span><code>.t-small</code><code>15px · 400 · lh 1.5</code></div><p class="s measure t-small">Keeping complex infrastructure observable, reliable and ready to scale.</p></div>
+<div class="row"><div class="meta"><span class="t-label">Caption</span><code>small · .t-caption</code><code>13px · 400 · lh 1.4 · muted</code></div><p class="s t-caption">Photo: Sigmoid lab, Novi Sad · 2026</p></div>
+<div class="row"><div class="meta"><span class="t-label">Label / eyebrow</span><code>.t-label · .eyebrow</code><code>13px · 500 · uppercase · +0.06em</code></div><div><p class="s t-label">Robotics · Mechatronics · Embedded</p><p class="eyebrow" style="margin:14px 0 0">Eyebrow above a section</p></div></div>
+<div class="row"><div class="meta"><span class="t-label">Blockquote</span><code>blockquote</code><code>Oswald · 28 → 42px · 400</code></div><blockquote class="s measure">“They understood the problem before we finished explaining it.”</blockquote></div>
+</section>
+
+<!-- LINKS & UI -->
+<section class="group">
+<span class="t-label">Links &amp; interface</span>
+<div class="row"><div class="meta"><span class="t-label">Inline link</span><code>.link · .prose a</code><code>inherits size · 500 · green underline 2px → midnight on hover</code></div><p class="s measure t-body">Read more about <a class="link" href="#">how we work with clients</a>, or see <a class="link" href="#">selected success stories</a>.</p></div>
+<div class="row"><div class="meta"><span class="t-label">Inline link · dark</span><code>.dark .link</code><code>platinum text · lime-cream underline</code></div><p class="s dark-demo dark t-body">Start with a <a class="link" href="#">short trial engagement</a> and scale from there.</p></div>
+<div class="row"><div class="meta"><span class="t-label">Text link (CTA)</span><code>.text-link</code><code>13px · 500 · uppercase</code></div><p class="s"><a class="text-link" href="#">View all expertise <span>→</span></a></p></div>
+<div class="row"><div class="meta"><span class="t-label">Button</span><code>.button</code><code>13px · 500 · uppercase</code></div><p class="s"><a class="button" href="#">Contact us ↗</a></p></div>
+<div class="row"><div class="meta"><span class="t-label">Navigation</span><code>.nav a</code><code>13px · 500 · uppercase</code></div><nav class="nav s"><a href="#">Expertise</a><a href="#">Industries</a><a href="#">Success stories</a><a href="#">About</a></nav></div>
+<div class="row"><div class="meta"><span class="t-label">Code</span><code>code</code><code>monospace · 0.9em</code></div><p class="s t-body">Set the token <code>--fs-body</code> to change all paragraphs.</p></div>
+</section>
+
+<!-- COLOURS -->
+<section class="group">
+<span class="t-label">Colour palette</span>
+<div class="palette">
+<div style="background:var(--sigmoid-green)"><b>Sigmoid Green</b><code>#98BF5A</code></div>
+<div style="background:var(--midnight);color:var(--platinum)"><b>Midnight · ink</b><code>#26233C</code></div>
+<div style="background:var(--lime-cream)"><b>Lime cream</b><code>#DBE580</code></div>
+<div style="background:var(--graphite);color:var(--platinum)"><b>Graphite</b><code>#373636</code></div>
+<div style="background:var(--bone)"><b>Bone</b><code>#D9D6C9</code></div>
+<div style="background:var(--platinum)"><b>Platinum · paper</b><code>#F1F2F2</code></div>
+<div style="background:var(--charcoal-blue);color:var(--platinum)"><b>Charcoal blue</b><code>#202A2C</code></div>
+</div>
+</section>
+</main></body></html>
