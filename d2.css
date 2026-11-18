@@ -1493,3 +1493,7 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .talk-btn{height:52px;padding-left:10px;gap:12px}
 .btn-robot3d{width:38px;height:39px;fill:none}
 .btn-robot3d .br-eyes{fill:none}
+/* robots: no blinking, the eyes only follow the mouse */
+.buddy.blink .pupil,.buddy.blink .robot .m-eyes{transform:none}
+.robot .pupil{transform-box:view-box}
+.btn-robot .br-eyes{animation:none!important}

@@ -340,8 +340,6 @@
     ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (innerHeight / 2)));
     if (!raf) raf = requestAnimationFrame(step);
   }, { passive: true });
-  // blink now and then
-  setInterval(() => { buddy.classList.add('blink'); setTimeout(() => buddy.classList.remove('blink'), 160); }, 3800);
 })();
 
 /* industries: the cards on the right switch the content on the left */
