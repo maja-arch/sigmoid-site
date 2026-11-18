@@ -791,3 +791,5 @@ body:before{border-left:0;border-right:0;clip-path:inset(0 1px 0 0)}
 .mod-title{letter-spacing:-.01em}
 .giant,.xp-abbr,.way-abbr{letter-spacing:-.03em}
 .xp svg.ticon.ticon{animation:none!important}
+/* no icon hop anywhere */
+svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;transform:none}
