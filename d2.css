@@ -1056,3 +1056,4 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @media(max-width:1180px){.stories{grid-template-columns:1fr}}
 @media(max-width:620px){.story-card{grid-template-columns:1fr}.story-visual{aspect-ratio:16/9}.story-facts div{grid-template-columns:1fr;gap:2px}}
 .v-photo-sm img{object-fit:contain}
+.v-photo-cover{background:var(--bone)}.v-photo-cover img{object-fit:cover}
