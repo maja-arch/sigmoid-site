@@ -618,3 +618,43 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 .pill .arr,.pill:hover .arr,a:hover .pill .arr{transform:none!important;transition:none}
 .hero-arrow:hover:not(:disabled):before{inset:1px}
 .hero-arrow span,.hero-arrow:hover span{transform:none!important}
+
+
+/* ---------- counters: bigger type, always-animated icons (Figma 285-58) ---------- */
+.counter{gap:16px;padding:22px 22px}
+.counter-label{max-width:170px;font-size:15px;line-height:1.35}
+.counter-num{font-size:clamp(76px,6.8vw,128px)}
+.counter-icon{width:54px;height:54px}
+.counter:hover .counter-icon{transform:none}
+.counter .ticon{color:var(--bg);overflow:visible;fill:none}
+.counter .ticon .tdec{fill:var(--ink)}
+.counter .ti-mx .mx-hole,.counter .ti-mx .mx-gap,.counter .ti-sw .sw-dot{fill:currentColor}
+.counter .ti-mx *{animation-delay:.9s}
+/* sphere facets: flat, then shade in from the bottom, hold, repeat (3s, like the logo GIF) */
+.counter .sph{fill:var(--ink)}
+.counter .sph path{animation:sph-facet 3s cubic-bezier(.4,0,.2,1) infinite;animation-delay:var(--d,0s)}
+@keyframes sph-facet{0%,13%{opacity:.18}34%,94%{opacity:1}100%{opacity:.18}}
+@media(max-width:1520px){.counters{grid-template-columns:1fr}.counter{min-height:120px}}
+@media(prefers-reduced-motion:reduce){.counter .sph path{opacity:1}}
+
+
+/* ---------- round 7: animated corner icons, solve section, ways to start ---------- */
+.mod-icon.ticon,.xp-icon.ticon{color:var(--bg);overflow:visible;fill:none}
+.mod-icon.ticon .tdec,.xp-icon.ticon .tdec{fill:var(--ink)}
+.ticon .sw-dot,.ticon .mx-hole,.ticon .mx-gap,.ticon .rb-slot{fill:currentColor}
+.xp:hover .xp-icon.ticon{color:#fff;transform:none}
+.mod-main:hover .mod-icon{transform:none}
+.mod-icon.ticon{width:clamp(30px,2.4vw,40px);height:clamp(30px,2.4vw,40px)}
+.xp-icon.ticon{width:40px;height:40px}
+.block-solve{padding-top:clamp(80px,9vw,150px)}
+.way{min-height:0}
+.way-abbr{margin:clamp(16px,2vw,28px) 0 clamp(20px,2.4vw,36px)}
+.way .mod-title{margin:0 0 20px}
+.way-facts{display:grid;gap:18px;margin:0 0 26px;padding-top:18px;border-top:1px solid var(--line-l)}
+.way-facts dt{margin-bottom:6px}
+.way-facts dd{margin:0;max-width:52ch;font:300 17px/1.45 var(--text);color:var(--ink)}
+.way-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.not-sure{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:var(--gap);padding:22px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+.not-sure p{font:400 clamp(20px,1.8vw,28px)/1.2 var(--display);text-transform:uppercase}
+.not-sure p span{color:var(--light-2)}
+.block-start .steps{margin-top:0}
