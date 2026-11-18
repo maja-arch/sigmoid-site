@@ -750,3 +750,28 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
   .cookie .cookie-btns{flex-direction:row}
   .cookie .cookie-btns .btn{flex:1 1 0;width:auto;padding:0 8px;font-size:11px}
 }
+
+/* ---------- round 9: expertise ---------- */
+/* no green marker anywhere */
+mark{background:none!important;color:inherit!important;padding:0}
+/* smaller abbreviations, tighter to the title, button pinned to the bottom */
+.xp{min-height:0}
+.xp-abbr{margin:clamp(18px,2vw,30px) 0 clamp(14px,1.4vw,22px);font-size:clamp(64px,6.2vw,112px)}
+.xp .mod-title{margin:0 0 10px}
+.xp .pill{margin-top:auto}
+/* outline buttons in the cards, graphite fill on hover (same as hero "Discuss a project") */
+.xp .pill{background:rgba(55,54,54,.55)}
+.xp .pill:after{background:var(--bg)}
+.xp:hover .pill,.xp .pill:hover{background:var(--ink);color:var(--bg)}
+.xp:hover .pill:after{background:var(--ink)}
+.xp:hover{transform:none}
+.xp:hover:before{background:var(--bg)}
+/* icons give a small hop every time their loop starts again */
+svg.ticon.ticon{animation:ticon-hop var(--d,3s) cubic-bezier(.3,0,.3,1) infinite!important;transform-origin:50% 100%}
+.ticker-set .ti-em.ticon{animation-delay:.6s!important}
+.ticker-set .ti-rb.ticon{animation-delay:1.2s!important}
+.ticker-set .ti-mx.ticon{animation-delay:1.8s!important}
+.counter .ti-mx.ticon{animation-delay:.9s!important}
+.counter .sph{animation:ticon-hop 3s cubic-bezier(.3,0,.3,1) infinite;transform-origin:50% 100%}
+@keyframes ticon-hop{0%{transform:translateY(0) scale(1)}3%{transform:translateY(0) scale(1.06,.92)}7%{transform:translateY(-22%) scale(.96,1.05)}11%{transform:translateY(0) scale(1.04,.95)}14%{transform:translateY(-6%)}17%,100%{transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){svg.ticon.ticon,.counter .sph{animation:none!important}}
