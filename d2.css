@@ -1398,3 +1398,22 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .contact-band .pill-green:after,.contact-band .pill-green:hover:after{background:var(--lime)!important}
 .contact-band .text-link{background-image:linear-gradient(var(--ink),var(--ink))!important}
 .contact-band .bit{color:var(--ink)}
+
+/* mascot: big, peeking up from the bottom edge of the footer, only the head visible */
+.ft2{position:relative;overflow:hidden}
+.ft2 .buddy{position:absolute;left:52%;bottom:0;z-index:0;width:clamp(320px,34vw,540px);transform:translate(-50%,40%);grid-column:auto;grid-row:auto;pointer-events:auto}
+.ft2 .buddy-body{width:100%!important}
+.ft2 .m-shadow{display:none}
+.ft2-grid,.ft2-bottom{position:relative;z-index:1}
+.ft2-grid{min-height:clamp(320px,32vw,460px)}
+.mascot2 .m-body{animation:m-peek 4.5s ease-in-out infinite}
+@keyframes m-peek{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(max-width:800px){.ft2 .buddy{position:relative;left:auto;transform:translateY(30%);width:min(80vw,360px);margin:0 auto -40px}}
+/* robot mascot: head peeking up from the footer edge */
+.ft2 .buddy{width:clamp(300px,30vw,480px);transform:translate(-50%,24%)}
+.ft2 .buddy-body{aspect-ratio:400/440!important}
+.robot .m-eyes{transform-box:fill-box;transform-origin:center;transition:transform .12s}
+.buddy.blink .robot .m-eyes{transform:scaleY(.1)}
+.robot .m-body{animation:m-peek 4.5s ease-in-out infinite}
+.robot .m-tip{transform-box:fill-box;transform-origin:center;animation:m-tip 6s ease-in-out infinite}
+.ft2 .buddy{transform:translate(-50%,30%)}
