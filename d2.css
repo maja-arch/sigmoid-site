@@ -996,3 +996,5 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .hero-foot{display:grid;grid-template-columns:var(--cta-slot,auto) auto;justify-content:start;column-gap:var(--gap)}
 .hero-foot .hero-primary{justify-self:start;min-width:0!important}
 @media(max-width:800px){.hero-foot{grid-template-columns:1fr}.hero-foot .hero-primary{justify-self:stretch}}
+.combine-side{padding-top:0}
+.combine-side{margin-top:-2px}

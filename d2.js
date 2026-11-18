@@ -240,26 +240,30 @@
   update();
 })();
 
-/* "compounds": decodes through 0/1 and letters, settles, repeats */
+/* digital decode: words with [data-scramble] mix 0/1 and letters, settle, repeat */
 (() => {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { window.sigmoidScramble = () => {}; return; }
   const GLYPHS = '0101010110ABCDEFGHKMNOPRSTUXZ';
-  document.querySelectorAll('[data-scramble]').forEach((el) => {
+  const start = (el) => {
+    if (el.dataset.scrambleOn) return;
+    el.dataset.scrambleOn = '1';
     const word = el.textContent;
     el.setAttribute('aria-label', word);
-    const lock = () => { el.style.width = ''; el.style.width = `${el.getBoundingClientRect().width}px`; };
+    const lock = () => { if (!el.isConnected) return; el.style.width = ''; el.style.width = `${el.getBoundingClientRect().width}px`; };
     lock();
     if (document.fonts) document.fonts.ready.then(lock);
     addEventListener('resize', lock);
     const run = () => {
+      if (!el.isConnected) return; // element was replaced (e.g. another industry selected): stop
       el.classList.add('is-run');
       const q = [...word].map((c, i) => ({ c, s: i * 2 + ((Math.random() * 6) | 0), e: 0 }));
       q.forEach((o) => { o.e = o.s + 10 + ((Math.random() * 14) | 0); });
       let f = 0;
       const tick = () => {
+        if (!el.isConnected) return;
         let done = 0;
         el.innerHTML = q.map((o) => {
-          if (f >= o.e) { done++; return o.c; }
+          if (f >= o.e || o.c === ' ') { done++; return o.c; }
           if (f < o.s) return o.c;
           const g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
           return /[01]/.test(g) ? `<span class="bit">${g}</span>` : g;
@@ -270,10 +274,11 @@
       };
       tick();
     };
-    // start when the About card is on screen
     const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); setTimeout(run, 600); } });
     io.observe(el);
-  });
+  };
+  window.sigmoidScramble = start;
+  document.querySelectorAll('[data-scramble]').forEach(start);
 })();
 
 /* contact form: no backend yet, opens the visitor's email app with the message filled in */
@@ -328,7 +333,10 @@
       cta.href = d.href;
       cta.querySelector('.pill-txt').textContent = d.cta;
       icons.forEach((ic, k) => ic.classList.toggle('is-on', k === i));
-      decode(name, d.name);
+      if (d.name.startsWith('Data Centers')) {
+        name.innerHTML = '<span class="scramble" data-scramble>Data Centers</span> / AI Infrastructure';
+        if (window.sigmoidScramble) window.sigmoidScramble(name.querySelector('[data-scramble]'));
+      } else decode(name, d.name);
       panel.classList.remove('is-swap');
     }, reduce ? 0 : 260);
   };
