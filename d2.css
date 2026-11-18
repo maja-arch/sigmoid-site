@@ -861,3 +861,4 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .bento{grid-template-columns:calc(25% - 4.5px) calc(25% - 8px) calc(25% - 8px) calc(25% - 3.5px)}
 @media(max-width:1180px){.bento{grid-template-columns:calc(50% - 4.5px) calc(50% - 3.5px)}}
 @media(max-width:800px){.bento{grid-template-columns:1fr}}
+/* no bitmap layers on icon parts: rotated icons stay vector-sharp */ .ticon *,.ticon,.side-logo,.side-logo path{will-change:auto!important}
