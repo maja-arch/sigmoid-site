@@ -802,3 +802,26 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 .giant span{transition-duration:.7s}
 .giant span:nth-child(2){transition-delay:.05s}.giant span:nth-child(3){transition-delay:.1s}
 .bar i{transition-duration:.9s;transition-delay:.15s}
+
+/* ---------- round 11: expertise cards & combine ---------- */
+/* card hover leaves the button alone; only the button's own hover fills it */
+.bento .xp:hover>.pill:not(:hover){background:rgba(55,54,54,.55);color:var(--ink)}
+.bento .xp:hover>.pill:not(:hover):after{background:var(--bg)}
+.bento .xp>.pill:hover{background:var(--ink);color:var(--bg)}
+.bento .xp>.pill:hover:after{background:var(--ink)}
+/* photo before the title */
+.combine-head{display:flex;align-items:center;gap:clamp(14px,1.6vw,24px)}
+.combine-photo{flex:none;width:clamp(76px,7.4vw,124px);height:clamp(76px,7.4vw,124px);object-fit:cover;--c:12px;clip-path:var(--facet);filter:grayscale(.2) contrast(1.05);transition:filter var(--t-hover) var(--soft),transform .8s var(--soft)}
+.combine:hover .combine-photo{filter:none;transform:scale(1.04)}
+/* tags with an animated colour outline running around the cut corners */
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+.chips{gap:8px}
+.chips li{--c:7px;position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:8px;padding:10px 14px 10px 11px;border-radius:0;clip-path:var(--facet);
+  font:500 12px/1 var(--text);letter-spacing:.07em;text-transform:uppercase;color:var(--ink);
+  background:conic-gradient(from var(--ang),rgba(55,54,54,.35) 0deg,rgba(55,54,54,.35) 200deg,var(--green) 260deg,var(--ink) 300deg,rgba(55,54,54,.35) 340deg);
+  animation:chip-run 3.2s linear infinite;animation-delay:calc(var(--i,0) * -1.05s)}
+.chips li:before{position:absolute;inset:1.5px;z-index:-1;content:"";background:var(--lime);clip-path:var(--facet);--c:6.4px}
+.chips li svg{width:16px;height:16px;fill:var(--ink)}
+@keyframes chip-run{to{--ang:360deg}}
+@media(prefers-reduced-motion:reduce){.chips li{animation:none;background:rgba(55,54,54,.45)}}
+@media(max-width:800px){.combine-photo{width:72px;height:72px}}
