@@ -44,11 +44,11 @@
     const lockCta = () => {
       const txt = primary.querySelector('.pill-txt');
       const keep = txt.textContent;
-      primary.style.minWidth = '';
       let w = 0;
       SLIDES.forEach((sl) => { txt.textContent = sl.cta; w = Math.max(w, primary.getBoundingClientRect().width); });
       txt.textContent = keep;
-      primary.style.minWidth = `${Math.ceil(w)}px`;
+      // the button keeps its own length; its slot keeps the widest length, so "Discuss a project" never moves
+      primary.parentElement.style.setProperty('--cta-slot', `${Math.ceil(w)}px`);
     };
     lockCta();
     if (document.fonts) document.fonts.ready.then(lockCta);
