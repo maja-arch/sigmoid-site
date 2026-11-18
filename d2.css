@@ -1423,3 +1423,69 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
   .ft2-bottom{padding-bottom:min(52vw,220px)}
 }
 @media(min-width:801px){.ft2 .buddy{transform:translate(-50%,16%)}}
+
+
+/* =====================================================================
+   ROUND 14
+   ===================================================================== */
+/* links with an arrow: arrow centred on the text (underline padding no longer pushes it down) */
+.read-link,.story-card .pill,.combine-link,.ft-list a{align-items:center}
+.read-link .pill-txt-u,.story-card .pill .pill-txt-u{padding:0;background-position:0 calc(100% + 3px)!important;background-size:100% 1px;line-height:1.35}
+.read-link .arr,.story-card .pill .arr{align-self:center}
+
+/* accumulated experience: no card border, proofs start at the top on the right, smaller numbers */
+.module-about .mod-main{background:transparent!important}
+.module-about .mod-main:before{inset:0!important}
+.module-about .mod-main{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:auto auto 1fr}
+.module-about .mod-top{grid-column:1;grid-row:1}
+.module-about .big-text{grid-column:1;grid-row:2}
+.module-about .mod-main>.pill{grid-column:1;grid-row:3}
+.module-about .proofs{grid-column:2;grid-row:1/4;margin-top:0!important;align-self:start}
+.proof .counter-num{font-size:clamp(44px,3.6vw,64px)!important}
+.proof .counter-icon{fill:var(--ink)}
+.proof .ticon .tdec,.proof .sph{fill:var(--ink)}
+.proof .sph path{animation-name:sph-facet-dark}
+@keyframes sph-facet-dark{0%,13%{opacity:.45}34%,94%{opacity:1}100%{opacity:.45}}
+@media(max-width:1000px){.module-about .mod-top,.module-about .big-text,.module-about .mod-main>.pill,.module-about .proofs{grid-column:1;grid-row:auto}}
+
+/* possible ways to start: heading and subtitle closer, description always visible,
+   lime facet card on hover with a dark arrow badge */
+#ways-to-start .block-head{gap:10px}
+#ways-to-start .block-sub{margin-top:0}
+.start-list{border-top:0}
+.start-row{--c:14px;grid-template-columns:clamp(48px,5vw,80px) minmax(0,1fr) auto;align-items:center;padding:clamp(18px,2vw,28px) clamp(16px,2vw,28px);
+  background:linear-gradient(var(--line-l),var(--line-l)) 0 100%/100% 1px no-repeat;border-bottom:0;clip-path:var(--facet);
+  transition:background-color var(--t-hover) var(--soft)}
+.start-num{padding-top:0;align-self:start;margin-top:.55em;font:400 13px var(--text)}
+.start-title{font-size:clamp(30px,3.6vw,56px)!important}
+.start-more{grid-template-rows:1fr!important}
+.start-more>span{opacity:1!important;padding-top:8px!important;color:var(--ink-2)}
+.start-go{display:grid;place-items:center;width:52px;height:52px;clip-path:var(--decagon);background:rgba(55,54,54,.12);color:var(--ink);transition:background-color var(--t-hover) var(--soft),color var(--t-hover) var(--soft),transform .6s var(--soft)}
+.start-go .arr{width:14px;height:14px}
+.start-row:hover,.start-row:focus-visible{background-color:var(--lime)}
+.start-row:hover .start-go,.start-row:focus-visible .start-go{background:var(--ink);color:var(--lime);transform:rotate(36deg)}
+.start-row:hover .start-go .arr,.start-row:focus-visible .start-go .arr{transform:rotate(-36deg)!important}
+.start-row:hover .start-num,.start-row:focus-visible .start-num{color:var(--ink)}
+.start-row:hover .start-more>span,.start-row:focus-visible .start-more>span{color:var(--ink)}
+@media(max-width:700px){.start-go{display:none}.start-row{grid-template-columns:40px minmax(0,1fr)}}
+
+/* people: real portraits */
+.person-photo{position:relative;overflow:hidden;--c:10px;clip-path:var(--facet);background:var(--bone)}
+.person-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:grayscale(.15);transition:transform 1.1s cubic-bezier(.22,.61,.36,1),filter .6s var(--soft)}
+.person:hover .person-photo img{transform:scale(1.04);filter:none}
+
+/* talk button with the mini robot */
+.talk-btn{gap:12px}
+.btn-robot{width:26px;height:24px;flex:none;fill:currentColor;overflow:visible}
+.btn-robot .br-visor{fill:var(--ink)}
+.btn-robot .br-eyes{fill:var(--lime);transform-box:fill-box;transform-origin:center;animation:br-blink 3.8s ease-in-out infinite}
+.btn-robot .br-tip{fill:currentColor;transform-box:fill-box;transform-origin:center}
+.talk-btn:hover .btn-robot{animation:br-nod .9s var(--soft)}
+.talk-btn:hover .br-tip{animation:br-ping .9s var(--soft)}
+.talk-btn{color:var(--ink)}
+.talk-btn .btn-robot{color:var(--ink)}
+@keyframes br-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes br-nod{0%,100%{transform:rotate(0)}30%{transform:rotate(-12deg)}65%{transform:rotate(8deg)}}
+@keyframes br-ping{0%,100%{transform:scale(1)}50%{transform:scale(1.6)}}
+@media(prefers-reduced-motion:reduce){.btn-robot .br-eyes{animation:none}}
+.combine-link .cl-text{padding-bottom:0;background-position:0 calc(100% + 3px)!important}
