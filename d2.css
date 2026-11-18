@@ -833,3 +833,8 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 .combine-link{position:relative;border-bottom:1px solid rgba(55,54,54,.3)}
 .combine-link:after{position:absolute;left:0;right:0;bottom:-1px;height:2px;content:"";background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--soft)}
 .combine-link:hover:after,.combine-link:focus-visible:after{transform:scaleX(1)}
+/* article link, proposal 2: no separator, underline draws under the words only */
+.combine-link{border-bottom:0;padding-bottom:6px}
+.combine-link:after{display:none}
+.combine-link .cl-text{background:linear-gradient(var(--ink),var(--ink)) 0 100%/0% 1px no-repeat;padding-bottom:3px;transition:background-size .6s var(--soft)}
+.combine-link:hover .cl-text,.combine-link:focus-visible .cl-text{background-size:100% 1px}
