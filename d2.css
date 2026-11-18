@@ -829,3 +829,7 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 .chips li{padding:10px 14px}
 .chips li:before{inset:1px;--c:6.58px}
 /* arrows never move on hover */ .arr,a:hover .arr,.combine-link:hover .arr,.ft-list a:hover .arr,.ind:hover .arr{transform:none!important}
+/* article link: the separator itself becomes the underline on hover */
+.combine-link{position:relative;border-bottom:1px solid rgba(55,54,54,.3)}
+.combine-link:after{position:absolute;left:0;right:0;bottom:-1px;height:2px;content:"";background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--soft)}
+.combine-link:hover:after,.combine-link:focus-visible:after{transform:scaleX(1)}
