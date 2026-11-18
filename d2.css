@@ -1489,3 +1489,7 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @keyframes br-ping{0%,100%{transform:scale(1)}50%{transform:scale(1.6)}}
 @media(prefers-reduced-motion:reduce){.btn-robot .br-eyes{animation:none}}
 .combine-link .cl-text{padding-bottom:0;background-position:0 calc(100% + 3px)!important}
+/* talk button: the footer robot, in miniature */
+.talk-btn{height:52px;padding-left:10px;gap:12px}
+.btn-robot3d{width:38px;height:39px;fill:none}
+.btn-robot3d .br-eyes{fill:none}
