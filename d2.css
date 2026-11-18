@@ -1551,3 +1551,45 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .module-about .mod-main{padding:clamp(22px,3vw,44px)!important}
 .proof .counter-label{font-size:17px!important;max-width:24ch}
 @media(max-width:1180px){.module-about{grid-template-columns:1fr!important}}
+
+
+/* =====================================================================
+   ROUND 16
+   ===================================================================== */
+/* testimonial arrows exactly like the hero: previous outline, next cream fill */
+.q-nav .hero-arrow{width:46px;height:46px;font-size:18px}
+.q-next{background:var(--bone)!important}
+.q-next:before{background:var(--bone)!important}
+.q-next:hover:before,.q-prev:hover:before{background:var(--green)!important}
+/* every quote on three lines */
+.clients .client-quote{max-width:15.5em}
+
+/* accumulated experience: heading as large as the other section headings, smaller % */
+#about-title{font-size:clamp(40px,5vw,72px);font-weight:300;line-height:.95;letter-spacing:-.025em;max-width:none}
+.module-about .lopta-anim{width:clamp(80px,8vw,120px);height:auto}
+.proof .counter-num sup.pct{font-size:.42em;margin-top:.1em}
+
+/* ---------- Possible ways to start · proposal 2: timeline of four steps ---------- */
+.start-v2 .start-list{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.start-v2 .start-list:before{position:absolute;left:0;right:0;top:42px;height:1px;content:"";background:rgba(55,54,54,.3)}
+.start-v2 .start-row{--c:14px;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:16px 18px 22px;background:none;clip-path:var(--facet);transition:background-color var(--t-hover) var(--soft)}
+.start-v2 .start-num{position:relative;z-index:1;display:grid;place-items:center;width:52px;height:52px;margin:0;padding:0;align-self:flex-start;clip-path:var(--decagon);background:var(--bone);color:var(--ink);font:400 18px var(--display);transition:background-color var(--t-hover) var(--soft),transform .6s var(--soft)}
+.start-v2 .start-main{display:flex;flex-direction:column;gap:10px}
+.start-v2 .start-title{font-size:clamp(24px,2.2vw,34px)!important;line-height:1}
+.start-v2 .start-more>span{padding-top:0!important;font-size:16px}
+.start-v2 .start-go{display:none}
+.start-v2 .start-row:hover,.start-v2 .start-row:focus-visible{background:var(--lime)}
+.start-v2 .start-row:hover .start-num,.start-v2 .start-row:focus-visible .start-num{background:var(--ink);color:var(--lime);transform:rotate(36deg)}
+@media(max-width:900px){
+  .start-v2 .start-list{grid-template-columns:1fr}
+  .start-v2 .start-list:before{left:43px;right:auto;top:16px;bottom:16px;width:1px;height:auto}
+  .start-v2 .start-row{flex-direction:row;gap:18px}
+}
+/* phones: partner logos in two columns */
+@media(max-width:600px){
+  .client-logos{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .client-logo{grid-column:auto!important;border-right:0!important;border-bottom:1px solid var(--line-l)!important;min-height:84px;padding:14px}
+  .client-logo:nth-child(odd){border-right:1px solid var(--line-l)!important}
+  .client-logo:nth-last-child(-n+2){border-bottom:0!important}
+  .client-logo img{max-width:110px;max-height:40px}
+}
