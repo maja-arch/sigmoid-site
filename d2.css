@@ -1018,3 +1018,15 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .ind-tab-head .tab{padding-top:.42em}
 .ind-tab-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .ind-tab-tags span{--c:5px;padding:7px 10px;clip-path:var(--facet);background:var(--bone);font:500 11px/1 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+/* industry tabs: name left (lines up with the tags), number right without brackets */
+.ind-tab-head{grid-template-columns:1fr auto;column-gap:16px}
+.ind-tab-head .ind-tab-num{padding-top:.42em;font-size:12px}
+/* tags with the same running colour outline as the combine card, platinum inside */
+.ind-tab-tags{gap:8px}
+.ind-tab-tags span{--c:7px;position:relative;isolation:isolate;padding:9px 12px;clip-path:var(--facet);
+  background:conic-gradient(from var(--ang),rgba(55,54,54,.35) 0deg,rgba(55,54,54,.35) 200deg,var(--green) 260deg,var(--ink) 300deg,rgba(55,54,54,.35) 340deg);
+  animation:chip-run 3.2s linear infinite}
+.ind-tab-tags span:nth-child(2){animation-delay:-1.05s}
+.ind-tab-tags span:nth-child(3){animation-delay:-2.1s}
+.ind-tab-tags span:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--facet);--c:6.58px}
+@media(prefers-reduced-motion:reduce){.ind-tab-tags span{animation:none;background:rgba(55,54,54,.45)}}
