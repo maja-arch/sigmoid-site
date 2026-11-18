@@ -1030,3 +1030,4 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .ind-tab-tags span:nth-child(3){animation-delay:-2.1s}
 .ind-tab-tags span:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--facet);--c:6.58px}
 @media(prefers-reduced-motion:reduce){.ind-tab-tags span{animation:none;background:rgba(55,54,54,.45)}}
+.text-link{font-weight:400}
