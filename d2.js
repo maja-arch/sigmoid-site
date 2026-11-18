@@ -400,3 +400,25 @@
     tabs[n].focus(); show(n);
   }));
 })();
+
+/* client testimonials: small fade slider with the hero arrows */
+(() => {
+  const card = document.querySelector('.quote-card');
+  const slides = card ? [...card.querySelectorAll('.q-slide')] : [];
+  if (slides.length < 2) return;
+  const wrap = card.querySelector('.q-slides');
+  let i = 0, timer = 0;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fit = () => { wrap.style.minHeight = `${Math.max(...slides.map((s) => s.scrollHeight))}px`; };
+  const show = (n) => {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.classList.toggle('is-active', k === i); s.setAttribute('aria-hidden', String(k !== i)); });
+  };
+  const auto = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => show(i + 1), 8000); };
+  card.querySelector('.q-prev').addEventListener('click', () => { show(i - 1); auto(); });
+  card.querySelector('.q-next').addEventListener('click', () => { show(i + 1); auto(); });
+  card.addEventListener('mouseenter', () => clearInterval(timer));
+  card.addEventListener('mouseleave', auto);
+  fit(); if (document.fonts) document.fonts.ready.then(fit); addEventListener('resize', fit);
+  auto();
+})();
