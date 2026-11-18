@@ -945,3 +945,44 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .block-head .h2-long{max-width:24ch}
 /* "One challenge. The right expertise." in the same light weight */
 .combine-big{font-weight:300}
+
+
+/* ---------- industries: selector cards on the right, content on the left ---------- */
+.module-ind .mod-side{gap:6px}
+.ind-side-label{margin:2px 0 6px}
+.ind-tabs{display:flex;flex-direction:column;gap:6px}
+.ind-tab{--card-c:12px;--c:12px;display:block;width:100%;padding:14px 16px;border:0;text-align:left;cursor:pointer;font:inherit;color:var(--ink);transition:background-color var(--t-hover) var(--soft)}
+.ind-tab-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.ind-tab-name{font:400 clamp(17px,1.35vw,22px)/1.05 var(--display);text-transform:uppercase}
+.ind-tab .arr{width:12px;height:12px;transition:transform .5s var(--soft)!important}
+.ind-tab[aria-selected=true] .arr{transform:rotate(90deg)!important}
+.ind-tab:hover:not([aria-selected=true]){background:var(--ink)}
+.ind-tab-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--soft)}
+.ind-tab[aria-selected=true] .ind-tab-body{grid-template-rows:1fr}
+.ind-tab-inner{overflow:hidden;display:flex;flex-direction:column;gap:18px;min-height:0}
+.ind-tab-inner .bar{margin-top:16px}
+.ind-tab-icon{width:clamp(96px,8vw,128px);height:clamp(96px,8vw,128px);color:var(--bg)}
+.ind-tab-icon .tdec{fill:var(--ink)}
+.ind-tab-icon .sw-dot,.ind-tab-icon .mx-hole,.ind-tab-icon .mx-gap,.ind-tab-icon .rb-slot{fill:currentColor}
+.ind-tab[aria-selected=true] .ind-tab-inner{padding-bottom:4px}
+/* left card content */
+.module-ind .mod-title{max-width:18ch}
+.ind-name{display:inline}
+.ind-swap,.ind-explore{transition:opacity .26s var(--soft),transform .26s var(--soft)}
+.is-swap .ind-swap,.is-swap .ind-explore{opacity:0;transform:translateY(8px)}
+.ind-main-icon[hidden]{display:none}
+.ind-challenge{display:flex;flex-direction:column;gap:6px;margin:0 0 24px;padding-top:16px;border-top:1px solid var(--line-l);width:100%}
+.ind-challenge p{font:300 17px/1.45 var(--text)}
+.ind-other{width:100%;margin-top:clamp(28px,3vw,44px);padding-top:18px;border-top:1px solid var(--line-l);font:300 clamp(17px,1.4vw,22px)/1.4 var(--text)}
+@media(max-width:800px){
+  .module-ind .mod-side{order:-1}
+  .ind-tab-icon{width:84px;height:84px}
+}
+.ind-main-icon{display:none!important}
+.ind-main-icon.is-on{display:block!important}
+/* bar fills each time a tab opens */
+.ind-tab .bar i{transform:scaleX(0);transition:transform .9s var(--soft) .15s}
+.ind-tab[aria-selected=true] .bar i{transform:scaleX(1)}
+/* phones: single column may never be wider than the screen */
+@media(max-width:800px){.module{grid-template-columns:minmax(0,1fr)}.mod-side,.mod-main,.ind-tab{min-width:0}}
+.ind-explore{max-width:100%;white-space:normal;height:auto;min-height:42px;padding-top:10px;padding-bottom:10px;line-height:1.3;text-align:left}

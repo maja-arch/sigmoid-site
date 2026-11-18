@@ -288,3 +288,57 @@
     location.href = `mailto:${form.dataset.mailto}?subject=${encodeURIComponent('Project enquiry from ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
   });
 })();
+
+/* industries: the cards on the right switch the content on the left */
+(() => {
+  const tabs = [...document.querySelectorAll('.ind-tab')];
+  const panel = document.getElementById('ind-panel');
+  if (!tabs.length || !panel) return;
+  const DATA = [{"n": "01", "name": "Data Centers / AI Infrastructure", "desc": "Keeping complex infrastructure observable, reliable and ready to scale.", "href": "industries.html#industry-data-centers", "cta": "Explore Data Centers / AI Infrastructure"}, {"n": "02", "name": "Logistics", "desc": "Making material flow more visible, connected and adaptable.", "href": "industries.html#industry-logistics", "cta": "Explore Logistics"}, {"n": "03", "name": "Manufacturing", "desc": "Connecting machines, systems and people on the production floor.", "href": "industries.html#industry-manufacturing", "cta": "Explore Manufacturing"}, {"n": "04", "name": "Energy", "desc": "Dependable software and connected systems for demanding environments.", "href": "industries.html#industry-energy", "cta": "Explore Energy"}];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const giant = panel.querySelector('.giant');
+  const name = panel.querySelector('.ind-name');
+  const desc = panel.querySelector('.ind-desc-main');
+  const cta = panel.querySelector('.ind-explore');
+  const icons = [...panel.querySelectorAll('.ind-main-icon')];
+  const GLYPHS = '0101010110ABCDEFGHKMNOPRSTUXZ';
+  const decode = (el, word) => {
+    if (reduce) { el.textContent = word; return; }
+    const q = [...word].map((c, i) => ({ c, e: i + 6 + ((Math.random() * 10) | 0) }));
+    let f = 0;
+    const tick = () => {
+      let done = 0;
+      el.textContent = q.map((o) => (f >= o.e || o.c === ' ' ? (done++, o.c) : GLYPHS[(Math.random() * GLYPHS.length) | 0])).join('');
+      f++;
+      if (done < q.length) setTimeout(() => requestAnimationFrame(tick), 35); else el.textContent = word;
+    };
+    tick();
+  };
+  let active = 0;
+  const show = (i) => {
+    if (i === active) return;
+    active = i;
+    const d = DATA[i];
+    tabs.forEach((t, k) => t.setAttribute('aria-selected', String(k === i)));
+    panel.setAttribute('aria-labelledby', tabs[i].id);
+    panel.classList.add('is-swap');
+    setTimeout(() => {
+      giant.innerHTML = [...d.n].map((c) => `<span>${c}</span>`).join('');
+      desc.textContent = d.desc;
+      cta.href = d.href;
+      cta.querySelector('.pill-txt').textContent = d.cta;
+      icons.forEach((ic, k) => ic.classList.toggle('is-on', k === i));
+      decode(name, d.name);
+      panel.classList.remove('is-swap');
+    }, reduce ? 0 : 260);
+  };
+  tabs.forEach((t, i) => t.addEventListener('click', () => show(i)));
+  // arrow keys move between the industry tabs
+  tabs.forEach((t, i) => t.addEventListener('keydown', (e) => {
+    const k = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+    if (!k) return;
+    e.preventDefault();
+    const n = (i + k + tabs.length) % tabs.length;
+    tabs[n].focus(); show(n);
+  }));
+})();
