@@ -827,3 +827,4 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 @media(max-width:800px){.combine-photo{width:72px;height:72px}}
 .combine-photo{filter:none}
 .chips li{padding:10px 14px}
+.chips li:before{inset:1px;--c:6.58px}
