@@ -1013,3 +1013,8 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .ind-challenge-text{max-width:80ch;text-wrap:balance}
 .ind-challenge .tab{font-weight:700;color:var(--ink)}
 .num-scramble{text-align:center}
+/* industry tabs: number and name aligned to the top, no arrow, discipline tags instead of the bar */
+.ind-tab-head{grid-template-columns:auto 1fr;align-items:start}
+.ind-tab-head .tab{padding-top:.42em}
+.ind-tab-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ind-tab-tags span{--c:5px;padding:7px 10px;clip-path:var(--facet);background:var(--bone);font:500 11px/1 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
