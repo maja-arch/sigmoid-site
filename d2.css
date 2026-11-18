@@ -1497,3 +1497,20 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .buddy.blink .pupil,.buddy.blink .robot .m-eyes{transform:none}
 .robot .pupil{transform-box:view-box}
 .btn-robot .br-eyes{animation:none!important}
+
+/* success stories: "See all" sits top-right next to the heading */
+#work .block-head{flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+#work .head-cta{margin-bottom:6px}
+
+/* clients: the split between quote and logos sits on the 62.5% background line */
+.clients{grid-template-columns:calc(62.5% - 4.5px) calc(37.5% - 3.5px)!important;gap:8px!important}
+@media(max-width:1180px){.clients{grid-template-columns:1fr!important}}
+
+/* accumulated experience: wider paragraph, narrower proofs, bigger "+", button closer */
+.module-about .mod-main{grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr)!important}
+.module-about .big-text{max-width:44ch;margin-bottom:0}
+.module-about .mod-main>.pill{margin-top:22px!important}
+.proof{gap:14px;padding:16px 18px!important}
+.proof .counter-label{font-size:15px!important}
+.proof .counter-num sup{font-size:.62em;margin-top:.02em}
+.proof .sph{width:44px!important;height:44px!important;margin:0 5px}
