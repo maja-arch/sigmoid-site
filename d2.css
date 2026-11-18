@@ -934,3 +934,14 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .quote{padding-top:var(--section-gap);padding-bottom:0}
 .block-start{padding-top:var(--section-gap)}
 .ft{margin-top:var(--section-gap)}
+
+/* ---------- round 13 ---------- */
+/* Oswald with its real vertical size, so text selection (and line boxes) hug the letters */
+@font-face{font-family:"Oswald Trim";src:url(https://fonts.gstatic.com/s/oswald/v57/TK3iWkUHHAIjg752GT8Gl-1PKw.woff2) format("woff2");
+  font-weight:200 700;font-style:normal;font-display:swap;ascent-override:88%;descent-override:8%;line-gap-override:0%}
+:root{--display:"Oswald Trim","Oswald","Arial Narrow",sans-serif}
+/* section headings: 72px max, light */
+.block-head h2,.block-head .h2-long,.glitch.huge,.quote .glitch.huge,.closing-title{font-size:clamp(40px,5vw,72px);font-weight:300;line-height:.95}
+.block-head .h2-long{max-width:24ch}
+/* "One challenge. The right expertise." in the same light weight */
+.combine-big{font-weight:300}
