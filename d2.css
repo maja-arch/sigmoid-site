@@ -1524,3 +1524,13 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .module-about .mod-top{border-bottom:0!important;padding-bottom:0;padding-right:clamp(24px,3vw,56px)}
 .module-about .big-text,.module-about .mod-main>.pill{margin-right:clamp(24px,3vw,56px)}
 @media(max-width:1180px){.module-about .mod-main{grid-template-columns:1fr!important}}
+
+/* accumulated experience: bordered card on the left, proofs beside it on the right */
+.module-about{display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr)!important;gap:var(--gap);align-items:start}
+.module-about .mod-main{display:flex!important;flex-direction:column;align-items:flex-start;background:rgba(55,54,54,.32)!important}
+.module-about .mod-main:before{inset:1px!important}
+.module-about .mod-top{width:100%}
+.module-about .big-text{max-width:44ch}
+.about-proofs .proofs{margin:0!important}
+@media(max-width:1000px){.module-about{grid-template-columns:1fr!important}}
+.module-about .mod-main{padding:clamp(18px,2vw,28px)!important}.module-about .mod-top{padding-bottom:clamp(16px,1.6vw,24px);border-bottom:1px solid var(--line-l);margin-bottom:clamp(16px,1.6vw,24px)}
