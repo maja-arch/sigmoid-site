@@ -1009,3 +1009,6 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .text-link:hover,.text-link:focus-visible{animation:ul-redraw .7s var(--soft)}
 @keyframes ul-redraw{0%{background-size:0% 1px}100%{background-size:100% 1px}}
 @media(prefers-reduced-motion:reduce){.text-link:hover{animation:none}}
+/* typical challenge: two lines max on desktop, bolder label */
+.ind-challenge-text{max-width:80ch;text-wrap:balance}
+.ind-challenge .tab{font-weight:700;color:var(--ink)}
