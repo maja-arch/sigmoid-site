@@ -926,3 +926,11 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .combine{align-items:start}
 .combine-head{align-items:flex-start}
 .combine-side{align-self:start;padding-top:.35em}
+
+/* one section rhythm for the whole homepage */
+:root{--section-gap:clamp(72px,7.5vw,128px)}
+.block,#expertise.block,.block-solve{padding-top:var(--section-gap)}
+.module-ind,#about.module{margin-top:var(--section-gap)}
+.quote{padding-top:var(--section-gap);padding-bottom:0}
+.block-start{padding-top:var(--section-gap)}
+.ft{margin-top:var(--section-gap)}
