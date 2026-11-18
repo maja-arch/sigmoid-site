@@ -1514,3 +1514,13 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .proof .counter-label{font-size:15px!important}
 .proof .counter-num sup{font-size:.62em;margin-top:.02em}
 .proof .sph{width:44px!important;height:44px!important;margin:0 5px}
+
+/* every section: 28px between heading and content (as in Success Stories) */
+.block-head{margin-bottom:28px!important}
+
+/* accumulated experience: proofs exactly as wide as the logos card, flush with the page grid */
+.module-about .mod-main{padding-left:0!important;padding-right:0!important;column-gap:8px!important;
+  grid-template-columns:calc(62.5% - 4.5px) calc(37.5% - 3.5px)!important}
+.module-about .mod-top{border-bottom:0!important;padding-bottom:0;padding-right:clamp(24px,3vw,56px)}
+.module-about .big-text,.module-about .mod-main>.pill{margin-right:clamp(24px,3vw,56px)}
+@media(max-width:1180px){.module-about .mod-main{grid-template-columns:1fr!important}}
