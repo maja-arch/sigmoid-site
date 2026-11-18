@@ -828,3 +828,4 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 .combine-photo{filter:none}
 .chips li{padding:10px 14px}
 .chips li:before{inset:1px;--c:6.58px}
+/* arrows never move on hover */ .arr,a:hover .arr,.combine-link:hover .arr,.ft-list a:hover .arr,.ind:hover .arr{transform:none!important}
