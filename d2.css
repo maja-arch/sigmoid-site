@@ -998,3 +998,14 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @media(max-width:800px){.hero-foot{grid-template-columns:1fr}.hero-foot .hero-primary{justify-self:stretch}}
 .combine-side{padding-top:0}
 .combine-side{margin-top:-2px}
+
+/* ---------- smooth hover on every button ---------- */
+.pill,.pill:before,.pill:after,.hd-cta,.hd-cta:after,.hero-arrow,.ind-tab,.ind-tab:before,.ind-go,.cookie .btn,.cookie .btn:after,.cookie-switch,.dec-link polygon,.dec-link span{
+  transition:background-color var(--t-hover) var(--soft),color var(--t-hover) var(--soft),opacity var(--t-hover) var(--soft),inset var(--t-hover) var(--soft),fill var(--t-hover) var(--soft),stroke var(--t-hover) var(--soft)!important}
+.dec-link polygon{transition:stroke-dashoffset 2s var(--ease),fill var(--t-hover) var(--soft),stroke var(--t-hover) var(--soft)!important}
+
+/* ---------- text links: 1px green underline, redraws on hover and stays green ---------- */
+.text-link{text-decoration:none;background:linear-gradient(var(--green),var(--green)) 0 100%/100% 1px no-repeat;padding-bottom:2px}
+.text-link:hover,.text-link:focus-visible{animation:ul-redraw .7s var(--soft)}
+@keyframes ul-redraw{0%{background-size:0% 1px}100%{background-size:100% 1px}}
+@media(prefers-reduced-motion:reduce){.text-link:hover{animation:none}}
