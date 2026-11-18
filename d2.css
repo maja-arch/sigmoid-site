@@ -1103,3 +1103,18 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @keyframes logo-run{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.logo-track{animation:none;flex-wrap:wrap}}
 @media(max-width:800px){.quote-card{grid-template-columns:1fr}.quote-mark{grid-row:auto}}
+
+/* ---------- clients: quote left, partner logos right (dark grey, open in a new tab) ---------- */
+.clients{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--gap);align-items:stretch}
+.clients .quote-card{margin:0}
+.clients .client-quote{font-size:clamp(24px,2.4vw,40px);max-width:24ch}
+.logos-card{display:flex;flex-direction:column;gap:14px;padding:clamp(18px,2vw,28px)}
+.client-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));flex:1;border-top:1px solid var(--line-l)}
+.client-logo{position:relative;display:grid;place-items:center;min-height:96px;padding:18px;border-bottom:1px solid var(--line-l)}
+.client-logo:nth-child(odd){border-right:1px solid var(--line-l)}
+.client-logo:last-child{grid-column:1/-1;border-right:0;border-bottom:0}
+.client-logo img{width:auto;max-width:130px;max-height:46px;height:auto;opacity:.75;transition:opacity var(--t-hover) var(--soft),transform var(--t-hover) var(--soft)}
+.client-logo .arr{position:absolute;top:10px;right:10px;width:10px;height:10px;opacity:0;transition:opacity var(--t-hover) var(--soft)}
+.client-logo:hover img,.client-logo:focus-visible img{opacity:1;transform:scale(1.04)}
+.client-logo:hover .arr,.client-logo:focus-visible .arr{opacity:1}
+@media(max-width:1180px){.clients{grid-template-columns:1fr}}
