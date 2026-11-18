@@ -825,3 +825,4 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 @keyframes chip-run{to{--ang:360deg}}
 @media(prefers-reduced-motion:reduce){.chips li{animation:none;background:rgba(55,54,54,.45)}}
 @media(max-width:800px){.combine-photo{width:72px;height:72px}}
+.combine-photo{filter:none}
