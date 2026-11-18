@@ -1417,3 +1417,9 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .robot .m-body{animation:m-peek 4.5s ease-in-out infinite}
 .robot .m-tip{transform-box:fill-box;transform-origin:center;animation:m-tip 6s ease-in-out infinite}
 .ft2 .buddy{transform:translate(-50%,30%)}
+/* phones: robot peeks up from the bottom, below all footer text */
+@media(max-width:800px){
+  .ft2 .buddy{position:absolute;left:50%;bottom:0;margin:0;width:min(62vw,260px);transform:translate(-50%,30%)}
+  .ft2-bottom{padding-bottom:min(52vw,220px)}
+}
+@media(min-width:801px){.ft2 .buddy{transform:translate(-50%,16%)}}
