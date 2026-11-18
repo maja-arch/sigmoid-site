@@ -1377,3 +1377,11 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .block-solve .ways{isolation:auto}
 .solve-glow{z-index:-1}
 .block-solve .block-head,.block-solve .not-sure,.block-solve p{position:relative;z-index:1}
+/* mascot 2: rounded decagon body, waving arm, blinking eyes */
+.mascot2 .m-eyes{transform-box:fill-box;transform-origin:center}
+.buddy.blink .mascot2 .m-eyes{transform:scaleY(.12)}
+.mascot2 .m-eyes{transition:transform .12s}
+.mascot2 .m-arm-r{transform-origin:262px 228px;animation:m-wave 5s ease-in-out infinite}
+.buddy:hover .mascot2 .m-arm-r{animation-duration:1.4s}
+@keyframes m-wave{0%,60%,100%{transform:rotate(0)}68%{transform:rotate(-38deg)}76%{transform:rotate(-8deg)}84%{transform:rotate(-38deg)}92%{transform:rotate(0)}}
+@media(prefers-reduced-motion:reduce){.mascot2 .m-arm-r{animation:none}}
