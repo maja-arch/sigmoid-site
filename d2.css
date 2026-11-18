@@ -862,3 +862,8 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @media(max-width:1180px){.bento{grid-template-columns:calc(50% - 4.5px) calc(50% - 3.5px)}}
 @media(max-width:800px){.bento{grid-template-columns:1fr}}
 /* no bitmap layers on icon parts: rotated icons stay vector-sharp */ .ticon *,.ticon,.side-logo,.side-logo path{will-change:auto!important}
+/* spacing after the prototype order */
+.module-ind{margin-top:clamp(80px,10vw,160px)}
+#about.module{margin-top:clamp(40px,5vw,72px)}
+.block-solve{padding-top:clamp(80px,9vw,150px)}
+.block-solve{padding-top:clamp(56px,6vw,100px)}
