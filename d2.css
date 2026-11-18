@@ -908,3 +908,10 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .closing-form .pill{grid-column:1/-1;justify-self:start;margin-top:8px}
 @media(max-width:1180px){.people,.insights{grid-template-columns:1fr 1fr}.clients{grid-template-columns:1fr}}
 @media(max-width:800px){.people,.insights,.closing,.closing-form{grid-template-columns:1fr}.insight{min-height:0}.ph-quote{min-height:160px}}
+/* project visual with a real photo (robotic hand) */
+.v-photo{background:#ECEDEF;aspect-ratio:16/10}
+.v-photo img{width:100%;height:100%;object-fit:contain;object-position:center 60%;transition:transform 1.2s var(--soft)}
+.mod-main:hover .v-photo img{transform:scale(1.03)}
+.v-photo .tab{color:var(--ink)}
+@media(max-width:800px){.v-photo{aspect-ratio:1}}
+.v-photo img{position:absolute;inset:0;width:100%;height:100%;padding:3% 0}
