@@ -40,6 +40,19 @@
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
     tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span><svg aria-hidden="true"><use href="#i-${s.icon}"/></svg><span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
     const tabs = $$('.hero-tab', tabsEl);
+    // lock the primary button to its widest label so nothing moves between slides
+    const lockCta = () => {
+      const txt = primary.querySelector('.pill-txt');
+      const keep = txt.textContent;
+      primary.style.minWidth = '';
+      let w = 0;
+      SLIDES.forEach((sl) => { txt.textContent = sl.cta; w = Math.max(w, primary.getBoundingClientRect().width); });
+      txt.textContent = keep;
+      primary.style.minWidth = `${Math.ceil(w)}px`;
+    };
+    lockCta();
+    if (document.fonts) document.fonts.ready.then(lockCta);
+    addEventListener('resize', lockCta);
     const prevBtn = $('.hero-prev');
     const timerCur = $('.hero-timer-cur');
     const timerBar = $('.hero-timer-bar i');

@@ -658,3 +658,95 @@ body:before{position:fixed;top:0;bottom:0;left:var(--pad);right:var(--pad);z-ind
 .not-sure p{font:400 clamp(20px,1.8vw,28px)/1.2 var(--display);text-transform:uppercase}
 .not-sure p span{color:var(--light-2)}
 .block-start .steps{margin-top:0}
+
+
+/* =====================================================================
+   ROUND 8 · tokens for the UI kit, gentle button hovers, hero controls,
+   visible cookie banner, industries module, responsive passes
+   ===================================================================== */
+:root{--soft:cubic-bezier(.4,0,.2,1);--t-hover:.45s}
+
+/* Buttons. Primary = graphite → green. Secondary/outline = outline → graphite fill. Soft colour fade only. */
+.pill,.pill:after{transition:background-color var(--t-hover) var(--soft),color var(--t-hover) var(--soft),inset .3s var(--soft)}
+.pill:hover,a:hover>.pill,.pill:focus-visible{background:var(--ink);color:var(--bg)}
+.pill:hover:after,a:hover>.pill:after,.pill:focus-visible:after{inset:1px;background:var(--ink)}
+.pill-green:hover,a:hover>.pill-green,.pill-green:focus-visible{background:var(--green);color:var(--ink)}
+.pill-green:after,.pill-green:hover:after,a:hover>.pill-green:after{opacity:0!important}
+.hd-nav .pill:hover{background:none;color:var(--ink)}
+/* navigation: smaller green Contact */
+.hd-cta{--pc:7px;--c:7px;height:36px;padding:0 14px;gap:12px;font-size:11px;background:var(--green);color:var(--ink)}
+.hd-cta:hover,.hd-cta:focus-visible{background:var(--ink);color:var(--bg)}
+.hd-menu{--c:7px;height:36px;font-size:11px}
+.hd-menu:hover{background:var(--green);color:var(--ink)}
+
+/* hero: buttons stay put, arrows on the left of the tabs and clearly visible */
+.hero-foot .pill{justify-content:space-between}
+.hero-nav{align-items:center;gap:clamp(14px,2vw,28px)}
+.hero-arrows{order:-1;padding-top:0;gap:8px}
+.hero-arrow{width:46px;height:46px;background:var(--ink);color:var(--bg)}
+.hero-arrow:before{display:none}
+.hero-arrow{transition:background-color var(--t-hover) var(--soft),color var(--t-hover) var(--soft)}
+.hero-arrow:hover:not(:disabled){background:var(--green);color:var(--ink)}
+.hero-arrow:disabled{opacity:.25}
+
+/* expertise heading is a full sentence now */
+.block-head .h2-long{max-width:22ch;font-size:clamp(38px,5.2vw,92px);line-height:.92}
+
+/* visible cookie banner: graphite card on the light page */
+.cookie{--c:14px;background:var(--ink)!important;color:var(--bg)}
+.cookie .cookie-title{color:var(--bg)}
+.cookie .cookie-text,.cookie .cookie-opt small{color:rgba(241,242,242,.82)}
+.cookie .cookie-text a{color:var(--bg);text-decoration-color:var(--green)}
+.cookie .cookie-opt b{color:var(--bg)}
+.cookie .cookie-prefs,.cookie .cookie-opt{border-color:rgba(241,242,242,.18)}
+.cookie .cookie-link,.cookie .cookie-back{color:var(--bg)}
+.cookie .cookie-switch{background:rgba(241,242,242,.24)}
+.cookie .cookie-switch:after{background:var(--bg)}
+.cookie .cookie-switch[aria-checked=true]{background:#98BF5A}
+.cookie .cookie-switch[aria-checked=true]:after{background:#F1F2F2}
+.cookie .btn{background:var(--green);color:var(--ink)}
+.cookie .btn:hover{background:var(--bg);color:var(--ink)}
+.cookie .btn-outline{background:rgba(241,242,242,.6);color:var(--bg)}
+.cookie .btn-outline:after{background:var(--ink)}
+.cookie .btn-outline:hover{color:var(--ink)}
+.cookie .btn-outline:hover:after{background:var(--bg)}
+.cookie ::selection{background:#D9D6C9;color:#373636}
+
+/* industries module (copy of the About module) */
+.module-ind .giant{font-weight:300;font-size:clamp(84px,10.5vw,190px);line-height:.92;letter-spacing:-.045em;padding:.02em .04em .04em 0}
+.module-ind{margin-top:clamp(40px,5vw,72px)}
+.text-link{text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:2px;text-underline-offset:.18em;transition:text-decoration-color var(--t-hover) var(--soft)}
+.text-link:hover{text-decoration-color:var(--ink)}
+.ind-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.ind-card{min-height:132px;transition:background-color var(--t-hover) var(--soft)}
+.ind-card:before{transition:background-color var(--t-hover) var(--soft)}
+.ind-card:hover{background:var(--ink)}
+.ind-card:hover:before{background:#fff}
+.ind-go{flex:none;display:grid;place-items:center;width:52px;height:52px;background:var(--ink);color:var(--bg);clip-path:var(--decagon);transition:background-color var(--t-hover) var(--soft),color var(--t-hover) var(--soft)}
+.ind-card:hover .ind-go{background:var(--green);color:var(--ink)}
+.ind-card .counter-label{display:flex;flex-direction:column;gap:8px;max-width:220px}
+.ind-card .counter-label b{font-weight:500}
+.ind-card .counter-label small{font:400 12px/1.3 var(--text);letter-spacing:.05em;color:var(--ink-2);text-transform:none}
+.ind-card .counter-num{font-size:clamp(56px,4.6vw,88px)}
+
+/* responsive: MacBook widths (1280–1512) and mobile */
+@media(max-width:1520px){.ind-grid{grid-template-columns:1fr!important}}
+@media(max-width:1180px){.hero-tab-label{display:none}}
+@media(max-width:800px){
+  .hero-nav{flex-wrap:wrap}
+  .hero-arrows{order:2;width:100%;justify-content:flex-start}
+  .hero-foot .pill{min-width:0!important}
+  .block-head .h2-long{font-size:clamp(34px,9vw,52px)}
+  .ind-card{min-height:0}
+  .ind-card .counter-num{font-size:56px}
+  .counter{padding:18px}
+  .counter-label{font-size:13px}
+  .cookie{left:8px;right:8px;bottom:8px}
+}
+/* compact cookie banner on phones: buttons in one row */
+@media(max-width:560px){
+  .cookie{gap:12px;padding:18px 16px 14px}
+  .cookie .cookie-actions{flex-direction:column-reverse;align-items:stretch;gap:8px}
+  .cookie .cookie-btns{flex-direction:row}
+  .cookie .cookie-btns .btn{flex:1 1 0;width:auto;padding:0 8px;font-size:11px}
+}
