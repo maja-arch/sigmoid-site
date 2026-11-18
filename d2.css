@@ -922,3 +922,7 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .combine-side .chips{grid-column:auto}
 /* expertise closer to the ticker */
 #expertise.block{padding-top:clamp(48px,5vw,84px)}
+/* combine card: everything aligned to the top line, so a longer title just grows downward */
+.combine{align-items:start}
+.combine-head{align-items:flex-start}
+.combine-side{align-self:start;padding-top:.35em}
