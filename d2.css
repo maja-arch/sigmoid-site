@@ -1385,3 +1385,16 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .buddy:hover .mascot2 .m-arm-r{animation-duration:1.4s}
 @keyframes m-wave{0%,60%,100%{transform:rotate(0)}68%{transform:rotate(-38deg)}76%{transform:rotate(-8deg)}84%{transform:rotate(-38deg)}92%{transform:rotate(0)}}
 @media(prefers-reduced-motion:reduce){.mascot2 .m-arm-r{animation:none}}
+
+/* contact band: plain brand lime cream, dark text, no effects */
+.contact-band{background:var(--lime)!important;color:var(--ink)!important}
+.contact-band .tab{color:var(--ink-2)!important}
+.contact-band .closing-title,.contact-band .closing-copy p,.contact-band .text-link,.contact-band .sent-title,.contact-band .form-sent p{color:var(--ink)!important}
+.contact-band input,.contact-band textarea{color:var(--ink)!important;border-bottom-color:rgba(55,54,54,.45)!important}
+.contact-band input::placeholder,.contact-band textarea::placeholder{color:rgba(55,54,54,.55)!important}
+.contact-band input:focus,.contact-band textarea:focus{border-bottom-color:var(--ink)!important}
+.contact-band .form-note{color:var(--ink)!important}
+.contact-band ::selection{background:#373636;color:#DBE580}
+.contact-band .pill-green:after,.contact-band .pill-green:hover:after{background:var(--lime)!important}
+.contact-band .text-link{background-image:linear-gradient(var(--ink),var(--ink))!important}
+.contact-band .bit{color:var(--ink)}
