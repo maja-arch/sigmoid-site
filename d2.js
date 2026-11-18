@@ -40,19 +40,20 @@
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
     tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span><svg aria-hidden="true"><use href="#i-${s.icon}"/></svg><span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
     const tabs = $$('.hero-tab', tabsEl);
-    // lock the primary button to its widest label so nothing moves between slides
-    const lockCta = () => {
+    // the primary button glides to the width of its new label (no jump, "Discuss a project" follows softly)
+    const setCta = (label) => {
       const txt = primary.querySelector('.pill-txt');
-      const keep = txt.textContent;
-      let w = 0;
-      SLIDES.forEach((sl) => { txt.textContent = sl.cta; w = Math.max(w, primary.getBoundingClientRect().width); });
-      txt.textContent = keep;
-      // the button keeps its own length; its slot keeps the widest length, so "Discuss a project" never moves
-      primary.parentElement.style.setProperty('--cta-slot', `${Math.ceil(w)}px`);
+      const from = primary.getBoundingClientRect().width;
+      primary.style.width = '';
+      txt.textContent = label;
+      const to = primary.getBoundingClientRect().width;
+      if (reduce || !from) return;
+      primary.style.width = `${from}px`;
+      void primary.offsetWidth;
+      primary.style.width = `${to}px`;
+      const done = () => { primary.style.width = ''; primary.removeEventListener('transitionend', done); };
+      primary.addEventListener('transitionend', done);
     };
-    lockCta();
-    if (document.fonts) document.fonts.ready.then(lockCta);
-    addEventListener('resize', lockCta);
     const prevBtn = $('.hero-prev');
     const timerCur = $('.hero-timer-cur');
     const timerBar = $('.hero-timer-bar i');
@@ -61,7 +62,7 @@
       title.setAttribute('aria-label', s.lines.join(' '));
       lede.textContent = s.text;
       primary.href = s.href;
-      primary.querySelector('.pill-txt').textContent = s.cta;
+      setCta(s.cta);
     };
     const setTabs = () => {
       prevBtn.disabled = active === 0;
@@ -130,7 +131,12 @@
       const setW = base.getBoundingClientRect().width || 1;
       // one spare set on top of what the screen needs, so the strip never shows a gap
       const perHalf = Math.max(1, Math.ceil(innerWidth / setW)) + 1;
-      for (let i = 1; i < perHalf * 2; i++) track.append(base.cloneNode(true));
+      for (let i = 1; i < perHalf * 2; i++) {
+        const c = base.cloneNode(true);
+        c.querySelectorAll('[data-scramble-on]').forEach((e) => { delete e.dataset.scrambleOn; e.style.width = ''; });
+        track.append(c);
+        if (window.sigmoidScramble) c.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
+      }
       track.style.setProperty('--ticker-dur', `${(setW * perHalf) / 110}s`); // ~110px per second
       lastW = setW;
     };
@@ -282,17 +288,104 @@
   document.querySelectorAll('[data-scramble]').forEach(start);
 })();
 
-/* contact form: no backend yet, opens the visitor's email app with the message filled in */
+/* contact form: no mail backend yet, so sending is simulated and the success state is shown */
 (() => {
-  const form = document.querySelector('.closing-form');
+  const form = document.querySelector('.big-form');
   if (!form) return;
+  const sent = document.querySelector('.form-sent');
+  const note = form.querySelector('.form-note');
+  const btn = form.querySelector('.big-submit');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.reportValidity()) return;
-    const d = new FormData(form);
-    const body = `${d.get('challenge')}\n\n${d.get('name')}\n${d.get('email')}`;
-    location.href = `mailto:${form.dataset.mailto}?subject=${encodeURIComponent('Project enquiry from ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+    if (!form.checkValidity()) {
+      note.textContent = 'Please fill in your name, a work email and a short description.';
+      form.querySelector(':invalid').focus();
+      return;
+    }
+    note.textContent = '';
+    btn.disabled = true;
+    btn.querySelector('.pill-txt, span') && (btn.firstChild.textContent = 'Sending… ');
+    setTimeout(() => {
+      const name = (new FormData(form).get('name') || '').split(',')[0].trim();
+      sent.querySelector('.sent-name').textContent = name ? `, ${name}` : '';
+      form.hidden = true;
+      sent.hidden = false;
+      sent.focus();
+      btn.disabled = false;
+      btn.firstChild.textContent = 'Send message ';
+    }, 900);
   });
+  sent.querySelector('.sent-again').addEventListener('click', () => {
+    form.reset(); sent.hidden = true; form.hidden = false; form.querySelector('input').focus();
+  });
+})();
+
+/* contact band: a field of dots that light up green around the mouse */
+(() => {
+  const band = document.querySelector('.contact-band');
+  const cv = band && band.querySelector('.dot-field');
+  if (!cv || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = cv.getContext('2d');
+  const GAP = 26, R = 170;
+  let w = 0, h = 0, dpr = 1, dots = [], mx = -9999, my = -9999, raf = 0, visible = false;
+  const size = () => {
+    dpr = Math.min(2, devicePixelRatio || 1);
+    const r = band.getBoundingClientRect();
+    w = r.width; h = r.height;
+    cv.width = w * dpr; cv.height = h * dpr; cv.style.width = `${w}px`; cv.style.height = `${h}px`;
+    dots = [];
+    for (let y = GAP / 2; y < h; y += GAP) for (let x = GAP / 2; x < w; x += GAP) dots.push({ x, y, k: 0 });
+    draw();
+  };
+  const draw = () => {
+    raf = 0;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    let busy = false;
+    for (const d of dots) {
+      const dist = Math.hypot(d.x - mx, d.y - my);
+      const target = dist < R ? 1 - dist / R : 0;
+      d.k += (target - d.k) * 0.14;
+      if (Math.abs(target - d.k) > 0.01) busy = true;
+      const k = d.k;
+      ctx.beginPath();
+      ctx.fillStyle = k > 0.02 ? `rgba(152,191,90,${0.25 + k * 0.75})` : 'rgba(241,242,242,0.13)';
+      ctx.arc(d.x, d.y, 1.1 + k * 3.2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (busy && visible) raf = requestAnimationFrame(draw);
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(draw); };
+  band.addEventListener('pointermove', (e) => { const r = band.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; kick(); });
+  band.addEventListener('pointerleave', () => { mx = my = -9999; kick(); });
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) kick(); }).observe(band);
+  addEventListener('resize', size);
+  if ('ResizeObserver' in window) new ResizeObserver(size).observe(band);
+  size();
+})();
+
+/* footer character: leans and looks toward the mouse */
+(() => {
+  const buddy = document.querySelector('.buddy');
+  if (!buddy || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const body = buddy.querySelector('.buddy-body');
+  const pupils = [...buddy.querySelectorAll('.buddy-eye i')];
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+  const step = () => {
+    cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+    body.style.transform = `rotateY(${cx * 22}deg) rotateX(${-cy * 16}deg) translate(${cx * 10}px, ${cy * 6}px)`;
+    pupils.forEach((pu) => { pu.style.transform = `translate(${cx * 5}px, ${cy * 5}px)`; });
+    raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.002 ? requestAnimationFrame(step) : 0;
+  };
+  addEventListener('pointermove', (e) => {
+    const r = buddy.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > innerHeight + 200) return;
+    tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (innerWidth / 2)));
+    ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (innerHeight / 2)));
+    if (!raf) raf = requestAnimationFrame(step);
+  }, { passive: true });
+  // blink now and then
+  setInterval(() => { buddy.classList.add('blink'); setTimeout(() => buddy.classList.remove('blink'), 160); }, 3800);
 })();
 
 /* industries: the cards on the right switch the content on the left */
