@@ -275,3 +275,16 @@
     io.observe(el);
   });
 })();
+
+/* contact form: no backend yet, opens the visitor's email app with the message filled in */
+(() => {
+  const form = document.querySelector('.closing-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const d = new FormData(form);
+    const body = `${d.get('challenge')}\n\n${d.get('name')}\n${d.get('email')}`;
+    location.href = `mailto:${form.dataset.mailto}?subject=${encodeURIComponent('Project enquiry from ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+  });
+})();
