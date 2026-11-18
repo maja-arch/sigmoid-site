@@ -299,11 +299,12 @@
   const tabs = [...document.querySelectorAll('.ind-tab')];
   const panel = document.getElementById('ind-panel');
   if (!tabs.length || !panel) return;
-  const DATA = [{"n": "01", "name": "Data Centers / AI Infrastructure", "desc": "Keeping complex infrastructure observable, reliable and ready to scale.", "href": "industries.html#industry-data-centers", "cta": "Explore Data Centers / AI Infrastructure"}, {"n": "02", "name": "Logistics", "desc": "Making material flow more visible, connected and adaptable.", "href": "industries.html#industry-logistics", "cta": "Explore Logistics"}, {"n": "03", "name": "Manufacturing", "desc": "Connecting machines, systems and people on the production floor.", "href": "industries.html#industry-manufacturing", "cta": "Explore Manufacturing"}, {"n": "04", "name": "Energy", "desc": "Dependable software and connected systems for demanding environments.", "href": "industries.html#industry-energy", "cta": "Explore Energy"}];
+  const DATA = [{"n": "01", "name": "Data Centers / AI Infrastructure", "desc": "Keeping complex infrastructure observable, reliable and ready to scale.", "href": "industries.html#industry-data-centers", "cta": "Explore Data Centers / AI Infrastructure", "challenge": "Monitoring and control systems that cannot keep up as the infrastructure grows, leaving teams with too little insight and too much manual work."}, {"n": "02", "name": "Logistics", "desc": "Making material flow more visible, connected and adaptable.", "href": "industries.html#industry-logistics", "cta": "Explore Logistics", "challenge": "Machines, software and people working from different data, so material flow is hard to see and slow to adapt."}, {"n": "03", "name": "Manufacturing", "desc": "Connecting machines, systems and people on the production floor.", "href": "industries.html#industry-manufacturing", "cta": "Explore Manufacturing", "challenge": "Bottlenecks that everyone feels but no one can measure, because the right signals are not collected from the line."}, {"n": "04", "name": "Energy", "desc": "Dependable software and connected systems for demanding environments.", "href": "industries.html#industry-energy", "cta": "Explore Energy", "challenge": "Distributed equipment in the field that needs dependable embedded software, remote monitoring and safe updates."}];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const giant = panel.querySelector('.giant');
   const name = panel.querySelector('.ind-name');
   const desc = panel.querySelector('.ind-desc-main');
+  const challenge = panel.querySelector('.ind-challenge-text');
   const cta = panel.querySelector('.ind-explore');
   const icons = [...panel.querySelectorAll('.ind-main-icon')];
   const GLYPHS = '0101010110ABCDEFGHKMNOPRSTUXZ';
@@ -330,6 +331,7 @@
     setTimeout(() => {
       giant.innerHTML = [...d.n].map((c) => `<span>${c}</span>`).join('');
       desc.textContent = d.desc;
+      challenge.textContent = d.challenge;
       cta.href = d.href;
       cta.querySelector('.pill-txt').textContent = d.cta;
       icons.forEach((ic, k) => ic.classList.toggle('is-on', k === i));
