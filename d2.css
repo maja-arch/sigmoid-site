@@ -1012,3 +1012,4 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 /* typical challenge: two lines max on desktop, bolder label */
 .ind-challenge-text{max-width:80ch;text-wrap:balance}
 .ind-challenge .tab{font-weight:700;color:var(--ink)}
+.num-scramble{text-align:center}

@@ -265,7 +265,8 @@
         el.innerHTML = q.map((o) => {
           if (f >= o.e || o.c === ' ') { done++; return o.c; }
           if (f < o.s) return o.c;
-          const g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+          const set = el.dataset.glyphs || GLYPHS;
+          const g = set[(Math.random() * set.length) | 0];
           return /[01]/.test(g) ? `<span class="bit">${g}</span>` : g;
         }).join('');
         f++;
