@@ -1593,3 +1593,6 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
   .client-logo:nth-last-child(-n+2){border-bottom:0!important}
   .client-logo img{max-width:110px;max-height:40px}
 }
+/* new portraits: keep faces in frame */
+.person-photo img[src*="nikola"]{object-position:60% 20%}
+.person-photo img[src*="jelena"]{object-position:72% 35%}
