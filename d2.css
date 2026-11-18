@@ -1066,3 +1066,17 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .story-card .tags li:nth-child(2){animation-delay:-.8s}.story-card .tags li:nth-child(3){animation-delay:-1.6s}.story-card .tags li:nth-child(4){animation-delay:-2.4s}.story-card .tags li:nth-child(5){animation-delay:-2.9s}
 .story-card .tags li:before{position:absolute;inset:1px;z-index:-1;content:"";background:var(--bg);clip-path:var(--facet);--c:5.58px}
 @media(prefers-reduced-motion:reduce){.story-card .tags li{animation:none;background:rgba(55,54,54,.45)}}
+
+/* story cards: "Read the story" as a link in its own footer row, so it doesn't merge with the tags */
+.story-card .pill{position:relative;align-self:stretch;justify-content:flex-start;gap:10px;height:auto;margin-top:auto;padding:14px 0 2px;border-top:1px solid var(--line-l);
+  background:none!important;clip-path:none;color:var(--ink)!important;font:500 12px/1 var(--text);letter-spacing:.07em}
+.story-card .pill:before,.story-card .pill:after{display:none!important}
+.story-card .pill .arr{width:11px;height:11px}
+.story-card .pill{background-image:none}
+.story-card .pill{--u:0}
+.story-card .pill>span.arr{margin-left:0}
+.story-card .tags{margin-bottom:6px}
+/* underline under the words, redraws on hover like the other text links */
+.story-card .pill{background:linear-gradient(var(--green),var(--green)) 0 calc(100% - 0px)/0 0 no-repeat!important}
+.story-card .pill-txt-u{background:linear-gradient(var(--green),var(--green)) 0 100%/100% 1px no-repeat;padding-bottom:3px}
+.story-card .pill:hover .pill-txt-u,.story-card:hover .pill-txt-u{animation:ul-redraw .7s var(--soft)}
