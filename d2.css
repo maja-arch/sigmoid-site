@@ -775,3 +775,19 @@ svg.ticon.ticon{animation:ticon-hop var(--d,3s) cubic-bezier(.3,0,.3,1) infinite
 .counter .sph{animation:ticon-hop 3s cubic-bezier(.3,0,.3,1) infinite;transform-origin:50% 100%}
 @keyframes ticon-hop{0%{transform:translateY(0) scale(1)}3%{transform:translateY(0) scale(1.06,.92)}7%{transform:translateY(-22%) scale(.96,1.05)}11%{transform:translateY(0) scale(1.04,.95)}14%{transform:translateY(-6%)}17%,100%{transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){svg.ticon.ticon,.counter .sph{animation:none!important}}
+
+/* ---------- round 10: layout breathing, quieter headings ---------- */
+/* content moved in from the screen edges */
+:root{--pad:clamp(16px,2.8vw,44px)}
+/* background lines: no first and last line */
+body:before{border-left:0;border-right:0;clip-path:inset(0 1px 0 0)}
+/* tighter ticker */
+.ticker-set{gap:clamp(10px,1vw,16px);padding-right:clamp(10px,1vw,16px)}
+/* less space under the expertise section */
+.block-solve{padding-top:clamp(56px,6vw,100px)}
+/* tighter heading letter-spacing */
+.hero-title{letter-spacing:-.025em}
+.block-head h2,.block-head .h2-long,.glitch.huge,.quote .glitch.huge{letter-spacing:-.025em}
+.mod-title{letter-spacing:-.01em}
+.giant,.xp-abbr,.way-abbr{letter-spacing:-.03em}
+.xp svg.ticon.ticon{animation:none!important}
