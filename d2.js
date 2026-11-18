@@ -320,21 +320,36 @@
   });
 })();
 
-/* contact band: a field of dots that light up green around the mouse */
+/* contact band: a low-poly field; triangles near the mouse light up green, kept quiet behind the form */
 (() => {
   const band = document.querySelector('.contact-band');
-  const cv = band && band.querySelector('.dot-field');
+  const cv = band && band.querySelector('.poly-field');
   if (!cv || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = cv.getContext('2d');
-  const GAP = 26, R = 170;
-  let w = 0, h = 0, dpr = 1, dots = [], mx = -9999, my = -9999, raf = 0, visible = false;
+  const CELL = 64, R = 230;
+  let w = 0, h = 0, dpr = 1, tris = [], mx = -9999, my = -9999, raf = 0, visible = false, formX = 1e9;
   const size = () => {
     dpr = Math.min(2, devicePixelRatio || 1);
     const r = band.getBoundingClientRect();
     w = r.width; h = r.height;
     cv.width = w * dpr; cv.height = h * dpr; cv.style.width = `${w}px`; cv.style.height = `${h}px`;
-    dots = [];
-    for (let y = GAP / 2; y < h; y += GAP) for (let x = GAP / 2; x < w; x += GAP) dots.push({ x, y, k: 0 });
+    const fw = band.querySelector('.form-wrap');
+    formX = fw ? fw.getBoundingClientRect().left - r.left - 40 : 1e9;
+    // jittered grid -> two triangles per cell
+    const cols = Math.ceil(w / CELL) + 1, rows = Math.ceil(h / CELL) + 1, pts = [];
+    let seed = 7; const rnd = () => ((seed = (seed * 9301 + 49297) % 233280) / 233280);
+    for (let y = 0; y <= rows; y++) for (let x = 0; x <= cols; x++) {
+      const edge = x === 0 || y === 0 || x === cols || y === rows;
+      pts.push([x * CELL + (edge ? 0 : (rnd() - .5) * CELL * .7), y * CELL + (edge ? 0 : (rnd() - .5) * CELL * .7)]);
+    }
+    const P = (x, y) => pts[y * (cols + 1) + x];
+    tris = [];
+    for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+      const a = P(x, y), b = P(x + 1, y), c = P(x, y + 1), d = P(x + 1, y + 1);
+      const flip = (x + y) % 2;
+      const t1 = flip ? [a, b, d] : [a, b, c], t2 = flip ? [a, d, c] : [b, d, c];
+      for (const t of [t1, t2]) tris.push({ p: t, cx: (t[0][0] + t[1][0] + t[2][0]) / 3, cy: (t[0][1] + t[1][1] + t[2][1]) / 3, k: 0 });
+    }
     draw();
   };
   const draw = () => {
@@ -342,16 +357,18 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, w, h);
     let busy = false;
-    for (const d of dots) {
-      const dist = Math.hypot(d.x - mx, d.y - my);
-      const target = dist < R ? 1 - dist / R : 0;
-      d.k += (target - d.k) * 0.14;
-      if (Math.abs(target - d.k) > 0.01) busy = true;
-      const k = d.k;
+    ctx.lineWidth = 1;
+    for (const t of tris) {
+      const dist = Math.hypot(t.cx - mx, t.cy - my);
+      let target = dist < R ? 1 - dist / R : 0;
+      if (t.cx > formX) target *= 0.18;           // stay quiet behind the form
+      t.k += (target - t.k) * 0.12;
+      if (Math.abs(target - t.k) > 0.01) busy = true;
       ctx.beginPath();
-      ctx.fillStyle = k > 0.02 ? `rgba(152,191,90,${0.25 + k * 0.75})` : 'rgba(241,242,242,0.13)';
-      ctx.arc(d.x, d.y, 1.1 + k * 3.2, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.moveTo(t.p[0][0], t.p[0][1]); ctx.lineTo(t.p[1][0], t.p[1][1]); ctx.lineTo(t.p[2][0], t.p[2][1]); ctx.closePath();
+      if (t.k > 0.02) { ctx.fillStyle = `rgba(152,191,90,${t.k * 0.55})`; ctx.fill(); }
+      ctx.strokeStyle = `rgba(241,242,242,${0.06 + t.k * 0.35})`;
+      ctx.stroke();
     }
     if (busy && visible) raf = requestAnimationFrame(draw);
   };
@@ -364,17 +381,33 @@
   size();
 })();
 
+/* solve section: a soft green glow follows the mouse behind the two cards */
+(() => {
+  const sec = document.querySelector('.block-solve .ways');
+  const glow = sec && sec.querySelector('.solve-glow');
+  if (!glow || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+  const step = () => {
+    x += (tx - x) * 0.09; y += (ty - y) * 0.09;
+    glow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.4 ? requestAnimationFrame(step) : 0;
+  };
+  sec.addEventListener('pointerenter', (e) => { const r = sec.getBoundingClientRect(); x = tx = e.clientX - r.left; y = ty = e.clientY - r.top; sec.classList.add('glow-on'); });
+  sec.addEventListener('pointermove', (e) => { const r = sec.getBoundingClientRect(); tx = e.clientX - r.left; ty = e.clientY - r.top; if (!raf) raf = requestAnimationFrame(step); });
+  sec.addEventListener('pointerleave', () => sec.classList.remove('glow-on'));
+})();
+
 /* footer character: leans and looks toward the mouse */
 (() => {
   const buddy = document.querySelector('.buddy');
   if (!buddy || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const body = buddy.querySelector('.buddy-body');
-  const pupils = [...buddy.querySelectorAll('.buddy-eye i')];
+  const pupils = [...buddy.querySelectorAll('.pupil')];
   let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
   const step = () => {
     cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
-    body.style.transform = `rotateY(${cx * 22}deg) rotateX(${-cy * 16}deg) translate(${cx * 10}px, ${cy * 6}px)`;
-    pupils.forEach((pu) => { pu.style.transform = `translate(${cx * 5}px, ${cy * 5}px)`; });
+    body.style.transform = `rotate(${cx * 6}deg) translate(${cx * 10}px, ${cy * 4}px)`;
+    pupils.forEach((pu) => { pu.style.transform = `translate(${cx * 9}px, ${cy * 6}px)`; });
     raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.002 ? requestAnimationFrame(step) : 0;
   };
   addEventListener('pointermove', (e) => {

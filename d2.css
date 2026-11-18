@@ -1302,3 +1302,78 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .buddy-ball path{animation:buddy-in 1.4s cubic-bezier(.3,.1,.3,1) both;animation-delay:var(--d,0s)}
 @keyframes buddy-in{0%{opacity:0}100%{opacity:1}}
 @media(max-width:800px){.proof{flex-wrap:wrap;row-gap:12px}.proof .counter-label{order:3;flex-basis:100%;max-width:none}}
+
+
+/* =====================================================================
+   ROUND 13
+   ===================================================================== */
+/* nav Contact: outline, green on hover */
+.hd-cta{background:rgba(55,54,54,.55)!important;color:var(--ink)!important}
+.hd-cta:after{opacity:1!important;background:var(--bg)!important}
+.hd-cta:hover,.hd-cta:focus-visible{background:var(--green)!important}
+.hd-cta:hover:after,.hd-cta:focus-visible:after{background:var(--green)!important}
+
+/* industries content as close to its heading as Success Stories */
+.block-ind .block-head{margin-bottom:28px}
+
+/* accumulated experience: text left, the three proofs on the right */
+.module-about .mod-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:auto auto 1fr;column-gap:clamp(24px,3vw,56px);align-items:start}
+.module-about .mod-top{grid-column:1/-1}
+.module-about .big-text{grid-column:1;grid-row:2}
+.module-about .mod-main>.pill{grid-column:1;grid-row:3;align-self:start}
+.module-about .proofs{grid-column:2;grid-row:2/4;margin-top:clamp(18px,2vw,28px)!important;gap:8px}
+@media(max-width:1000px){.module-about .mod-main{grid-template-columns:1fr}.module-about .proofs{grid-column:1;grid-row:auto}.module-about .mod-main>.pill{grid-row:auto}}
+
+/* possible ways to start: whole row fills grey on hover, numbers top-aligned with the title */
+.start-row{align-items:start;padding-left:16px;padding-right:16px;transition:background-color var(--t-hover) var(--soft)}
+.start-num{padding-top:.55em}
+.start-row:hover,.start-row:focus-visible{background:#E2E3E3}
+.start-row:hover .start-title,.start-row:focus-visible .start-title{transform:none}
+
+/* people: photo on top again, a bit smaller than before */
+.person{display:flex!important;flex-direction:column;gap:14px}
+.person-photo{width:100%;aspect-ratio:5/4!important;font-size:13px}
+
+/* insights: real photos */
+.insight-media img{object-fit:cover}
+
+/* solve: LT and the title block line up; soft green glow follows the mouse behind the cards */
+.way-head{align-items:flex-end}
+.way-abbr{line-height:.74!important}
+.block-solve .ways{position:relative;isolation:isolate}
+.block-solve .way{position:relative;z-index:1}
+.block-solve .way:before{background:rgba(241,242,242,.78)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.solve-glow{position:absolute;left:0;top:0;z-index:0;width:min(60vw,720px);aspect-ratio:1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 40% 40%,rgba(152,191,90,.95),rgba(219,229,128,.65) 38%,rgba(152,191,90,0) 70%);filter:blur(30px);opacity:0;transition:opacity .6s var(--soft)}
+.ways.glow-on .solve-glow{opacity:1}
+@media(hover:none){.solve-glow{display:none}}
+
+/* contact band: polygon canvas */
+.poly-field{position:absolute;inset:0;pointer-events:none}
+
+/* footer inside the container, cut corners like the contact band */
+.ft2{margin-left:var(--pad)!important;margin-right:var(--pad)!important;margin-bottom:var(--pad);--c:22px;clip-path:var(--facet)}
+/* new mascot */
+.buddy-body{width:clamp(170px,16vw,240px)!important;aspect-ratio:300/380!important;filter:none!important;transition:transform .2s linear}
+.buddy-body:before{display:none!important}
+.mascot{width:100%;height:100%;overflow:visible}
+.m-shadow{fill:rgba(38,35,60,.18)}
+.m-body{transform-origin:150px 360px;animation:m-idle 4.5s ease-in-out infinite}
+.pupil{transition:transform .2s linear}
+.buddy.blink .pupil{transform:scaleY(.15)!important;transform-box:fill-box;transform-origin:center}
+.m-tip{transform-box:fill-box;transform-origin:center;animation:m-tip 6s ease-in-out infinite}
+@keyframes m-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes m-tip{0%,70%,100%{transform:rotate(0)}80%{transform:rotate(36deg)}}
+.buddy:hover .m-tip{animation-duration:1.2s}
+@media(prefers-reduced-motion:reduce){.m-body,.m-tip{animation:none}}
+.module-about .mod-main>.pill{justify-self:start;margin-top:clamp(18px,2vw,28px)}
+.buddy-body{width:clamp(210px,20vw,300px)!important}
+/* solve cards stay opaque; the glow shows around and between them */
+.block-solve .way:before{background:var(--bg)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.block-solve .ways{gap:14px}
+.solve-glow{width:min(70vw,820px)}
+/* glow sits behind everything in the section (heading and text stay on top) */
+.block-solve{position:relative;isolation:isolate}
+.block-solve .ways{isolation:auto}
+.solve-glow{z-index:-1}
+.block-solve .block-head,.block-solve .not-sure,.block-solve p{position:relative;z-index:1}
