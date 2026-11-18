@@ -187,7 +187,7 @@
   const targets = $$('.up, .block-head, .dec-link, .side-card');
   // stagger siblings inside grids
   $$('.bento, .ways, .inds, .pill-list').forEach((grid) => {
-    [...grid.children].forEach((c, i) => { c.style.transitionDelay = `${i * 0.07}s`; });
+    [...grid.children].forEach((c, i) => { c.style.transitionDelay = `${i * 0.04}s`; });
   });
   if (reduce || !('IntersectionObserver' in window)) {
     targets.forEach((t) => t.classList.add('in'));
@@ -201,7 +201,7 @@
       $$('.glitch', t).forEach((g) => setTimeout(() => glitch(g), 250));
       if (t.classList.contains('glitch')) glitch(t);
       io.unobserve(t);
-    }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    }), { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
     targets.forEach((t) => io.observe(t));
     const qio = new IntersectionObserver((es) => es.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add('in'); glitch(e.target); qio.unobserve(e.target); }

@@ -793,3 +793,12 @@ body:before{border-left:0;border-right:0;clip-path:inset(0 1px 0 0)}
 .xp svg.ticon.ticon{animation:none!important}
 /* no icon hop anywhere */
 svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;transform:none}
+/* faster scroll reveal */
+.js .up{transform:translateY(24px);transition:opacity .55s var(--ease),transform .65s var(--ease)}
+.js .up.in{transform:none}
+.js .block-head .tab,.js .block-head h2{transform:translateY(16px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.js .block-head.in .tab,.js .block-head.in h2{transform:none}
+.js .block-head.in h2{transition-delay:.04s}
+.giant span{transition-duration:.7s}
+.giant span:nth-child(2){transition-delay:.05s}.giant span:nth-child(3){transition-delay:.1s}
+.bar i{transition-duration:.9s;transition-delay:.15s}
