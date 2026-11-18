@@ -838,3 +838,26 @@ svg.ticon.ticon,.xp svg.ticon.ticon,.counter .sph{animation:none!important;trans
 .combine-link:after{display:none}
 .combine-link .cl-text{background:linear-gradient(var(--ink),var(--ink)) 0 100%/0% 1px no-repeat;padding-bottom:3px;transition:background-size .6s var(--soft)}
 .combine-link:hover .cl-text,.combine-link:focus-visible .cl-text{background-size:100% 1px}
+
+/* ---------- animated icons: clipped to their box, smoother, crisp edges ---------- */
+svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
+.ticon *{will-change:transform,opacity}
+/* softer sine-like easing on every icon part */
+.ti-sw .sw-dot,.ti-sw .sw-rays,.ti-em .tsym,.ti-em .em-l,.ti-em .em-r,.ti-rb .rb-body,.ti-rb .rb-slot,.ti-mx .tdec,.ti-mx .mx-gap{animation-timing-function:cubic-bezier(.45,.05,.55,.95)!important}
+/* robotics: one consistent transform list, so the slot slides and grips without jumps */
+@keyframes rb-slot{
+  0%,6%{transform:translateX(56px) scaleY(1)}
+  14%,50%{transform:translateX(0) scaleY(1)}
+  60%,66%{transform:translateX(0) scaleY(.35)}
+  74%,88%{transform:translateX(0) scaleY(1)}
+  97%,100%{transform:translateX(56px) scaleY(1)}}
+@keyframes rb-body{0%,40%{transform:rotate(0deg)}48%,72%{transform:rotate(10deg)}84%,100%{transform:rotate(0deg)}}
+@keyframes mx-gap{0%{transform:scaleY(0)}12%,46%{transform:scaleY(1)}58%,100%{transform:scaleY(0)}}
+@keyframes mx-body{0%{transform:scaleY(1)}12%,46%{transform:scaleY(1.05)}58%,100%{transform:scaleY(1)}}
+@keyframes em{0%,10%{transform:scale(0);opacity:0}24%,78%{transform:scale(1);opacity:1}88%,100%{transform:scale(0);opacity:0}}
+@keyframes sw-dot{0%,6%{transform:scale(0)}14%,85%{transform:scale(1)}94%,100%{transform:scale(0)}}
+/* expertise columns sized so each background line sits exactly in the middle of the 8px gap
+   (lines are 1px at 25/50/75% of the content width) */
+.bento{grid-template-columns:calc(25% - 4.5px) calc(25% - 8px) calc(25% - 8px) calc(25% - 3.5px)}
+@media(max-width:1180px){.bento{grid-template-columns:calc(50% - 4.5px) calc(50% - 3.5px)}}
+@media(max-width:800px){.bento{grid-template-columns:1fr}}
