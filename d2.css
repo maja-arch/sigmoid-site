@@ -2418,3 +2418,7 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .xp{transition:background-color var(--t-hover) var(--soft)!important}
 .xp:hover{background:var(--bone)!important}
 .xp:hover:before{background:var(--bone)!important}
+/* hero: bigger title and bigger photo window */
+.hv2 .hero-title{font-size:clamp(42px,6.6vw,120px)!important}
+.hw{width:1.95em!important}
+@media(max-width:800px){.hv2 .hero-title{font-size:clamp(40px,11.5vw,60px)!important}.hw{width:1.6em!important}}
