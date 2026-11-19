@@ -424,3 +424,9 @@
   fit(); if (document.fonts) document.fonts.ready.then(fit); addEventListener('resize', fit);
   auto();
 })();
+
+/* back to top: scroll to the very start of the page */
+document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}));
