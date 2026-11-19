@@ -1680,3 +1680,93 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .not-sure p,.not-sure{font-size:clamp(18px,1.4vw,22px)}
 .big-field input,.big-field textarea{font-size:clamp(20px,1.8vw,28px)}
 .cookie .cookie-text{font-size:16px}
+
+/* =====================================================================
+   ROUND 17
+   ===================================================================== */
+/* stylised arrow: 1px stroke, longer horizontal line */
+.arr:not(.arr-ext){width:22px!important;height:11px!important;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 11'%3E%3Cpath d='M0 5.5h21M16.5 1l4.5 4.5-4.5 4.5' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E")!important;
+          mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 11'%3E%3Cpath d='M0 5.5h21M16.5 1l4.5 4.5-4.5 4.5' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E")!important;
+  -webkit-mask-size:contain!important;mask-size:contain!important;-webkit-mask-repeat:no-repeat!important;mask-repeat:no-repeat!important;-webkit-mask-position:center!important;mask-position:center!important}
+
+/* hero tabs: animated icons, dark brown when inactive, green when active */
+.hero-tab .tab-ticon{width:30px;height:30px;flex:none;color:var(--bg);overflow:hidden;fill:none}
+.hero-tab .tab-ticon .tdec{fill:var(--ink);transition:fill .3s}
+.hero-tab .tab-ticon .sw-dot,.hero-tab .tab-ticon .mx-hole,.hero-tab .tab-ticon .mx-gap,.hero-tab .tab-ticon .rb-slot{fill:currentColor}
+.hero-tab[aria-selected=true] .tab-ticon{transform:none}
+.hero-tab[aria-selected=true] .tab-ticon .tdec{fill:var(--green)}
+.hero-tab[aria-selected=true] .tab-ticon{color:var(--ink)}
+
+/* slider arrows (hero + testimonials): both outline, cream on hover */
+.hero-arrow,.hero-next,.q-next{background:var(--ink)!important;color:var(--ink)!important}
+.hero-arrow:before,.hero-next:before,.q-next:before{background:var(--bg)!important}
+.hero-arrow:hover:not(:disabled):before,.hero-next:hover:before,.q-next:hover:before,.q-prev:hover:before{background:var(--bone)!important}
+
+/* success stories: green underline on title hover, a little away from the text */
+.story-title a{background:none!important;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:.22em;transition:text-decoration-color var(--t-hover) var(--soft)}
+.story-card:hover .story-title a,.story-title a:hover{text-decoration-color:var(--green)}
+.insight-title a{background:none!important;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:.22em;transition:text-decoration-color var(--t-hover) var(--soft)}
+.insight:hover .insight-title a{text-decoration-color:var(--green)}
+
+/* testimonials: wider quote */
+.clients .client-quote{max-width:22em}
+
+/* accumulated experience proofs: bigger, longer lines */
+.proof .counter-label{font-size:18px!important;max-width:none!important}
+
+/* head buttons top-right: how we work, all insights */
+#ways-to-start .block-head,#insights .block-head{flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+#ways-to-start .block-head .block-sub{flex-basis:100%;order:3}
+.head-cta{margin-bottom:6px}
+
+/* possible ways to start: cards with a soft technical pattern and a big outlined number */
+.start-row{position:relative;overflow:hidden;margin-bottom:8px;background-color:rgba(217,214,201,.42)!important;
+  background-image:linear-gradient(rgba(55,54,54,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(55,54,54,.07) 1px,transparent 1px)!important;
+  background-size:28px 28px!important;background-position:right center!important}
+.start-row:after{position:absolute;right:110px;top:50%;transform:translateY(-50%);content:attr(data-n);font:300 clamp(90px,10vw,170px)/1 var(--display);color:transparent;-webkit-text-stroke:1px rgba(55,54,54,.18);pointer-events:none;transition:-webkit-text-stroke-color var(--t-hover) var(--soft)}
+.start-row>*{position:relative;z-index:1}
+.start-row:hover,.start-row:focus-visible{background-color:var(--lime)!important}
+.start-row:hover:after{-webkit-text-stroke-color:rgba(55,54,54,.35)}
+.start-go{background:var(--bg)!important}
+@media(max-width:700px){.start-row:after{right:12px;font-size:84px}}
+
+/* people: big, playful robot button centred under the team */
+.talk-wrap{display:flex;justify-content:center;margin-top:28px}
+.talk-big{height:84px!important;padding:0 30px 0 18px!important;gap:16px!important;font-size:15px!important;--c:14px;--pc:14px;overflow:visible!important}
+.talk-big .btn-robot3d{width:64px;height:66px;margin-top:-18px}
+.talk-bubble{position:absolute!important;left:30px;top:-38px;padding:8px 12px;border-radius:12px 12px 12px 2px;background:var(--ink);color:var(--bg);font:500 12px/1 var(--text);letter-spacing:.02em;text-transform:none;white-space:nowrap;
+  opacity:0;transform:translateY(6px) scale(.9);transform-origin:left bottom;animation:bubble 6s ease-in-out infinite}
+@keyframes bubble{0%,55%,100%{opacity:0;transform:translateY(6px) scale(.9)}62%,90%{opacity:1;transform:none}}
+.talk-big:hover .talk-bubble{animation:none;opacity:1;transform:none}
+.talk-big:hover .btn-robot3d{animation:robo-hop .7s var(--soft) infinite}
+@keyframes robo-hop{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-8px) rotate(-8deg)}70%{transform:translateY(0) rotate(6deg)}}
+@media(max-width:600px){.talk-big{height:72px!important;font-size:13px!important}.talk-big .btn-robot3d{width:50px;height:52px}}
+
+/* what are you trying to solve: longer lines, bigger titles */
+.way-facts dd{max-width:none!important}
+.way .mod-title{font-size:clamp(26px,2.4vw,40px)!important;max-width:none}
+.way-head{align-items:center}
+
+/* CTA: paler placeholders, response-time placeholder */
+.contact-band input::placeholder,.contact-band textarea::placeholder{color:rgba(241,242,242,.42)!important}
+.ph-inline-dark{color:#E0A49A;font-style:italic}
+.contact-band .ph-inline-dark{color:#F2B8AE}
+
+/* footer: closer to the CTA, smaller statement without highlight, prototype link columns */
+.ft2{margin-top:var(--gap)!important}
+.ft2-statement{font-size:clamp(34px,3.6vw,56px)!important;grid-row:auto!important;max-width:14ch}
+.ft2-statement .hl{background:none!important}
+.ft2-grid{display:grid!important;grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr)!important;gap:40px!important;min-height:0!important;padding-bottom:clamp(140px,14vw,220px)}
+.ft2-cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.ft2-cols div{display:flex;flex-direction:column;gap:10px}
+.ft2-cols .tab{margin-bottom:6px;color:var(--ink)!important;font-weight:700}
+.ft2-cols a,.ft2-cols span:not(.tab){font:400 15px/1.35 var(--text);color:var(--ink)}
+.ft2-cols a{text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.25em;transition:text-decoration-color var(--t-hover) var(--soft)}
+.ft2-cols a:hover{text-decoration-color:var(--ink)}
+.ft2-cols .ph-inline-dark{color:#8A2E22}
+.ft2 .buddy{left:22%!important}
+@media(max-width:1180px){.ft2-grid{grid-template-columns:1fr!important}.ft2-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.ft2-cols{grid-template-columns:1fr 1fr;row-gap:28px}.ft2 .buddy{left:50%!important}}
+.ft2 .buddy{left:56%!important}
+@media(max-width:600px){.ft2 .buddy{left:50%!important}}

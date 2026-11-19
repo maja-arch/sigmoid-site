@@ -38,7 +38,9 @@
   let active = 0, busy = false;
   if (hero && title && tabsEl) {
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
-    tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span><svg aria-hidden="true"><use href="#i-${s.icon}"/></svg><span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
+    const tick = (cls) => { const t = document.querySelector(`.ticker-set .${cls}`); if (!t) return ''; const c = t.cloneNode(true); c.removeAttribute('class'); c.setAttribute('class', `ticon ${cls} tab-ticon`); c.setAttribute('aria-hidden', 'true'); return c.outerHTML; };
+    const tabIcon = (k) => ({ software: tick('ti-sw'), embedded: tick('ti-em'), robotics: tick('ti-rb'), mechatronics: tick('ti-mx') }[k] || `<svg aria-hidden="true"><use href="#i-${k}"/></svg>`);
+    tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span>${tabIcon(s.icon)}<span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
     const tabs = $$('.hero-tab', tabsEl);
     // the primary button glides to the width of its new label (no jump, "Discuss a project" follows softly)
     const setCta = (label) => {
