@@ -2820,3 +2820,9 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 }
 @media(max-width:800px){.hv2 .hero-title{font-size:14vw!important}.hw{width:1.4em!important}}
 @media(max-width:800px) and (max-height:760px){.hv2 .hero-title{font-size:12.6vw!important}}
+
+/* slider tabs: only the active tab shows the progress line (earlier tabs stay empty) */
+.hero-tab:not([aria-selected=true]) .hero-tab-bar i{opacity:0!important}
+/* proof number + text changes with each slide */
+.hcr-proof .hcr-num,.hcr-proof .hcr-text{transition:opacity .3s var(--soft),transform .3s var(--soft)}
+.hcr-proof.is-swap .hcr-num,.hcr-proof.is-swap .hcr-text{opacity:0;transform:translateY(6px)}

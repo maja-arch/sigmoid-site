@@ -12,7 +12,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Fazon kao wearetheromans.com: pozadina sajta (vide se vertikalne linije), **ogroman naslov u 3 reda** preko širine, u jednom redu mali **prozor sa fotkom** (visok kao slova, isečeni ćoškovi). Fotka se „učitava" brisanjem odozdo + blagi zum.
 - Tekst naslova, podnaslova i dugmadi slajdova se uzima TAČNO sa prototipa https://sigmoid-website-prototype.vercel.app/#home (desktop i telefon): Engineering shaped around the challenge. · Software built for products that run in the real world. · Electronics and code that make hardware work. · Robotic hand for automated grocery handling. · Mechanics designed as part of the whole system. Oznaka prvog slajda: „Engineering partner". U `d2.js` (`SLIDES`) `[img]` označava mesto prozora sa fotkom.
 - Iznad naslova `{ 01 / 05 — Sigmoid }`. Ispod: podnaslov (širi, ~62ch), pa dva dugmeta levo ispod njega.
-- Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, sat „Novi Sad { … }" desno. Nema separatora preko širine.
+- Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, samo iznad AKTIVNOG taba (prethodni tabovi bez linije), sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **najavni box „Latest"** (krem) — smenjuju se Success Stories i Insights: veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
 - Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni je pun, ostali bledi; aktivni se sam pomeri na sredinu vidnog dela); bez sata, oba dugmeta u jednom redu, sa strelicama, najavni box je sakriven iza malog krem jezička sa strelicom i ikonicom vesti, uz desnu ivicu ekrana u liniji oznake iznad naslova; na dodir izlazi s desne strane i izgleda kao na desktopu (zatvara se na ×); ispod dugmadi je red „Clients & partners +" koji se na dodir otvori (15+ i logotipi). Sadržaj hero-a je spušten ka dnu, blizu tabova.
@@ -21,7 +21,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
-- Credibility strip na svakom slajdu, dole desno: „15+ mechatronic and robotic systems…" + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.
+- Credibility strip na svakom slajdu, dole desno: broj + tekst se menja sa slajdom (4 discipline · 80% · 4 industrije · 15+ sistema · 3 discipline — zameniti proverenim podacima kad stignu) + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.

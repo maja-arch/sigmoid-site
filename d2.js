@@ -12,19 +12,19 @@
   /* ---------- hero slider (all five slides from Design 1) ---------- */
   const hero = $('.hero');
   const SLIDES = [
-    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', kicker: 'Engineering partner', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'], mlines: ['Engineering', 'shaped [img]', 'around the', 'challenge.'],
+    { photo: 'images/solve/new-products.jpg', proof: ['4', '', 'core disciplines working as one delivery team'], label: 'Sigmoid', kicker: 'Engineering partner', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'], mlines: ['Engineering', 'shaped [img]', 'around the', 'challenge.'],
       text: 'We help companies develop software, products and systems with the engineering expertise, technical contribution and responsibility each project requires.',
       cta: 'View success stories', href: 'success-stories.html' },
-    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built [img]', 'for products that run', 'in the real world.'], mlines: ['Software [img]', 'built for products', 'that run in the', 'real world.'],
+    { photo: 'images/solve/long-term.jpg', proof: ['80', '%', 'engineering capacity in multi-year product partnerships'], label: 'Software Development', icon: 'software', lines: ['Software built [img]', 'for products that run', 'in the real world.'], mlines: ['Software [img]', 'built for products', 'that run in the', 'real world.'],
       text: 'Software built and evolved with engineering experience applied from day one, and deepened over time through knowledge of your product and domain.',
       cta: 'See expertise', href: 'expertise.html#expertise-software' },
-    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'], mlines: ['Electronics', 'and code [img]', 'that make', 'hardware work.'],
+    { photo: 'images/bottleneck-detector.jpg', proof: ['4', '', 'industries: data centers, logistics, manufacturing and energy'], label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'], mlines: ['Electronics', 'and code [img]', 'that make', 'hardware work.'],
       text: 'Code and electronics designed together with the software and mechanics around them.',
       cta: 'See expertise', href: 'expertise.html#expertise-embedded' },
-    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'], mlines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
+    { photo: 'images/insights/robotic-hand-black.jpg', proof: ['15', '+', 'mechatronic and robotic systems taken from architecture to the field'], label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'], mlines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
       text: 'Picking fragile, irregular products reliably, so grocery orders can be automated end to end.',
       cta: 'Read the story', href: 'success-stories.html#story-grocery-robotic-hand' },
-    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img] designed', 'as part of the', 'whole system.'], mlines: ['Mechanics [img]', 'designed as part', 'of the whole', 'system.'],
+    { photo: 'images/lyra.jpg', proof: ['3', '', 'disciplines in one design: mechanics, electronics and software'], label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img] designed', 'as part of the', 'whole system.'], mlines: ['Mechanics [img]', 'designed as part', 'of the whole', 'system.'],
       text: 'Mechanical design and 3D modelling, developed together with the electronics and software of the same system.',
       cta: 'See expertise', href: 'expertise.html#expertise-mechanical' }
   ];
@@ -60,6 +60,12 @@
     const setV2 = () => {
       layers.forEach((l, i) => l.classList.toggle('is-on', i === active));
       hero.classList.toggle('on-first', active === 0);
+      const pf = document.querySelector('.hcr-proof'), pr = SLIDES[active].proof;
+      if (pf && pr) {
+        const fill = () => { pf.querySelector('.hcr-num').innerHTML = `${pr[0]}${pr[1] ? `<sup>${pr[1]}</sup>` : ''}`; pf.querySelector('.hcr-text').textContent = pr[2]; };
+        if (reduce || !pf.dataset.ready) { fill(); pf.dataset.ready = '1'; }
+        else { pf.classList.add('is-swap'); setTimeout(() => { fill(); pf.classList.remove('is-swap'); }, 320); }
+      }
       if (kNum) { kNum.textContent = String(active + 1).padStart(2, '0'); kLabel.textContent = SLIDES[active].kicker || SLIDES[active].label; }
       if (card) {
         const n = (active + 1) % SLIDES.length, ns = SLIDES[n];
