@@ -56,6 +56,7 @@
     const kNum = $('.hk-num'), kLabel = $('.hk-label');
     const setV2 = () => {
       layers.forEach((l, i) => l.classList.toggle('is-on', i === active));
+      hero.classList.toggle('on-first', active === 0);
       if (kNum) { kNum.textContent = String(active + 1).padStart(2, '0'); kLabel.textContent = SLIDES[active].label; }
       if (card) {
         const n = (active + 1) % SLIDES.length, ns = SLIDES[n];

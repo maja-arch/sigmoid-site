@@ -2486,3 +2486,21 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .way .way-facts dd{max-width:44ch!important}
 /* hero title: room for the parts of letters below/above the line (g, p, y, accents) */
 .hero-title .ln{padding:.08em 0 .2em!important;margin:-.08em 0 -.2em!important}
+
+
+/* hero: credibility strip on the first slide (proof point + client logos) */
+.hero-cred{grid-column:2;grid-row:2;align-self:end;justify-self:end;z-index:2;display:flex;flex-direction:column;gap:14px;width:clamp(300px,26vw,420px);padding-bottom:2px;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .6s var(--soft),transform .6s var(--soft),visibility 0s .6s}
+.hero.on-first .hero-cred{opacity:1;visibility:visible;transform:none;transition:opacity .6s var(--soft) .2s,transform .6s var(--soft) .2s,visibility 0s}
+.hcr-proof{display:flex;align-items:center;gap:14px;margin:0;font:300 15px/1.35 var(--text);color:var(--ink)}
+.hcr-num{flex:none;font:300 clamp(40px,3.4vw,56px)/.9 var(--display);color:var(--ink)}
+.hcr-num sup{font-size:.45em;color:var(--green);vertical-align:top;margin-left:1px}
+.hcr-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0;padding:12px 0 0;list-style:none;border-top:1px solid rgba(55,54,54,.2)}
+.hcr-logos li{display:grid;place-items:center;height:40px;font:500 9px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:rgba(55,54,54,.5);text-align:center}
+.hcr-ph{border:1px dashed rgba(55,54,54,.3)}
+@media(max-width:1180px){
+  .hero-cred{grid-column:1;grid-row:3;justify-self:stretch;width:auto;max-width:520px;margin-top:28px}
+  .hero-news.hs{grid-row:4!important}
+  .hv2 .hero-nav{grid-row:5!important}
+  .hero:not(.on-first) .hero-cred{display:none}
+}
+@media(min-width:1181px){.hero-news.hs{justify-self:end}}

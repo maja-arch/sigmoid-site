@@ -16,6 +16,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
+- Credibility strip samo na prvom slajdu, dole desno: „15+ mechatronic and robotic systems…" + 4 mesta za logotipe klijenata (placeholderi „Client logo" — zameniti pravim logotipima uz dozvolu klijenata).
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.
