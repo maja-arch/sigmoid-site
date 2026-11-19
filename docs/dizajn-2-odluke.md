@@ -73,4 +73,5 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Pozadinske vertikalne linije: nema linije skroz desno.
 
 ## Cookie banner
-- Krem pozadina, tamno braon tekst, manji tekst, niži. Samo „Accept" (dugme) i „Reject" (link). Ne prekriva footer bar ni pokretnu traku ispod heroja.
+- Pozadina = boja pozadine sajta (Platinum), 1px okvir u boji linija sa sajta, isečeni ćoškovi (ranije krem pozadina).
+- tamno braon tekst, manji tekst, niži. Samo „Accept" (dugme) i „Reject" (link). Ne prekriva footer bar ni pokretnu traku ispod heroja.

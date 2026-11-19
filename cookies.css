@@ -123,3 +123,9 @@ section.cookie.cookie .cookie-reject{color:#373636}
 section.cookie.cookie .cookie-text a{color:#373636!important}
 
 section.cookie.cookie{transition:bottom .45s cubic-bezier(.4,0,.2,1),opacity .35s,transform .35s}
+
+/* banner on the site background with the site's 1px outline (cut corners) */
+section.cookie.cookie{isolation:isolate;border:1px solid transparent!important;background:rgba(55,54,54,.32)!important;
+  clip-path:polygon(calc(var(--c) + 3px) -3px,calc(100% - var(--c) - 3px) -3px,calc(100% + 3px) calc(var(--c) + 3px),calc(100% + 3px) calc(100% - var(--c) - 3px),calc(100% - var(--c) - 3px) calc(100% + 3px),calc(var(--c) + 3px) calc(100% + 3px),-3px calc(100% - var(--c) - 3px),-3px calc(var(--c) + 3px))!important}
+section.cookie.cookie:before{position:absolute;inset:0;z-index:-1;content:"";background:var(--bg,#F1F2F2);--k:calc(var(--c) - .6px);
+  clip-path:polygon(calc(var(--k) + 3px) -3px,calc(100% - var(--k) - 3px) -3px,calc(100% + 3px) calc(var(--k) + 3px),calc(100% + 3px) calc(100% - var(--k) - 3px),calc(100% - var(--k) - 3px) calc(100% + 3px),calc(var(--k) + 3px) calc(100% + 3px),-3px calc(100% - var(--k) - 3px),-3px calc(var(--k) + 3px))}
