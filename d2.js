@@ -569,8 +569,8 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
 (() => {
   const hero = document.querySelector('.hero'), tg = document.querySelector('.hs-toggle'), x = document.querySelector('.hs-close');
   if (!hero || !tg) return;
-  const set = (open) => { hero.classList.toggle('hs-open', open); tg.setAttribute('aria-expanded', String(open)); };
+  const set = (open) => { hero.classList.toggle('hs-open', open); tg.setAttribute('aria-expanded', String(open)); hero.scrollLeft = 0; };
   tg.addEventListener('click', () => set(!hero.classList.contains('hs-open')));
-  if (x) x.addEventListener('click', (e) => { e.preventDefault(); set(false); tg.focus(); });
+  if (x) x.addEventListener('click', (e) => { e.preventDefault(); set(false); tg.focus({ preventScroll: true }); hero.scrollLeft = 0; });
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && hero.classList.contains('hs-open')) set(false); });
 })();

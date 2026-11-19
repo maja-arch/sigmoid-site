@@ -2753,3 +2753,16 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .hs-close i{position:absolute;width:16px;height:1.5px;background:currentColor;transform:rotate(45deg)}
   .hs-close i+i{transform:rotate(-45deg)}
 }
+@media(max-width:800px){
+  /* the hero never scrolls sideways (keeps the tab glued to the screen edge) */
+  .hero.hv2{overflow:clip!important}
+  /* content higher up, bigger title and photo */
+  .hv2 .hero-main{margin-top:clamp(28px,8svh,90px)!important}
+  .hv2 .hero-nav{margin-top:auto!important}
+  .hv2 .hero-title{font-size:clamp(44px,13.6vw,66px)!important}
+  .hw{width:1.6em!important}
+}
+@media(max-width:800px) and (max-height:760px){
+  .hv2 .hero-main{margin-top:14px!important}
+  .hv2 .hero-title{font-size:clamp(38px,11.6vw,50px)!important}
+}
