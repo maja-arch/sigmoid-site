@@ -2542,3 +2542,5 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .module-about .mod-main.card:before{inset:0!important}
 /* success stories box: titles keep room for g, p, y under the line */
 .hs .hn-title{padding:.06em 0 .2em!important;margin:-.06em 0 -.2em!important}
+/* ticker keeps moving on hover */
+.ticker:hover .ticker-track{animation-play-state:running!important}
