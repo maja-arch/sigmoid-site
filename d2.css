@@ -2395,3 +2395,6 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .ind-tab[aria-selected=true]:before{background:transparent!important}
 @keyframes ind-liquid{from{background-position:0 0,0% 0%,0 0}to{background-position:0 0,100% 100%,0 0}}
 @media(prefers-reduced-motion:reduce){.ind-tab[aria-selected=true]{animation:none}}
+/* industries: active card back to plain cream */
+.ind-tab[aria-selected=true]{background:var(--bone)!important;animation:none!important}
+.ind-tab[aria-selected=true]:before{background:transparent!important}
