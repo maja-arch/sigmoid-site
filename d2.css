@@ -2531,3 +2531,5 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 /* the underline redraws when the link itself is hovered (not already when the card is entered) */
 .story-card:hover .pill:not(:hover):not(:focus-visible) .pill-txt-u{animation:none!important}
 .insight:hover .insight-title a:not(:hover){animation:none!important}
+/* credibility strip with logos on every slide */
+.hero-cred,.hero:not(.on-first) .hero-cred{opacity:1!important;visibility:visible!important;transform:none!important;display:flex!important}
