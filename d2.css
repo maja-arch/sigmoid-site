@@ -1648,3 +1648,35 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .counter-num sup,.proof .counter-num sup{color:var(--green-text)!important}
 .bit{color:var(--green-text)}
 .contact-band .bit{color:var(--green)!important}
+
+/* =====================================================================
+   READABILITY: larger text everywhere
+   ===================================================================== */
+/* navigation and buttons */
+.hd-nav .pill{font-size:14px!important;height:38px}
+.hd-cta,.hd-menu{font-size:13px!important;height:40px!important}
+.pill{font-size:13px!important}
+.pill-sm,.pill-list .pill,.read-link,.story-card .pill{font-size:12.5px!important}
+.menu .pill{font-size:24px!important}
+/* small labels */
+.tab{font-size:12px!important}
+.story-facts dt{font-size:11.5px!important}
+.tags li,.chips li,.ind-tab-tags span,.story-card .tags li{font-size:11.5px!important}
+/* hero */
+.hero-lede{font-size:clamp(18px,1.55vw,23px)!important}
+.hero-tab-label{font-size:13px!important}
+.hero-tab-num{font-size:15px!important}
+/* body copy */
+.xp p,.ind-desc,.insight p,.person p{font-size:17px!important}
+.story-facts dd{font-size:17px!important}
+.way-facts dd{font-size:18px!important}
+.counter-label{font-size:16px!important}
+.ind-challenge-text{font-size:18px!important}
+.closing-copy p,.cta-foot p{font-size:clamp(18px,1.4vw,22px)!important}
+.ft2-next,.ft2-links a{font-size:18px!important}
+.ft2-bottom{font-size:14px!important}
+.client-quote+figcaption,.quote-card figcaption{font-size:16px!important}
+.block-sub{font-size:clamp(18px,1.4vw,22px)!important}
+.not-sure p,.not-sure{font-size:clamp(18px,1.4vw,22px)}
+.big-field input,.big-field textarea{font-size:clamp(20px,1.8vw,28px)}
+.cookie .cookie-text{font-size:16px}
