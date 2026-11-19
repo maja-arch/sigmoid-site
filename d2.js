@@ -419,7 +419,23 @@
       panel.classList.remove('is-swap');
     }, reduce ? 0 : 260);
   };
-  tabs.forEach((t, i) => t.addEventListener('click', () => show(i)));
+  // industries move on by themselves; a click jumps there and restarts the timer; hovering the module holds it
+  const mod = panel.closest('.module') || panel.parentElement;
+  let itimer = 0, ihold = false;
+  const iauto = () => { clearInterval(itimer); if (!reduce) itimer = setInterval(() => { if (!ihold && !document.hidden) show((active + 1) % tabs.length); }, 7000); };
+  mod.addEventListener('mouseenter', () => { ihold = true; });
+  mod.addEventListener('mouseleave', () => { ihold = false; });
+  mod.addEventListener('focusin', () => { ihold = true; });
+  mod.addEventListener('focusout', () => { ihold = false; });
+  tabs.forEach((t, i) => t.addEventListener('click', () => { show(i); iauto(); }));
+  iauto();
+  // active card: soft liquid light that follows the mouse
+  tabs.forEach((t) => {
+    let tx = 70, ty = 30, cx = 70, cy = 30, raf = 0;
+    const loop = () => { cx += (tx - cx) * .08; cy += (ty - cy) * .08; t.style.setProperty('--mx', cx.toFixed(2) + '%'); t.style.setProperty('--my', cy.toFixed(2) + '%'); raf = Math.abs(tx - cx) + Math.abs(ty - cy) > .1 ? requestAnimationFrame(loop) : 0; };
+    t.addEventListener('mousemove', (e) => { const r = t.getBoundingClientRect(); tx = (e.clientX - r.left) / r.width * 100; ty = (e.clientY - r.top) / r.height * 100; if (!raf && !reduce) raf = requestAnimationFrame(loop); });
+    t.addEventListener('mouseleave', () => { tx = 70; ty = 30; if (!raf && !reduce) raf = requestAnimationFrame(loop); });
+  });
   // arrow keys move between the industry tabs
   tabs.forEach((t, i) => t.addEventListener('keydown', (e) => {
     const k = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
@@ -485,7 +501,7 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
     box.classList.remove('is-in'); box.classList.add('is-out');
     setTimeout(() => {
       fill(lead, ST[i]); fill(small, ST[(i + 1) % ST.length]);
-      n.textContent = String(i + 1).padStart(2, '0');
+      if (n) n.textContent = String(i + 1).padStart(2, '0');
       box.classList.remove('is-out'); void box.offsetWidth; box.classList.add('is-in');
     }, 520);
   };
