@@ -1881,3 +1881,38 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
   .ft2-grid .ft2-cols{grid-template-columns:1fr 1fr!important;order:3}
   .ft2-left{gap:20px}
 }
+
+
+/* =====================================================================
+   ROUND 21
+   ===================================================================== */
+/* combine card example link: heavier, green underline, redraws on hover */
+.combine-link .arr{display:none!important}
+.combine-link .cl-text{font-weight:500;padding-bottom:3px!important;background:linear-gradient(var(--green),var(--green)) 0 100%/100% 1px no-repeat!important}
+.combine-link:hover .cl-text,.combine-link:focus-visible .cl-text{animation:ul-redraw .7s var(--soft)}
+
+/* success stories: no line under the title */
+.story-facts{border-top:0!important;padding-top:4px!important}
+
+/* testimonial quote larger */
+.client-quote{font-size:clamp(26px,2.4vw,40px)!important;line-height:1.28!important}
+
+/* slider arrows (hero + testimonials): hover = plain cream, no outline */
+.hero-arrow:hover:not(:disabled),.q-prev:hover,.q-next:hover{background:var(--bone)!important}
+.hero-arrow:hover:not(:disabled):before,.q-prev:hover:before,.q-next:hover:before{background:var(--bone)!important}
+
+/* proof icon: same looping ball as the about card */
+.proof .proof-lopta{width:48px!important;height:auto!important;flex:none;fill:var(--green);margin:0 2px}
+
+/* possible ways to start: four cards side by side */
+#ways-to-start .start-list{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);border:0!important;margin-top:clamp(28px,3vw,48px)}
+#ways-to-start .start-row{--c:14px;display:flex!important;flex-direction:column;align-items:flex-start;gap:18px;min-height:clamp(280px,24vw,360px);padding:clamp(18px,1.8vw,28px)!important;border:0!important;background:#E6E7E7;clip-path:var(--facet);transition:background-color var(--t-hover) var(--soft)}
+#ways-to-start .start-num{margin:0!important;padding:0!important;font:400 14px var(--text)!important;color:var(--ink-2)}
+#ways-to-start .start-main{display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:20px;width:100%}
+#ways-to-start .start-title{font-size:clamp(26px,2.3vw,38px)!important;line-height:1.02;transform:none!important}
+#ways-to-start .start-more{grid-template-rows:1fr!important}
+#ways-to-start .start-more>span{opacity:1!important;padding-top:0!important;font-size:clamp(16px,1.15vw,18px);color:var(--ink-2)}
+#ways-to-start .start-row:hover,#ways-to-start .start-row:focus-visible{background:var(--lime)}
+#ways-to-start .start-row:hover .start-num,#ways-to-start .start-row:hover .start-more>span{color:var(--ink)}
+@media(max-width:1180px){#ways-to-start .start-list{grid-template-columns:repeat(2,minmax(0,1fr))}#ways-to-start .start-row{min-height:240px}}
+@media(max-width:600px){#ways-to-start .start-list{grid-template-columns:1fr}#ways-to-start .start-row{min-height:0}}
