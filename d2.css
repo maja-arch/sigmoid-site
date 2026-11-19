@@ -1829,3 +1829,55 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
   .ft2-bottom{flex-direction:column;align-items:flex-start}
   .ft2-bottom,.ft2 .buddy{padding-bottom:0}
 }
+
+
+/* =====================================================================
+   ROUND 20
+   ===================================================================== */
+/* one link style: text + green underline that redraws on hover, no arrow */
+.read-link .arr,.story-card .pill .arr{display:none!important}
+.read-link .pill-txt-u,.story-card .pill .pill-txt-u{padding-bottom:4px!important;background:linear-gradient(var(--green),var(--green)) 0 100%/100% 1px no-repeat!important;line-height:1.2}
+.read-link:hover .pill-txt-u,.read-link:focus-visible .pill-txt-u,.story-card .pill:hover .pill-txt-u{animation:ul-redraw .7s var(--soft)!important}
+.contact-band .read-link .pill-txt-u{background-image:linear-gradient(var(--green),var(--green))!important}
+
+/* solve: no initials, more air */
+.way{padding:clamp(18px,1.6vw,26px)!important;gap:clamp(22px,2vw,32px)!important}
+.way .way-head{display:block}
+.way .way-photo{margin:0 0 clamp(4px,.6vw,10px)!important}
+.way-facts{gap:clamp(18px,1.8vw,28px)!important}
+.way-links{gap:28px!important;margin-top:clamp(8px,1vw,16px)}
+
+/* ways to start: heading + subtitle left, button top-right */
+#ways-to-start .block-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:nowrap}
+#ways-to-start .head-text{display:flex;flex-direction:column;gap:14px}
+#ways-to-start .head-cta{flex:none;margin-top:clamp(6px,1vw,18px)}
+@media(max-width:700px){#ways-to-start .block-head{flex-wrap:wrap}}
+
+/* our experts: smaller cards, big badge sitting over the third photo */
+.people{position:relative}
+.person{gap:10px!important;padding:12px!important}
+.person-photo{aspect-ratio:16/10!important}
+.person p{font-size:16px!important}
+.people .talk-badge{position:absolute;z-index:3;top:calc(-1 * clamp(56px,5vw,80px));right:clamp(-8px,1vw,24px);width:clamp(170px,15vw,230px);margin:0}
+.people .talk-badge .badge-ring text{font-size:15px}
+.people .talk-badge .badge-ring{filter:drop-shadow(0 0 0 transparent)}
+.people .talk-badge:before{position:absolute;inset:4%;z-index:-1;content:"";border-radius:50%;background:var(--bg)}
+@media(max-width:800px){.people .talk-badge{top:calc(-1 * 70px);right:8px;width:140px}}
+
+/* footer: statement + logo left, whole robot in the middle, links right */
+.ft2-grid{display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr)!important;align-items:stretch;gap:clamp(24px,3vw,56px)!important;padding-bottom:clamp(32px,4vw,56px)!important}
+.ft2-left{display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.ft2-left .ft2-logo img{height:clamp(28px,2.4vw,38px);width:auto}
+.ft2 .ft2-grid .buddy{position:relative!important;left:auto!important;top:auto!important;bottom:auto!important;transform:none!important;margin:0!important;align-self:center;width:clamp(220px,20vw,320px)!important;z-index:0!important}
+.ft2-grid .ft2-cols{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:32px 24px!important;align-content:start}
+.ft2-bottom{margin-top:0!important}
+@media(max-width:1180px){
+  .ft2-grid{grid-template-columns:minmax(0,1fr) auto!important}
+  .ft2-grid .ft2-cols{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .ft2-grid{grid-template-columns:1fr!important}
+  .ft2 .ft2-grid .buddy{justify-self:center;width:min(60vw,240px)!important;order:2}
+  .ft2-grid .ft2-cols{grid-template-columns:1fr 1fr!important;order:3}
+  .ft2-left{gap:20px}
+}
