@@ -12,19 +12,19 @@
   /* ---------- hero slider (all five slides from Design 1) ---------- */
   const hero = $('.hero');
   const SLIDES = [
-    { label: 'Sigmoid', icon: 'sigmoid', lines: ['Engineering', 'shaped around', 'the challenge.'],
+    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', icon: 'sigmoid', lines: ['Engineering', 'shaped around', 'the challenge.'],
       text: 'We help companies develop software, products and systems with the engineering expertise, technical contribution and responsibility each project requires.',
       cta: 'View success stories', href: 'success-stories.html' },
-    { label: 'Software Development', icon: 'software', lines: ['Software built', 'for products that run', 'in the real world.'],
+    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built', 'for products that run', 'in the real world.'],
       text: 'Software built and evolved with engineering experience applied from day one, and deepened over time through knowledge of your product and domain.',
       cta: 'See expertise', href: 'expertise.html#expertise-software' },
-    { label: 'Embedded', icon: 'embedded', lines: ['Electronics and code', 'that make', 'hardware work.'],
+    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics and code', 'that make', 'hardware work.'],
       text: 'Code and electronics designed together with the software and mechanics around them.',
       cta: 'See expertise', href: 'expertise.html#expertise-embedded' },
-    { label: 'Robotics', icon: 'robotics', lines: ['Robotic hand', 'for automated', 'grocery handling.'],
+    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand', 'for automated', 'grocery handling.'],
       text: 'Picking fragile, irregular products reliably, so grocery orders can be automated end to end.',
       cta: 'Read the story', href: 'success-stories.html#story-grocery-robotic-hand' },
-    { label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics designed', 'as part of the', 'whole system.'],
+    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics designed', 'as part of the', 'whole system.'],
       text: 'Mechanical design and 3D modelling, developed together with the electronics and software of the same system.',
       cta: 'See expertise', href: 'expertise.html#expertise-mechanical' }
   ];
@@ -44,7 +44,7 @@
     const tabs = $$('.hero-tab', tabsEl);
     // v2: big animated icon of each slide on the stage, "up next" card, kicker
     const stage = $('.hero-stage');
-    if (stage) SLIDES.forEach((s, i) => { if (i) stage.insertAdjacentHTML('beforeend', `<div class="stage-layer" data-i="${i}">${tabIcon(s.icon).replace('tab-ticon', 'stage-ticon')}</div>`); });
+    if (stage) stage.innerHTML = SLIDES.map((s, i) => `<div class="stage-layer${i ? '' : ' is-on'}" data-i="${i}"><img src="${s.photo}" alt="" ${i ? 'loading="lazy"' : ''}></div>`).join('');
     const layers = stage ? $$('.stage-layer', stage) : [];
     const card = $('.hero-card');
     const kNum = $('.hk-num'), kLabel = $('.hk-label');
