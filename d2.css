@@ -2425,3 +2425,8 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 /* buttons: plain rectangles with sharp corners */
 .pill:not(.hd-nav .pill):not(.story-card .pill),.cookie .btn{clip-path:none!important;border-radius:0!important;padding-left:20px!important;padding-right:20px!important}
 .pill:not(.hd-nav .pill):not(.story-card .pill):after,.cookie .btn:after{clip-path:none!important;border-radius:0!important;inset:1px!important}
+/* expertise cards: text link with green underline + long arrow instead of a button */
+.xp .xp-link{display:inline-flex;align-items:center;align-self:flex-start;gap:10px;font:500 12px/1.2 var(--text);letter-spacing:.07em;text-transform:uppercase;color:var(--ink);background:none!important}
+.xp:hover .xp-link .pill-txt-u,.xp:focus-visible .xp-link .pill-txt-u{animation:ul-redraw .7s var(--soft)!important}
+.xp:hover .xp-link .arr{transform:translateX(5px)!important}
+.xp .xp-link{margin-top:auto!important;padding-top:12px}
