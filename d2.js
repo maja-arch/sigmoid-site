@@ -445,7 +445,14 @@
   mod.addEventListener('mouseleave', () => { ihold = false; });
   mod.addEventListener('focusin', () => { ihold = true; });
   mod.addEventListener('focusout', () => { ihold = false; });
-  tabs.forEach((t, i) => t.addEventListener('click', () => { show(i); iauto(); }));
+  tabs.forEach((t, i) => t.addEventListener('click', () => {
+    show(i); iauto();
+    // phone: the panel sits above the list, bring it into view so the change is seen
+    if (matchMedia('(max-width: 800px)').matches) {
+      const top = panel.getBoundingClientRect().top;
+      if (top < 0 || top > innerHeight * 0.35) scrollTo({ top: scrollY + top - (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hd')) || 56) - 12, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }));
   iauto();
   // active card: soft liquid light that follows the mouse
   tabs.forEach((t) => {

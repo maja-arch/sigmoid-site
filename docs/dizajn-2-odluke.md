@@ -2,10 +2,8 @@
 
 Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je probano i nije se svidelo, ne vraćati.
 
-## Loader (`loader.js`)
-- Pri ulasku: ekran u boji sajta sa linijama, logo gore levo, 4 animirane ikonice (Software, Embedded, Robotics, Mechatronics) ulaze jedna za drugom, brojač { 000 % } sa zelenom linijom, pa „Scroll to enter ↓".
-- Na skrol/prevlačenje/↓/Enter/klik: ikonice odlete na svoja mesta u tabovima slajdera (02–05), pozadina se povuče nagore kao zavesa, naslov heroja se ispiše, zaglavlje uklizne, slajder tek tada kreće.
-- Prikazuje se pri svakom učitavanju početne strane (može i samo jednom po poseti, ako se odluči). Ne prikazuje se korisnicima sa isključenim animacijama.
+## Loader
+- Probano i ODBIJENO (ikonice + brojač + prelaz na skrol). Nema loadera.
 
 ## Header
 - Logo poravnat sa sadržajem ispod (ista leva ivica), na desktopu i telefonu.
@@ -30,9 +28,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.
-- Kartica „How disciplines combine": „Example:" tanje (200), naslov primera 300 sa zelenim underline-om koji se iscrtava + strelica.
+- Kartica „How disciplines combine": „Example:" tanje (200), naslov primera 300 sa zelenim underline-om koji se iscrtava + strelica. Telefon: underline prati tekst kroz redove, strelica je odmah uz poslednju reč.
 
 ## Industries
+- Telefon: veliki box prvi, ispod industrije kao kompaktni redovi (broj + naziv); na dodir se box promeni i stranica klizne do njega.
 - Desno tabovi; aktivni je **čisto krem**, bez okvira (odbijeno: preliv/„liquid" efekat). Svetli delovi ikonica krem.
 - Sam prelazi na sledeću industriju na 7 s, klik takođe radi (resetuje tajmer), staje dok je miš iznad.
 
