@@ -1,0 +1,63 @@
+# Sigmoid website — instructions for Claude
+
+Static HTML/CSS/JS site for the client **Sigmoid** (engineering company, Novi Sad). No build step.
+The user (designer) writes in **Serbian**: always reply in Serbian, short and clear, no jargon.
+
+## Where we work
+
+- Git repo: https://github.com/maja-arch/sigmoid-site
+- **Branch `dizajn-2`** = current design (homepage). Always work here.
+- Branch `main` + tag `dizajn-1` = the old Design 1. Do not change it.
+- Live site: https://sigmoid-dizajn-2.vercel.app (Vercel project `sigmoid-dizajn-2`)
+- The design history and every decision (including what the user **rejected**) is in
+  [docs/dizajn-2-odluke.md](docs/dizajn-2-odluke.md). Read it before changing the look of a section.
+
+## Files that matter
+
+| File | What |
+|---|---|
+| `index.html` | the homepage (Design 2) |
+| `d2.css` | all homepage styles. Changes are **appended at the end** in blocks titled `ROUND nn`; later rules override earlier ones (many use `!important`). |
+| `d2.js` | homepage interactions: hero slider (`SLIDES`), success-stories box, ticker, industries tabs, digital "scramble" words, robot eyes, clock, back to top |
+| `cookies.css`, `cookies.js` | cookie banner (Accept + Reject link only) |
+| `images/` | photos (`images/solve`, `images/insights`, …) |
+| other `*.html` + `styles.css`/`script.js` | inner pages, still the older design |
+
+`DESIGN-SYSTEM.md` is **outdated** in places (it still says uppercase titles and faceted buttons). The rules below win.
+
+## After every finished change (the user wants this without asking)
+
+1. Bump the cache-busting version on `?v=` in `index.html` (all links to css/js), e.g. on macOS
+   `V=$(date +%s); sed -i '' "s/?v=[0-9]*/?v=$V/g" index.html`
+   (PowerShell: `(Get-Content index.html) -replace '\?v=\d+', "?v=$([DateTimeOffset]::Now.ToUnixTimeSeconds())" | Set-Content index.html`).
+2. Check the page at 390px, 1280px and 1440px wide: nothing may stick out horizontally.
+3. Commit on `dizajn-2` with a short message describing the change.
+4. `git push` (origin/dizajn-2).
+5. `vercel deploy --prod --yes`, then confirm the live page shows the change.
+   (Needs the Vercel CLI and `vercel login`; the project link lives in `.vercel/`, which is not in git — on a new computer run `vercel link` and pick `sigmoid-dizajn-2`.)
+6. Tell the user in Serbian what changed, by section.
+
+## Design rules (agreed with the user)
+
+**Colours** (CSS variables): `--bg #F1F2F2` page (platinum) · `--ink #373636` text (graphite) · `--green #98BF5A` brand green · `--lime #DBE580` · `--bone #D9D6C9` cream (ticker, active states, boxes) · `--green-text #4F6E22` green text on light background.
+
+**Type:** Oswald for titles, Roboto for text.
+- **Titles are NOT all caps.** Normal case, as written in the text.
+- Section titles are all the same size; card titles are all the same size (`clamp(22px,1.9vw,30px)`); subtitles are all the same size (`clamp(18px,1.4vw,22px)`, weight 300).
+- Small labels above titles use curly braces: `{ Expertise }`, `{ 01 / 05 — Sigmoid }` — never `[ ]`.
+- Every button text starts with a verb ("Read all insights", "See how we work", "Learn about Sigmoid").
+
+**Buttons:** plain **rectangles with sharp 90° corners** (no cut corners, no pointed ends, no rounding).
+Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--facet`).
+
+**Links:** text + thin 1px **green underline** that **redraws on hover**, plus a long thin arrow (1px line) for "Read", "Read the article", "See this expertise", examples. One link style everywhere.
+
+**Hovers:** cream (`--bone`), no outlines/borders; never white. Footer links: underline on hover.
+
+**Digital effect:** words marked `<span class="scramble" data-scramble>` flicker through 0/1 and letters ("development", "Data Centers").
+
+**Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse, on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
+
+## Content still to replace before launch
+
+Testimonials, people (names/photos), phone number (+381 12 345 67 is an example), stock photos, the footer line "Let's build it." (may change). The Cookies link should go to `cookies.html` when that page exists.
