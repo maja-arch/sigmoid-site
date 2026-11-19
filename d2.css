@@ -2540,3 +2540,5 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .h2-long,.mod-title,.closing-title,.combine-big,h1,h2,h3{font-weight:400!important}
 .giant,.xp-abbr,.counter-num,.hcr-num,.start-num,.client-quote{font-weight:300!important}
 .module-about .mod-main.card:before{inset:0!important}
+/* success stories box: titles keep room for g, p, y under the line */
+.hs .hn-title{padding:.06em 0 .2em!important;margin:-.06em 0 -.2em!important}
