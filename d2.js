@@ -103,8 +103,8 @@
       });
       // phone: the tab row scrolls sideways; keep the active tab in view
       if (tabsEl.scrollWidth > tabsEl.clientWidth + 2) {
-        const t = tabs[active];
-        tabsEl.scrollTo({ left: Math.max(0, t.offsetLeft - tabsEl.offsetLeft - 8), behavior: reduce ? 'auto' : 'smooth' });
+        const t = tabs[active], tr = t.getBoundingClientRect(), rr = tabsEl.getBoundingClientRect();
+        tabsEl.scrollTo({ left: Math.max(0, tabsEl.scrollLeft + (tr.left - rr.left) - (rr.width - tr.width) / 2), behavior: reduce ? 'auto' : 'smooth' });
       }
     };
     const go = (index) => {
@@ -498,6 +498,13 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
     { t: 'Bottleneck Detector', tag: 'Manufacturing', img: 'images/bottleneck-detector.jpg', href: 'success-stories.html#story-bottleneck-detector' },
     { t: 'Orox Spindle', tag: 'Manufacturing', img: 'images/orox-spindle.jpg', href: 'success-stories.html#story-orox-spindle' }
   ];
+  // insights in between the stories
+  const INS = [
+    { t: 'The expensive decisions are made before development starts', tag: 'Insight', img: 'images/insights/code-laptop.jpg', href: 'insights.html#insight-expensive-decisions' },
+    { t: 'How do you design a robotic hand that can handle both fragile and robust grocery items?', tag: 'Insight', img: 'images/insights/robotic-hand-black.jpg', href: 'insights.html#insight-grocery-hand' },
+    { t: 'What accumulated engineering experience changes on day one', tag: 'Insight', img: 'images/insights/robot-pepper.jpg', href: 'insights.html#insight-experience-day-one' }
+  ];
+  ST.splice(1, 0, INS[0]); ST.splice(3, 0, INS[1]); ST.splice(5, 0, INS[2]);
   ST.forEach((x) => { const im = new Image(); im.src = x.img; });
   const lead = box.querySelector('.hn-lead'), small = box.querySelector('.hn-small'), n = box.querySelector('.hs-n');
   let i = 0, hold = false;
