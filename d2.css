@@ -2048,3 +2048,78 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 @media(max-width:1180px){.ft3-bottom{grid-template-columns:auto minmax(0,1fr)!important}.ft3-bottom .ft3-end{grid-column:1/-1}}
 @media(max-width:700px){.ft3-bottom{grid-template-columns:1fr!important}}
 @media(min-width:701px){.ft3-robot{transform:translateY(clamp(24px,3.4vw,52px))}}
+
+
+/* =====================================================================
+   ROUND 24 · hero slider makeover (editorial, lamalama-style layout)
+   ===================================================================== */
+.hero.hv2{display:grid!important;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);grid-template-rows:1fr auto auto;column-gap:clamp(24px,4vw,80px);min-height:max(640px,100svh);padding:calc(var(--hd) + clamp(20px,3vw,40px)) var(--pad) clamp(14px,1.4vw,22px)!important;overflow:hidden}
+/* stage: big animated icon of the active slide */
+.hv2 .hero-stage{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hv2 .stage-layer{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:scale(.94);transition:opacity .9s var(--soft),transform 1.2s cubic-bezier(.22,.61,.36,1)}
+.hv2 .stage-layer.is-on{opacity:1;transform:none}
+.hv2 .stage-layer .hero-mark{position:absolute;left:58%;top:44%;transform:translate(-50%,-50%)}
+.hv2 .stage-ticon{position:absolute;left:58%;top:44%;width:min(64svh,46vw);height:min(64svh,46vw);transform:translate(-50%,-50%);color:var(--bg);overflow:hidden;fill:none}
+.hv2 .stage-ticon .tdec{fill:var(--bone)}
+.hv2 .stage-ticon .sw-dot,.hv2 .stage-ticon .mx-hole,.hv2 .stage-ticon .mx-gap,.hv2 .stage-ticon .rb-slot{fill:currentColor}
+.hv2 .stage-ticon .sw-rays path{stroke:var(--bg)}
+/* main text block bottom-left, lede + buttons bottom-right */
+.hv2 .hero-main{grid-column:1;grid-row:2;position:relative;z-index:1;align-self:end}
+.hero-kicker{margin:0 0 clamp(14px,1.4vw,22px);font:500 12px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.hero-kicker .hk-num,.hero-kicker .hk-label{color:var(--ink)}
+.hv2 .hero-title{margin:0!important;font-size:clamp(46px,7.4vw,136px)!important}
+.hv2 .hero-side{grid-column:2;grid-row:2;position:relative;z-index:1;align-self:end;display:flex;flex-direction:column;gap:clamp(18px,2vw,28px);padding-bottom:6px}
+.hv2 .hero-intro{width:auto!important;max-width:34ch;margin:0!important}
+.hv2 .hero-lede{font-size:clamp(18px,1.45vw,22px)!important;line-height:1.4!important;color:var(--ink)}
+.hv2 .hero-foot{margin:0!important;flex-wrap:wrap}
+/* bottom bar: hairline, small tabs with animated icons, clock, arrows */
+.hv2 .hero-nav{grid-column:1/-1;grid-row:3;position:relative;z-index:1;display:flex!important;align-items:center;justify-content:space-between;gap:24px;margin-top:clamp(28px,3vw,48px)!important;padding-top:0;border-top:1px solid rgba(55,54,54,.28)}
+.hv2 .hero-tabs{flex:1;display:flex!important;gap:clamp(14px,2.4vw,40px)}
+.hv2 .hero-tab{flex:0 1 auto;gap:8px!important;padding:14px 0 0!important;margin-top:-1px}
+.hv2 .hero-tab-bar{top:0;height:2px;background:transparent}
+.hv2 .hero-tab .tab-ticon,.hv2 .hero-tab>svg{width:20px!important;height:20px!important}
+.hv2 .hero-tab-text{flex-direction:row;align-items:baseline;gap:8px}
+.hv2 .hero-tab-num{font:500 12px/1 var(--text)!important;letter-spacing:.08em}
+.hv2 .hero-tab-label{display:inline!important;font:500 12px/1 var(--text)!important;letter-spacing:.1em}
+.hv2 .hero-meta{display:flex;align-items:center;gap:clamp(16px,2vw,32px);padding-top:12px}
+.hero-clock{display:flex;gap:14px;font:500 12px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.hero-clock time{font-variant-numeric:tabular-nums}
+.hc-dot{display:inline-block;width:6px;height:6px;margin:0 4px 1px;border-radius:50%;background:var(--green);animation:hc-blink 1s steps(2,start) infinite}
+@keyframes hc-blink{to{visibility:hidden}}
+.hv2 .hero-arrows{display:flex;gap:6px;order:0!important;width:auto!important}
+.hv2 .hero-arrow{width:38px!important;height:38px!important;font-size:14px!important}
+/* "up next" card top-right */
+.hero-card{--c:12px;position:absolute;z-index:2;top:calc(var(--hd) + clamp(16px,2vw,28px));right:var(--pad);display:flex;flex-direction:column;gap:12px;width:clamp(200px,15vw,240px);padding:12px;border:0;background:var(--bone);color:var(--ink);text-align:left;cursor:pointer;font:inherit;clip-path:var(--facet);transition:background-color var(--t-hover) var(--soft)}
+.hero-card:hover{background:var(--lime)}
+.hc-top{display:flex;justify-content:space-between;font:500 11px/1 var(--text);letter-spacing:.12em;text-transform:uppercase}
+.hc-count b{font-weight:500}
+.hc-media{--c:8px;display:grid;place-items:center;aspect-ratio:4/3;background:var(--bg);clip-path:var(--facet)}
+.hc-media .card-ticon,.hc-media>svg{width:46%;height:auto;color:var(--bg);overflow:hidden;fill:var(--ink)}
+.hc-media .card-ticon .tdec{fill:var(--ink)}
+.hc-media .card-ticon .sw-dot,.hc-media .card-ticon .mx-hole,.hc-media .card-ticon .mx-gap,.hc-media .card-ticon .rb-slot{fill:currentColor}
+.hc-title{font:400 20px/1.05 var(--display);text-transform:uppercase}
+.hc-bar{position:relative;height:2px;background:rgba(55,54,54,.18);overflow:hidden}
+.hc-bar i{position:absolute;inset:0;right:100%;background:var(--ink)}
+.hero.is-autoplay .hc-bar i{animation:tab-progress var(--slide-dur,7000ms) linear forwards}
+.hero.is-paused .hc-bar i{animation-play-state:paused}
+@media(max-width:1180px){
+  .hero.hv2{grid-template-columns:1fr;grid-template-rows:1fr auto auto auto}
+  .hv2 .hero-side{grid-column:1;grid-row:3;margin-top:24px}
+  .hv2 .hero-nav{grid-row:4}
+  .hv2 .hero-tab-label{display:none!important}
+}
+@media(max-width:800px){
+  .hero.hv2{min-height:auto;padding-top:calc(var(--hd) + 220px)!important}
+  .hero-card{top:calc(var(--hd) + 16px);left:var(--pad);right:auto;width:180px;flex-direction:row;flex-wrap:wrap;gap:8px}
+  .hero-card .hc-media{display:none}
+  .hv2 .stage-layer .hero-mark,.hv2 .stage-ticon{left:72%;top:22%;width:58vw;height:58vw}
+  .hv2 .hero-nav{flex-direction:column;align-items:stretch;gap:0}
+  .hv2 .hero-tabs{justify-content:space-between}
+  .hv2 .hero-meta{justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){.hv2 .stage-layer{transition:none}.hc-dot{animation:none}}
+.hv2 .stage-layer{padding:0 0 12svh 16vw}
+.hv2 .stage-ticon{position:relative!important;left:auto!important;top:auto!important;width:min(70svh,48vw)!important;height:min(70svh,48vw)!important;opacity:.07}
+.hv2 .stage-ticon .tdec{fill:var(--ink)!important}
+@media(max-width:800px){.hv2 .stage-layer{padding:0 0 0 30vw;place-items:start center}.hv2 .stage-ticon{width:58vw!important;height:58vw!important;margin-top:calc(var(--hd) + 20px)}}
+@media(max-width:800px){.hero-card .hc-top{width:100%;gap:10px}.hero-card .hc-bar{width:100%}}

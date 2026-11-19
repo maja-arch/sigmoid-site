@@ -42,6 +42,25 @@
     const tabIcon = (k) => ({ software: tick('ti-sw'), embedded: tick('ti-em'), robotics: tick('ti-rb'), mechatronics: tick('ti-mx') }[k] || `<svg aria-hidden="true"><use href="#i-${k}"/></svg>`);
     tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span>${tabIcon(s.icon)}<span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
     const tabs = $$('.hero-tab', tabsEl);
+    // v2: big animated icon of each slide on the stage, "up next" card, kicker
+    const stage = $('.hero-stage');
+    if (stage) SLIDES.forEach((s, i) => { if (i) stage.insertAdjacentHTML('beforeend', `<div class="stage-layer" data-i="${i}">${tabIcon(s.icon).replace('tab-ticon', 'stage-ticon')}</div>`); });
+    const layers = stage ? $$('.stage-layer', stage) : [];
+    const card = $('.hero-card');
+    const kNum = $('.hk-num'), kLabel = $('.hk-label');
+    const setV2 = () => {
+      layers.forEach((l, i) => l.classList.toggle('is-on', i === active));
+      if (kNum) { kNum.textContent = String(active + 1).padStart(2, '0'); kLabel.textContent = SLIDES[active].label; }
+      if (card) {
+        const n = (active + 1) % SLIDES.length, ns = SLIDES[n];
+        card.querySelector('.hc-count b').textContent = String(n + 1).padStart(2, '0');
+        card.querySelector('.hc-title').textContent = ns.label;
+        card.querySelector('.hc-media').innerHTML = tabIcon(ns.icon).replace('tab-ticon', 'card-ticon');
+        card.setAttribute('aria-label', `Next slide: ${ns.label}`);
+        const bar = card.querySelector('.hc-bar i'); bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = '';
+      }
+    };
+    if (card) card.addEventListener('click', () => go(active + 1));
     // the primary button glides to the width of its new label (no jump, "Discuss a project" follows softly)
     const setCta = (label) => {
       const txt = primary.querySelector('.pill-txt');
@@ -81,7 +100,7 @@
       if (next === active || busy) return;
       active = next; busy = true;
       const s = SLIDES[active];
-      setTabs();
+      setTabs(); setV2();
       if (reduce) { title.innerHTML = s.lines.map(lineHTML).join(''); setText(s); busy = false; return; }
       title.classList.add('is-out'); title.classList.remove('is-in');
       setTimeout(() => {
@@ -102,6 +121,7 @@
     tabs.forEach((t) => t.addEventListener('click', () => go(Number(t.dataset.i))));
     prevBtn.addEventListener('click', () => { if (active > 0) go(active - 1); });
     prevBtn.disabled = true;
+    setV2();
     $('.hero-next').addEventListener('click', () => go(active + 1));
     const pause = (on) => hero.classList.toggle('is-paused', on);
     title.addEventListener('mouseenter', () => pause(true));
@@ -430,3 +450,11 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }));
+
+/* hero clock: local time in Novi Sad */
+(() => {
+  const t = document.querySelector('.hero-clock time'); if (!t) return;
+  const f = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+  const tick = () => { t.textContent = f.format(new Date()).replace(/:/g, ' : '); };
+  tick(); setInterval(tick, 1000);
+})();
