@@ -2528,3 +2528,6 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .hcr-logos img{display:block;width:auto;max-width:78%;max-height:26px;height:auto;opacity:.8}
 .hcr-logos li:nth-child(4) img,.hcr-logos li:nth-child(5) img{max-height:32px}
 @media(max-width:800px){.hcr-logos li{height:34px!important}.hcr-logos img{max-height:22px}.hcr-logos li:nth-child(4) img,.hcr-logos li:nth-child(5) img{max-height:28px}.hcr-proof{font-size:14px}}
+/* the underline redraws when the link itself is hovered (not already when the card is entered) */
+.story-card:hover .pill:not(:hover):not(:focus-visible) .pill-txt-u{animation:none!important}
+.insight:hover .insight-title a:not(:hover){animation:none!important}
