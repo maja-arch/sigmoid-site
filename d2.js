@@ -12,32 +12,38 @@
   /* ---------- hero slider (all five slides from Design 1) ---------- */
   const hero = $('.hero');
   const SLIDES = [
-    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', icon: 'sigmoid', lines: ['Engineering', 'shaped around', 'the challenge.'],
+    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'],
       text: 'We help companies develop software, products and systems with the engineering expertise, technical contribution and responsibility each project requires.',
       cta: 'View success stories', href: 'success-stories.html' },
-    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built', 'for products that run', 'in the real world.'],
+    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software [img]', '{development}', 'for real products.'],
       text: 'Software built and evolved with engineering experience applied from day one, and deepened over time through knowledge of your product and domain.',
       cta: 'See expertise', href: 'expertise.html#expertise-software' },
-    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics and code', 'that make', 'hardware work.'],
+    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'],
       text: 'Code and electronics designed together with the software and mechanics around them.',
       cta: 'See expertise', href: 'expertise.html#expertise-embedded' },
-    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand', 'for automated', 'grocery handling.'],
+    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
       text: 'Picking fragile, irregular products reliably, so grocery orders can be automated end to end.',
       cta: 'Read the story', href: 'success-stories.html#story-grocery-robotic-hand' },
-    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics designed', 'as part of the', 'whole system.'],
+    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img]', 'designed for', 'the whole system.'],
       text: 'Mechanical design and 3D modelling, developed together with the electronics and software of the same system.',
       cta: 'See expertise', href: 'expertise.html#expertise-mechanical' }
   ];
   const DURATION = 7000;
   const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const lineHTML = (l) => `<span class="ln"><span>${esc(l)}</span></span>`;
+  const plain = (l) => l.replace('[img] ', '').replace(' [img]', '').replace(/[{}]/g, '');
+  const lineHTML = (l) => `<span class="ln"><span>${esc(l)
+    .replace('[img]', `<span class="hw" aria-hidden="true"><img src="${SLIDES[active].photo}" alt=""></span>`)
+    .replace(/\{(.+?)\}/, '<span class="scramble" data-scramble>$1</span>')}</span></span>`;
   const title = $('.hero-title');
   const lede = $('.hero-lede');
   const primary = $('.hero-primary');
   const tabsEl = $('.hero-tabs');
   let active = 0, busy = false;
   if (hero && title && tabsEl) {
+    title.innerHTML = SLIDES[0].lines.map(lineHTML).join('');
+    title.setAttribute('aria-label', SLIDES[0].lines.map(plain).join(' '));
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
+    SLIDES.forEach((x) => { const im = new Image(); im.src = x.photo; });
     const tick = (cls) => { const t = document.querySelector(`.ticker-set .${cls}`); if (!t) return ''; const c = t.cloneNode(true); c.removeAttribute('class'); c.setAttribute('class', `ticon ${cls} tab-ticon`); c.setAttribute('aria-hidden', 'true'); return c.outerHTML; };
     const tabIcon = (k) => ({ software: tick('ti-sw'), embedded: tick('ti-em'), robotics: tick('ti-rb'), mechatronics: tick('ti-mx') }[k] || `<svg aria-hidden="true"><use href="#i-${k}"/></svg>`);
     tabsEl.innerHTML = SLIDES.map((s, i) => `<button class="hero-tab" type="button" role="tab" aria-selected="${i === 0}" aria-label="Slide ${i + 1}: ${s.label}" data-i="${i}"><span class="hero-tab-bar"><i></i></span>${tabIcon(s.icon)}<span class="hero-tab-text"><span class="hero-tab-num">0${i + 1}</span><span class="hero-tab-label">${s.label}</span></span></button>`).join('');
@@ -80,7 +86,7 @@
     const timerBar = $('.hero-timer-bar i');
     const restart = (el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; };
     const setText = (s) => {
-      title.setAttribute('aria-label', s.lines.join(' '));
+      title.setAttribute('aria-label', s.lines.map(plain).join(' '));
       lede.textContent = s.text;
       primary.href = s.href;
       setCta(s.cta);
@@ -106,6 +112,7 @@
       setTimeout(() => {
         title.classList.remove('is-out');
         title.innerHTML = s.lines.map(lineHTML).join('');
+        if (window.sigmoidScramble) title.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
         void title.offsetWidth;
         title.classList.add('is-in');
         setText(s);
@@ -457,4 +464,35 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   const f = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
   const tick = () => { t.textContent = f.format(new Date()).replace(/:/g, ' : '); };
   tick(); setInterval(tick, 1000);
+})();
+
+/* hero box: success stories that change on their own */
+(() => {
+  const box = document.querySelector('.hero-news.hs'); if (!box) return;
+  const ST = [
+    { t: 'Robotic hand for automated grocery handling', tag: 'Logistics', img: 'images/robotic-hand-sq.jpg', href: 'success-stories.html#story-grocery-robotic-hand' },
+    { t: 'Automation in Intralogistics', tag: 'Logistics', img: 'images/automation-intralogistics.jpg', href: 'success-stories.html#story-automation-in-intralogistics' },
+    { t: 'Bottleneck Detector', tag: 'Manufacturing', img: 'images/bottleneck-detector.jpg', href: 'success-stories.html#story-bottleneck-detector' },
+    { t: 'Orox Spindle', tag: 'Manufacturing', img: 'images/orox-spindle.jpg', href: 'success-stories.html#story-orox-spindle' }
+  ];
+  ST.forEach((x) => { const im = new Image(); im.src = x.img; });
+  const lead = box.querySelector('.hn-lead'), small = box.querySelector('.hn-small'), n = box.querySelector('.hs-n');
+  let i = 0, hold = false;
+  const fill = (el, x) => { el.href = x.href; el.querySelector('img').src = x.img; el.querySelector('.hs-t').textContent = x.t; const tg = el.querySelector('.hs-tag'); if (tg) tg.textContent = x.tag; };
+  const step = () => {
+    if (hold || document.hidden) return;
+    i = (i + 1) % ST.length;
+    box.classList.remove('is-in'); box.classList.add('is-out');
+    setTimeout(() => {
+      fill(lead, ST[i]); fill(small, ST[(i + 1) % ST.length]);
+      n.textContent = String(i + 1).padStart(2, '0');
+      box.classList.remove('is-out'); void box.offsetWidth; box.classList.add('is-in');
+    }, 520);
+  };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  box.addEventListener('mouseenter', () => { hold = true; });
+  box.addEventListener('mouseleave', () => { hold = false; });
+  box.addEventListener('focusin', () => { hold = true; });
+  box.addEventListener('focusout', () => { hold = false; });
+  setInterval(step, 5200);
 })();
