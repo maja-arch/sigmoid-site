@@ -2422,3 +2422,6 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .hv2 .hero-title{font-size:clamp(42px,6.6vw,120px)!important}
 .hw{width:1.95em!important}
 @media(max-width:800px){.hv2 .hero-title{font-size:clamp(40px,11.5vw,60px)!important}.hw{width:1.6em!important}}
+/* buttons: plain rectangles with sharp corners */
+.pill:not(.hd-nav .pill):not(.story-card .pill),.cookie .btn{clip-path:none!important;border-radius:0!important;padding-left:20px!important;padding-right:20px!important}
+.pill:not(.hd-nav .pill):not(.story-card .pill):after,.cookie .btn:after{clip-path:none!important;border-radius:0!important;inset:1px!important}
