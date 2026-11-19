@@ -2398,3 +2398,23 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 /* industries: active card back to plain cream */
 .ind-tab[aria-selected=true]{background:var(--bone)!important;animation:none!important}
 .ind-tab[aria-selected=true]:before{background:transparent!important}
+
+/* =====================================================================
+   ROUND 32
+   ===================================================================== */
+/* hero photo window: as tall as the capitals, loads in like the stories box */
+.hw{height:.8em!important;vertical-align:baseline!important;margin:0 .02em!important}
+.hw img{clip-path:inset(100% 0 0 0);transform:scale(1.15)}
+.hero-title.is-in .hw img,body.is-ready .hero-title:not(.is-out) .hw img{animation:hs-wipe .9s cubic-bezier(.65,0,.2,1) .3s both!important}
+.hv2 .hero-intro{max-width:62ch!important}
+/* slider progress line: 1px */
+.hv2 .hero-tab-bar{height:1px!important;top:0!important}
+/* pointed buttons everywhere */
+.pill:not(.hd-nav .pill):not(.story-card .pill),.cookie .btn{--pt:13px;clip-path:polygon(var(--pt) 0,calc(100% - var(--pt)) 0,100% 50%,calc(100% - var(--pt)) 100%,var(--pt) 100%,0 50%)!important;padding-left:24px!important;padding-right:24px!important}
+.pill:not(.hd-nav .pill):not(.story-card .pill):after,.cookie .btn:after{--pt:12.4px;clip-path:polygon(var(--pt) 0,calc(100% - var(--pt)) 0,100% 50%,calc(100% - var(--pt)) 100%,var(--pt) 100%,0 50%)!important;inset:1px 1.4px!important}
+.pill-sm:not(.story-card .pill),.pill-list .pill{--pt:10px}
+.pill-sm:not(.story-card .pill):after,.pill-list .pill:after{--pt:9.4px}
+/* expertise cards: cream on hover, no outline */
+.xp{transition:background-color var(--t-hover) var(--soft)!important}
+.xp:hover{background:var(--bone)!important}
+.xp:hover:before{background:var(--bone)!important}
