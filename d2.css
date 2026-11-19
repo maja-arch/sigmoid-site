@@ -2654,3 +2654,8 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 @media(max-width:800px){.hero.hv2 .hero-foot .pill.pill.pill.pill{padding-left:6px!important;padding-right:6px!important;gap:0!important}}
 @media(max-width:800px){.hero.hv2 .hero-foot .pill.pill.pill.pill{flex:1 1 0!important;width:auto!important;min-width:0!important;max-width:none!important}}
 @media(max-width:800px){.hv2 .hero-foot{align-self:stretch!important;width:100%!important}}
+/* phone: hero fills the screen, slider tabs + arrows sit at the bottom of the device */
+@media(max-width:800px){
+  .hero.hv2{min-height:100svh!important;padding-top:calc(var(--hd) + 18px)!important;padding-bottom:max(14px,env(safe-area-inset-bottom))!important}
+  .hv2 .hero-nav{order:9!important;margin:auto 0 0!important;padding-top:22px}
+}

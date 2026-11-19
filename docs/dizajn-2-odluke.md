@@ -14,7 +14,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **Success Stories box** (krem): veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
-- Telefon: tabovi i strelice slajdera skroz gore (bez sata i natpisa tabova), oba dugmeta u jednom redu (bez strelica), a ispod red „Clients & success stories +" koji se na dodir otvori (15+, logotipi i najavni box).
+- Telefon: hero zauzima ceo ekran, tabovi i strelice slajdera su na DNU ekrana uređaja (ne gore; bez sata i natpisa tabova), oba dugmeta u jednom redu (bez strelica), a ispod red „Clients & success stories +" koji se na dodir otvori (15+, logotipi i najavni box).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
