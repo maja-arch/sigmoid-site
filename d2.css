@@ -1624,3 +1624,27 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .insight-title a{background-image:linear-gradient(var(--green),var(--green))!important}
 .insight:hover .insight-title a{background-size:100% 1px}
 .insight .read-link{margin-top:14px}
+
+/* robots blink now and then: each eye squashes around its own centre, separate from the look/follow movement */
+.btn-robot3d .br-eyes ellipse,.robot .pupil ellipse{transform-box:fill-box;transform-origin:center;animation:robo-blink 4.6s ease-in-out infinite}
+.robot .pupil ellipse{animation-duration:5.4s}
+@keyframes robo-blink{0%,90%,100%{transform:scaleY(1)}93%,95%{transform:scaleY(.12)}}
+@media(prefers-reduced-motion:reduce){.btn-robot3d .br-eyes ellipse,.robot .pupil ellipse{animation:none}}
+
+/* contact band: brand graphite with light, high-contrast text (WCAG AA) */
+.contact-band{background:var(--ink)!important;color:var(--bg)!important}
+.contact-band .tab{color:rgba(241,242,242,.8)!important}
+.contact-band .closing-title,.contact-band .closing-copy p,.contact-band .text-link,.contact-band .sent-title,.contact-band .form-sent p,.contact-band .form-note{color:var(--bg)!important}
+.contact-band .text-link{background-image:linear-gradient(var(--green),var(--green))!important}
+.contact-band input,.contact-band textarea{color:var(--bg)!important;border-bottom-color:rgba(241,242,242,.55)!important}
+.contact-band input::placeholder,.contact-band textarea::placeholder{color:rgba(241,242,242,.7)!important}
+.contact-band input:focus,.contact-band textarea:focus{border-bottom-color:var(--green)!important}
+.contact-band .bit{color:var(--green)}
+.contact-band ::selection{background:#D9D6C9;color:#373636}
+.contact-band .pill-green:after,.contact-band .pill-green:hover:after{background:var(--ink)!important}
+.contact-band .pill-green:hover{color:var(--bg)!important;background:var(--bg)!important}
+/* accessible green for small text accents on light backgrounds (5.2:1 on platinum) */
+:root{--green-text:#4F6E22}
+.counter-num sup,.proof .counter-num sup{color:var(--green-text)!important}
+.bit{color:var(--green-text)}
+.contact-band .bit{color:var(--green)!important}
