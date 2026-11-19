@@ -2433,3 +2433,7 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 /* industries: the light parts inside the tab icons in cream, like the card */
 .ind-tab .ind-tab-icon{color:var(--bone)!important}
 .ind-tab .ind-tab-icon .sw-rays path{stroke:var(--bone)!important}
+
+/* titles in normal case (no all caps) */
+:is(h1,h2,h3,.hero-title,.hn-title,.combine-big,.ind-tab-name,.ind-name,.client-quote,.start-title,.ft3-big,.ft3-mail,.ft3-bignav a,.menu .pill),
+:is(h1,h2,h3,.hero-title,.hn-title,.combine-big,.ind-tab-name,.ind-name,.client-quote,.start-title,.ft3-big,.ft3-bignav a) *{text-transform:none!important}
