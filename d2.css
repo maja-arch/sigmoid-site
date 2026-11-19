@@ -2858,3 +2858,24 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .module-ind .mod-side,.module-ind .ind-tabs{width:100%!important;align-self:stretch!important}
   .module-ind .ind-tab{width:100%!important}
 }
+
+
+/* =====================================================================
+   ROUND 52 · PHONE ONLY: load more stories, quote arrows, section heads
+   ===================================================================== */
+.stories-more{display:none}
+@media(max-width:800px){
+  /* success stories: three, then "Load more" */
+  .stories:not(.is-all) .story-card:nth-child(n+4){display:none}
+  .stories.is-all .story-card:nth-child(n+4){animation:sm-in .6s var(--soft) both}
+  @keyframes sm-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .stories-more{display:flex;justify-content:center;margin-top:22px}
+  .stories-more[hidden]{display:none}
+  .load-more{display:inline-flex;align-items:center;gap:10px;padding:6px 0;border:0;background:none;color:var(--ink);font:500 12px/1.2 var(--text);letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+  .load-more .arr{transform:rotate(90deg)!important;width:20px!important}
+  /* arrows: no hover shrink on touch screens (the first arrow looked smaller after a tap) */
+  .hero-arrow:hover:not(:disabled):before,.hero-arrow:active:before,.hero-arrow:focus:before{inset:1px!important}
+  /* section heads with a button: button under the title, like Success Stories */
+  .block-head:has(.head-cta){flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
+  .block-head .head-cta{margin:0!important;align-self:flex-start!important}
+}

@@ -36,9 +36,11 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Sam prelazi na sledeću industriju na 7 s, klik takođe radi (resetuje tajmer), staje dok je miš iznad.
 
 ## Success Stories
+- Telefon: prikazane prve 3 priče, ispod link „Load more ↓" koji otvori ostale.
 - Bez separatora. „Read the story": zeleni underline koji se iscrtava na hover + duga tanka strelica.
 
 ## What clients say
+- Telefon: strelice uvek iste veličine (bez hover smanjenja posle dodira).
 - Veliki font citata. Strelice decagoni, hover samo krem, bez bordera.
 
 ## Accumulated engineering experience
@@ -52,6 +54,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Okrugli bedž sa tekstom u krug („Talk to our engineering team"), zelen, robot u sredini (manji). Isti robot kao u footeru.
 
 ## Insights
+- Telefon: dugme ispod naslova (isto za sve sekcije sa dugmetom u zaglavlju).
 - Dugme „Read all insights". Linkovi „Read the article" zeleni underline koji se iscrtava + duga tanka strelica.
 
 ## What are you trying to solve?

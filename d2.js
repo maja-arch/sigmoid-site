@@ -599,3 +599,16 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   if (x) x.addEventListener('click', (e) => { e.preventDefault(); set(false); tg.focus({ preventScroll: true }); hero.scrollLeft = 0; });
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && hero.classList.contains('hs-open')) set(false); });
 })();
+
+/* phone: success stories show three, "Load more" reveals the rest */
+(() => {
+  const list = document.querySelector('.stories'), btn = document.querySelector('.load-more');
+  if (!list || !btn) return;
+  btn.addEventListener('click', () => {
+    list.classList.add('is-all');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.closest('.stories-more').hidden = true;
+    const first = list.querySelectorAll('.story-card')[3];
+    if (first) first.querySelector('a')?.focus({ preventScroll: true });
+  });
+})();
