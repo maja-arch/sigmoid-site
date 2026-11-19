@@ -564,3 +564,13 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   const set = () => document.documentElement.style.setProperty('--tkh', `${tk.offsetHeight}px`);
   set(); addEventListener('resize', set); if (document.fonts) document.fonts.ready.then(set);
 })();
+
+/* phone: success stories box slides in from the right edge */
+(() => {
+  const hero = document.querySelector('.hero'), tg = document.querySelector('.hs-toggle'), x = document.querySelector('.hs-close');
+  if (!hero || !tg) return;
+  const set = (open) => { hero.classList.toggle('hs-open', open); tg.setAttribute('aria-expanded', String(open)); };
+  tg.addEventListener('click', () => set(!hero.classList.contains('hs-open')));
+  if (x) x.addEventListener('click', (e) => { e.preventDefault(); set(false); tg.focus(); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && hero.classList.contains('hs-open')) set(false); });
+})();
