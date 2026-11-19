@@ -149,7 +149,8 @@
     const pause = (on) => hero.classList.toggle('is-paused', on);
     title.addEventListener('mouseenter', () => pause(true));
     title.addEventListener('mouseleave', () => pause(false));
-    hero.addEventListener('focusin', () => pause(true));
+    // pause only for keyboard focus; a mouse click on a tab or arrow must not stop the progress line
+    hero.addEventListener('focusin', (e) => { if (e.target.matches(':focus-visible')) pause(true); });
     hero.addEventListener('focusout', () => pause(false));
     document.addEventListener('visibilitychange', () => pause(document.hidden));
     hero.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft' && active > 0) go(active - 1); if (e.key === 'ArrowRight') go(active + 1); });
