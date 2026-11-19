@@ -541,3 +541,14 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   const t0 = performance.now();
   setInterval(() => draw((performance.now() - t0) / 1000), 90);
 })();
+
+/* mobile: clients & success stories under the hero buttons open on tap */
+(() => {
+  const btn = document.querySelector('.hero-more-btn'), box = document.getElementById('heroMore');
+  if (!btn || !box) return;
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    box.classList.toggle('is-open', open);
+  });
+})();

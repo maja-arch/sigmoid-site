@@ -2604,3 +2604,53 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 @media(max-width:800px){.hd-burger{margin-left:auto!important;margin-right:-8px}}
 .menu .menu-cta{justify-content:space-between!important;padding:0 20px!important;font:500 13px/1 var(--text)!important;letter-spacing:.07em!important;text-transform:uppercase!important}
 .menu .menu-cta .arr{margin:0 0 0 auto!important;opacity:1!important;font:inherit}
+
+
+/* =====================================================================
+   ROUND 41 · mobile hero + menu details
+   ===================================================================== */
+/* wrapper is invisible to the layout above phone size */
+.hero-more,.hero-more-in{display:contents}
+.hero-more-btn{display:none}
+
+/* menu: normal-size contact button, bigger numbers in the text colour */
+.menu .menu-cta{width:auto!important;align-self:flex-start;gap:28px}
+.mnav sup{width:28px;padding-top:.45em;font-size:14px;color:var(--ink)}
+
+@media(max-width:800px){
+  /* order on the phone: slider controls on top, then title, text, buttons, then the expandable row */
+  .hero.hv2{display:flex!important;flex-direction:column;padding-top:calc(var(--hd) + 10px)!important}
+  .hv2 .hero-nav{order:0;margin:0 0 22px!important;flex-direction:row!important;align-items:center!important;gap:14px!important}
+  .hv2 .hero-nav>.hero-arrows{order:2!important;padding-top:10px!important;margin:0 0 0 auto!important}
+  .hv2 .hero-tabs{order:1;flex:1;justify-content:space-between;gap:6px!important}
+  .hv2 .hero-tab-label{display:none!important}
+  .hv2 .hero-meta{display:none!important}
+  .hv2 .hero-main{order:1;margin-top:0!important}
+  .hv2 .hero-side{order:2}
+  /* both buttons on one line */
+  .hv2 .hero-foot{display:flex!important;flex-wrap:nowrap!important;gap:8px!important}
+  .hv2 .hero-foot .pill{flex:1 1 0!important;min-width:0;justify-content:center!important;padding:0 10px!important;font-size:11px!important;letter-spacing:.05em!important;height:46px!important}
+  .hv2 .hero-foot .pill .arr{display:none!important}
+  .hv2 .hero-foot .pill-txt{overflow:hidden;text-overflow:ellipsis}
+  /* expandable row */
+  .hero-more-btn{order:3;display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:26px;padding:16px 0;border:0;border-top:1px solid rgba(55,54,54,.2);border-bottom:1px solid rgba(55,54,54,.2);background:none;color:var(--ink);font:500 12px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-align:left}
+  .hm-plus{position:relative;width:16px;height:16px;flex:none;transition:transform .45s var(--soft)}
+  .hm-plus:before,.hm-plus:after{position:absolute;left:0;right:0;top:50%;height:1.5px;margin-top:-.75px;content:"";background:currentColor}
+  .hm-plus:after{transform:rotate(90deg)}
+  .hero-more-btn[aria-expanded=true] .hm-plus{transform:rotate(45deg)}
+  .hero-more{order:4;display:grid!important;grid-template-rows:0fr;transition:grid-template-rows .55s var(--soft)}
+  .hero-more.is-open{grid-template-rows:1fr}
+  .hero-more-in{display:flex!important;flex-direction:column;gap:24px;min-height:0;overflow:hidden}
+  .hero-more.is-open .hero-more-in{padding:22px 0 6px}
+  .hero-more .hero-cred{margin:0!important;max-width:none!important}
+  .hero-more .hero-news.hs{margin:0!important;max-width:none!important}
+}
+@media(max-width:800px){
+  .hero.hv2{min-height:0!important;padding-bottom:28px!important}
+  .hv2 .hero-main,.hv2 .hero-side{align-self:stretch!important;justify-self:stretch!important;width:auto!important}
+  .hv2 .hero-tab .hero-tab-label,.hv2 .hero-tab[aria-selected=true] .hero-tab-label{display:none!important}
+  .hv2 .hero-foot .pill{padding:0 6px!important;font-size:10.5px!important;letter-spacing:.03em!important}
+}
+@media(max-width:800px){.hero.hv2 .hero-foot .pill.pill.pill.pill{padding-left:6px!important;padding-right:6px!important;gap:0!important}}
+@media(max-width:800px){.hero.hv2 .hero-foot .pill.pill.pill.pill{flex:1 1 0!important;width:auto!important;min-width:0!important;max-width:none!important}}
+@media(max-width:800px){.hv2 .hero-foot{align-self:stretch!important;width:100%!important}}

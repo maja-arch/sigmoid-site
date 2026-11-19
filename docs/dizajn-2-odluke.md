@@ -4,7 +4,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Header
 - Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
-- Mobilni meni: bez okvira, veliki tekstualni linkovi (Oswald) sa malim zelenim brojem, ulaze jedan za drugim, zeleni underline na dodir; dole „Contact us" preko cele širine, email i LinkedIn ikonica.
+- Mobilni meni: bez okvira, veliki tekstualni linkovi (Oswald) sa malim brojem (14px, boja teksta), ulaze jedan za drugim, zeleni underline na dodir; dole „Contact us" normalne dužine, email i LinkedIn ikonica.
 - Logo veći (30px visine, 26px na telefonu). Linkovi sa malim zelenim trouglom, „Contact us" kao pravougaono dugme.
 
 ## Hero (slajder)
@@ -14,6 +14,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **Success Stories box** (krem): veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
+- Telefon: tabovi i strelice slajdera skroz gore (bez sata i natpisa tabova), oba dugmeta u jednom redu (bez strelica), a ispod red „Clients & success stories +" koji se na dodir otvori (15+, logotipi i najavni box).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
