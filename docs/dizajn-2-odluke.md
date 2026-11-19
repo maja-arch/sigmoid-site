@@ -10,7 +10,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Naslovi slajdova (u `d2.js`, `SLIDES`): Engineering / shaped [img] around / the challenge. · Software [img] / {development} / for real products. · Electronics / and code [img] that / make hardware work. · Robotic hand [img] / for automated / grocery handling. · Mechanics [img] / designed for / the whole system. (`[img]` = prozor, `{…}` = digitalni efekat, zelena iz brenda).
 - Iznad naslova `{ 01 / 05 — Sigmoid }`. Ispod: podnaslov (širi, ~62ch), pa dva dugmeta levo ispod njega.
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, sat „Novi Sad { … }" desno. Nema separatora preko širine.
-- Gore desno **Success Stories box** (krem): veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04).
+- Gore desno **Success Stories box** (krem): veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
@@ -56,6 +56,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Desno: Expertise kao velika lista + kolone Working with us / Industries / Company. Hover: underline, bez bele.
 - Dno: logo, © Sigmoid d.o.o., Privacy Policy, Terms of Use, Cookies, Landing page; „Design: Elder Design Studio" (https://www.weareelder.com/) i „Back to top ↑" (glatko na vrh).
 - Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu.
+
+## Boje (iz brend fajla u Figmi)
+- Sigmoid Green #98BF5A · Midnight #26233C · Lime cream #DBE580 · Graphite #373636 · Bone #D9D6C9 · Platinum #F1F2F2 — sačuvane u `d2.css` pod tim imenima (`--sigmoid-green`, `--midnight`, `--lime-cream`, `--graphite`, `--bone`, `--platinum`).
+- U brend fajlu su odštampani HEX za Graphite (014744) i Bone (D6D6C9) greške; prave boje su na samim poljima.
 
 ## Tipografija
 - Svi naslovi Oswald Regular (400). Light (300) samo veliki brojevi/skraćenice (01, SW, 15+, 80%) i citati.

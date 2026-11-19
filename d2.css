@@ -2544,3 +2544,25 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .hs .hn-title{padding:.06em 0 .2em!important;margin:-.06em 0 -.2em!important}
 /* ticker keeps moving on hover */
 .ticker:hover .ticker-track{animation-play-state:running!important}
+
+/* =====================================================================
+   BRAND COLOURS (Figma brand guide, "Colour palette", file m8lOExFn0AXrh0L3ZngSpV)
+   Names as in the guide. Values are the actual swatch colours on the guide page
+   (the HEX labels printed there for Graphite and Bone contain typos).
+   ===================================================================== */
+:root{
+  --sigmoid-green:#98BF5A; /* 01 Sigmoid Green */
+  --midnight:#26233C;      /* 02 Midnight */
+  --lime-cream:#DBE580;    /* 03 Lime cream */
+  --graphite:#373636;      /* 04 Graphite */
+  --bone:#D9D6C9;          /* 05 Bone */
+  --platinum:#F1F2F2;      /* 06 Platinum */
+  /* the site's working names point at the brand colours */
+  --green:var(--sigmoid-green);
+  --lime:var(--lime-cream);
+  --ink:var(--graphite);
+  --bg:var(--platinum);
+}
+
+/* success stories box: bigger title for the lower article */
+.hs .hn-small .hn-title{font-size:clamp(16px,1.25vw,19px)!important;line-height:1.1!important}
