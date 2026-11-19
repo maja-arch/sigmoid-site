@@ -2826,3 +2826,60 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 /* proof number + text changes with each slide */
 .hcr-proof .hcr-num,.hcr-proof .hcr-text{transition:opacity .3s var(--soft),transform .3s var(--soft)}
 .hcr-proof.is-swap .hcr-num,.hcr-proof.is-swap .hcr-text{opacity:0;transform:translateY(6px)}
+
+
+/* =====================================================================
+   LOADER · four discipline icons + counter; on scroll they fly into the slider tabs
+   ===================================================================== */
+html.ld-on,html.ld-on body{overflow:hidden!important}
+.ld{position:fixed;inset:0;z-index:10000;display:grid;grid-template-rows:auto 1fr auto;padding:0 var(--pad);pointer-events:auto}
+.ld-bg{position:absolute;inset:0;z-index:-1;background:var(--bg);
+  background-image:repeating-linear-gradient(90deg,transparent 0 calc(12.5% - 1px),var(--gridline) calc(12.5% - 1px) 12.5%);background-size:calc(100% - 2 * var(--pad)) 100%;background-position:var(--pad) 0;background-repeat:no-repeat;
+  clip-path:inset(0 0 0 0);transition:clip-path 1.05s cubic-bezier(.76,0,.24,1) .12s}
+.ld-logo{height:30px;width:auto;margin-top:calc((var(--hd) - 30px) / 2);opacity:0;animation:ld-fade .8s var(--soft) .1s forwards;transition:opacity .4s var(--soft)}
+.ld-icons{align-self:center;justify-self:center;display:flex;gap:clamp(18px,4vw,64px)}
+.ld-item{display:flex;flex-direction:column;align-items:center;gap:16px;margin:0}
+.ld-item svg{width:clamp(58px,8.4vw,128px);height:clamp(58px,8.4vw,128px);overflow:visible;color:var(--bone);opacity:0;transform:scale(.4) rotate(-36deg);
+  animation:ld-pop .9s cubic-bezier(.2,.9,.25,1.15) forwards;animation-delay:calc(.15s + var(--i) * .14s);transition:transform 1.15s cubic-bezier(.76,0,.24,1),opacity .6s var(--soft)}
+.ld-item svg .tdec{fill:var(--ink)}
+.ld-item svg .sw-dot,.ld-item svg .mx-hole,.ld-item svg .mx-gap,.ld-item svg .rb-slot{fill:currentColor}
+.ld-item svg .sw-rays path{stroke:currentColor}
+.ld-item figcaption{font:500 11px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:0;animation:ld-fade .6s var(--soft) forwards;animation-delay:calc(.45s + var(--i) * .14s);transition:opacity .35s var(--soft)}
+@keyframes ld-pop{to{opacity:1;transform:none}}
+@keyframes ld-fade{to{opacity:1}}
+.ld-foot{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:0 0 clamp(18px,3vh,34px);transition:opacity .35s var(--soft)}
+.ld-count{font:500 12px/1 var(--text);letter-spacing:.12em;color:var(--ink);font-variant-numeric:tabular-nums}
+.ld-count b{font-weight:500}
+.ld-bar{position:relative;height:1px;background:rgba(55,54,54,.18);overflow:hidden}
+.ld-bar i{position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left}
+.ld-enter{display:inline-flex;align-items:center;gap:10px;padding:0;border:0;background:none;color:var(--ink);font:500 12px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;transition:opacity .5s var(--soft)}
+.ld.is-ready .ld-enter{opacity:1}
+.ld-enter[hidden]{display:inline-flex;visibility:hidden}
+.ld-down{position:relative;width:10px;height:10px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-5px;animation:ld-bob 1.4s ease-in-out infinite}
+@keyframes ld-bob{50%{transform:translateY(5px) rotate(45deg)}}
+/* leaving: captions, counter and logo go, icons fly, the panel lifts like a curtain */
+.ld.is-leaving{pointer-events:none}
+.ld.is-leaving .ld-bg{clip-path:inset(0 0 100% 0)}
+.ld.is-leaving .ld-foot,.ld.is-leaving figcaption,.ld.is-leaving .ld-logo{opacity:0!important;animation:none}
+.ld.is-leaving .ld-item svg{animation:none;opacity:1}
+.ld.is-gone .ld-item svg{opacity:0}
+/* page underneath waits: hero title lines, photo window and slider progress start when the loader leaves */
+html.ld-on .hero-title .ln>span{transform:translateY(105%)!important;transition:none!important}
+html.ld-on .hw img{animation:none!important}
+html.ld-on .hero-tab-bar i{animation-play-state:paused!important}
+html.ld-on .hd{transform:translateY(-100%)}
+.hd{transition:transform .9s cubic-bezier(.76,0,.24,1)}
+@media(max-width:800px){
+  .ld-icons{gap:14px}
+  .ld-item{gap:12px}
+  .ld-item figcaption{font-size:9px;letter-spacing:.08em}
+  .ld-foot{grid-template-columns:auto 1fr;row-gap:16px}
+  .ld-enter{grid-column:1/-1;justify-self:center}
+  .ld-logo{height:26px;margin-top:calc((var(--hd) - 26px) / 2)}
+}
+@media(prefers-reduced-motion:reduce){.ld{display:none!important}html.ld-on,html.ld-on body{overflow:auto!important}}
+/* loader icons: the entrance runs on the figure (the site switches off animations on svg.ticon itself) */
+.ld-item{opacity:0;transform:scale(.4) rotate(-36deg);animation:ld-pop .9s cubic-bezier(.2,.9,.25,1.15) forwards;animation-delay:calc(.15s + var(--i) * .14s)}
+.ld-item svg{opacity:1!important}
+.ld.is-gone .ld-item svg{opacity:0!important}
+.ld.is-leaving .ld-item{animation:none;opacity:1;transform:none}

@@ -2,6 +2,11 @@
 
 Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je probano i nije se svidelo, ne vraćati.
 
+## Loader (`loader.js`)
+- Pri ulasku: ekran u boji sajta sa linijama, logo gore levo, 4 animirane ikonice (Software, Embedded, Robotics, Mechatronics) ulaze jedna za drugom, brojač { 000 % } sa zelenom linijom, pa „Scroll to enter ↓".
+- Na skrol/prevlačenje/↓/Enter/klik: ikonice odlete na svoja mesta u tabovima slajdera (02–05), pozadina se povuče nagore kao zavesa, naslov heroja se ispiše, zaglavlje uklizne, slajder tek tada kreće.
+- Prikazuje se pri svakom učitavanju početne strane (može i samo jednom po poseti, ako se odluči). Ne prikazuje se korisnicima sa isključenim animacijama.
+
 ## Header
 - Logo poravnat sa sadržajem ispod (ista leva ivica), na desktopu i telefonu.
 - Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
