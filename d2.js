@@ -12,26 +12,29 @@
   /* ---------- hero slider (all five slides from Design 1) ---------- */
   const hero = $('.hero');
   const SLIDES = [
-    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', kicker: 'Engineering partner', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'],
+    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', kicker: 'Engineering partner', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'], mlines: ['Engineering', 'shaped [img]', 'around the', 'challenge.'],
       text: 'We help companies develop software, products and systems with the engineering expertise, technical contribution and responsibility each project requires.',
       cta: 'View success stories', href: 'success-stories.html' },
-    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built [img]', 'for products that run', 'in the real world.'],
+    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built [img]', 'for products that run', 'in the real world.'], mlines: ['Software [img]', 'built for products', 'that run in the', 'real world.'],
       text: 'Software built and evolved with engineering experience applied from day one, and deepened over time through knowledge of your product and domain.',
       cta: 'See expertise', href: 'expertise.html#expertise-software' },
-    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'],
+    { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'], mlines: ['Electronics', 'and code [img]', 'that make', 'hardware work.'],
       text: 'Code and electronics designed together with the software and mechanics around them.',
       cta: 'See expertise', href: 'expertise.html#expertise-embedded' },
-    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
+    { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'], mlines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
       text: 'Picking fragile, irregular products reliably, so grocery orders can be automated end to end.',
       cta: 'Read the story', href: 'success-stories.html#story-grocery-robotic-hand' },
-    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img] designed', 'as part of the', 'whole system.'],
+    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img] designed', 'as part of the', 'whole system.'], mlines: ['Mechanics [img]', 'designed as part', 'of the whole', 'system.'],
       text: 'Mechanical design and 3D modelling, developed together with the electronics and software of the same system.',
       cta: 'See expertise', href: 'expertise.html#expertise-mechanical' }
   ];
   const DURATION = 7000;
   const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const phone = matchMedia('(max-width: 800px)');
+  const linesOf = (s) => (phone.matches && s.mlines) || s.lines;
   const plain = (l) => l.replace('[img] ', '').replace(' [img]', '').replace(/[{}]/g, '');
   const lineHTML = (l) => `<span class="ln"><span>${esc(l)
+    .replace(/(\S+) \[img\]/, '<span class="nw">$1 [img]</span>').replace(/\[img\] (\S+)/, '<span class="nw">[img] $1</span>')
     .replace('[img]', `<span class="hw" aria-hidden="true"><img src="${SLIDES[active].photo}" alt=""></span>`)
     .replace(/\{(.+?)\}/, '<span class="scramble" data-scramble>$1</span>')}</span></span>`;
   const title = $('.hero-title');
@@ -40,7 +43,7 @@
   const tabsEl = $('.hero-tabs');
   let active = 0, busy = false;
   if (hero && title && tabsEl) {
-    title.innerHTML = SLIDES[0].lines.map(lineHTML).join('');
+    title.innerHTML = linesOf(SLIDES[0]).map(lineHTML).join('');
     title.setAttribute('aria-label', SLIDES[0].lines.map(plain).join(' '));
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
     SLIDES.forEach((x) => { const im = new Image(); im.src = x.photo; });
@@ -113,11 +116,11 @@
       active = next; busy = true;
       const s = SLIDES[active];
       setTabs(); setV2();
-      if (reduce) { title.innerHTML = s.lines.map(lineHTML).join(''); setText(s); busy = false; return; }
+      if (reduce) { title.innerHTML = linesOf(s).map(lineHTML).join(''); setText(s); busy = false; return; }
       title.classList.add('is-out'); title.classList.remove('is-in');
       setTimeout(() => {
         title.classList.remove('is-out');
-        title.innerHTML = s.lines.map(lineHTML).join('');
+        title.innerHTML = linesOf(s).map(lineHTML).join('');
         if (window.sigmoidScramble) title.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
         void title.offsetWidth;
         title.classList.add('is-in');
@@ -134,6 +137,7 @@
     tabs.forEach((t) => t.addEventListener('click', () => go(Number(t.dataset.i))));
     prevBtn.addEventListener('click', () => { if (active > 0) go(active - 1); });
     prevBtn.disabled = true;
+    phone.addEventListener('change', () => { title.innerHTML = linesOf(SLIDES[active]).map(lineHTML).join(''); title.classList.add('is-in'); });
     setV2();
     $('.hero-next').addEventListener('click', () => go(active + 1));
     const pause = (on) => hero.classList.toggle('is-paused', on);

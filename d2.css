@@ -2803,3 +2803,20 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .hv2 .hero-tabs{-webkit-mask:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 24px),transparent);mask:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 24px),transparent);padding-left:6px}
 }
 @media(min-width:801px){.hs-toggle{display:none!important}}
+@media(max-width:800px){
+  /* slider tabs: no fade; progress line above the active tab like on desktop */
+  .hv2 .hero-tabs{-webkit-mask:none!important;mask:none!important;padding-left:0!important}
+  .hero.hv2 .hero-tabs .hero-tab{opacity:1!important}
+  .hv2 .hero-tab-bar{height:1px!important}
+  /* news toggle: on its own line above the tag, at the right edge */
+  .hk-row{flex-direction:column;align-items:stretch;gap:14px}
+  .hk-row .hs-toggle{order:-1;align-self:flex-end}
+}
+/* the photo window never ends up alone on a line */
+.hero-title .nw{white-space:nowrap}
+@media(max-width:800px){
+  .hv2 .hero-tabs{padding-top:4px!important}
+  .hv2 .hero-tab{margin-top:0!important}
+}
+@media(max-width:800px){.hv2 .hero-title{font-size:14vw!important}.hw{width:1.4em!important}}
+@media(max-width:800px) and (max-height:760px){.hv2 .hero-title{font-size:12.6vw!important}}

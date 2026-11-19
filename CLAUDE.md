@@ -40,6 +40,10 @@ The user (designer) writes in **Serbian**: always reply in Serbian, short and cl
 
 Copy (hero slide titles, subtitles, buttons, section texts) comes from the prototype https://sigmoid-website-prototype.vercel.app/#home — use its wording exactly; do not shorten or rewrite it unless the user asks.
 
+## Desktop vs phone
+
+Desktop is approved: when the user asks for phone changes, scope every CSS rule to `@media(max-width:800px)` and every JS change to the phone breakpoint. Do not change desktop unless the user explicitly asks for it. Phone hero titles use their own line breaks (`mlines` in `SLIDES`, same words as the prototype).
+
 ## Design rules (agreed with the user)
 
 **Colours** — brand palette from the Figma brand guide, saved in `d2.css` under the brand names: `--sigmoid-green #98BF5A` · `--midnight #26233C` · `--lime-cream #DBE580` · `--graphite #373636` · `--bone #D9D6C9` · `--platinum #F1F2F2`. Working aliases used in the CSS: `--green` = Sigmoid Green, `--lime` = Lime cream, `--ink` = Graphite (text), `--bg` = Platinum (page). Extra: `--green-text #4F6E22` for green text on light backgrounds. Use these variables, not new hex values. (The guide's printed HEX for Graphite "014744" and Bone "D6D6C9" are typos; the swatches are #373636 and #D9D6C9.)
