@@ -12,10 +12,10 @@
   /* ---------- hero slider (all five slides from Design 1) ---------- */
   const hero = $('.hero');
   const SLIDES = [
-    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'],
+    { photo: 'images/solve/new-products.jpg', label: 'Sigmoid', kicker: 'Engineering partner', icon: 'sigmoid', lines: ['Engineering', 'shaped [img] around', 'the challenge.'],
       text: 'We help companies develop software, products and systems with the engineering expertise, technical contribution and responsibility each project requires.',
       cta: 'View success stories', href: 'success-stories.html' },
-    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software [img]', '{development}', 'for real products.'],
+    { photo: 'images/solve/long-term.jpg', label: 'Software Development', icon: 'software', lines: ['Software built [img]', 'for products that run', 'in the real world.'],
       text: 'Software built and evolved with engineering experience applied from day one, and deepened over time through knowledge of your product and domain.',
       cta: 'See expertise', href: 'expertise.html#expertise-software' },
     { photo: 'images/bottleneck-detector.jpg', label: 'Embedded', icon: 'embedded', lines: ['Electronics', 'and code [img] that', 'make hardware work.'],
@@ -24,7 +24,7 @@
     { photo: 'images/insights/robotic-hand-black.jpg', label: 'Robotics', icon: 'robotics', lines: ['Robotic hand [img]', 'for automated', 'grocery handling.'],
       text: 'Picking fragile, irregular products reliably, so grocery orders can be automated end to end.',
       cta: 'Read the story', href: 'success-stories.html#story-grocery-robotic-hand' },
-    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img]', 'designed for', 'the whole system.'],
+    { photo: 'images/lyra.jpg', label: 'Mechatronics', icon: 'mechatronics', lines: ['Mechanics [img] designed', 'as part of the', 'whole system.'],
       text: 'Mechanical design and 3D modelling, developed together with the electronics and software of the same system.',
       cta: 'See expertise', href: 'expertise.html#expertise-mechanical' }
   ];
@@ -57,7 +57,7 @@
     const setV2 = () => {
       layers.forEach((l, i) => l.classList.toggle('is-on', i === active));
       hero.classList.toggle('on-first', active === 0);
-      if (kNum) { kNum.textContent = String(active + 1).padStart(2, '0'); kLabel.textContent = SLIDES[active].label; }
+      if (kNum) { kNum.textContent = String(active + 1).padStart(2, '0'); kLabel.textContent = SLIDES[active].kicker || SLIDES[active].label; }
       if (card) {
         const n = (active + 1) % SLIDES.length, ns = SLIDES[n];
         card.querySelector('.hc-count b').textContent = String(n + 1).padStart(2, '0');
@@ -101,6 +101,11 @@
         t.classList.toggle('is-done', i < active);
         restart(t.querySelector('i'));
       });
+      // phone: the tab row scrolls sideways; keep the active tab in view
+      if (tabsEl.scrollWidth > tabsEl.clientWidth + 2) {
+        const t = tabs[active];
+        tabsEl.scrollTo({ left: Math.max(0, t.offsetLeft - tabsEl.offsetLeft - 8), behavior: reduce ? 'auto' : 'smooth' });
+      }
     };
     const go = (index) => {
       const next = (index + SLIDES.length) % SLIDES.length;
@@ -551,4 +556,11 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
     btn.setAttribute('aria-expanded', String(open));
     box.classList.toggle('is-open', open);
   });
+})();
+
+/* phone: hero height leaves room for the moving text strip at the bottom of the screen */
+(() => {
+  const tk = document.querySelector('.ticker'); if (!tk) return;
+  const set = () => document.documentElement.style.setProperty('--tkh', `${tk.offsetHeight}px`);
+  set(); addEventListener('resize', set); if (document.fonts) document.fonts.ready.then(set);
 })();

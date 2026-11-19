@@ -9,12 +9,12 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Hero (slajder)
 - Fazon kao wearetheromans.com: pozadina sajta (vide se vertikalne linije), **ogroman naslov u 3 reda** preko širine, u jednom redu mali **prozor sa fotkom** (visok kao slova, isečeni ćoškovi). Fotka se „učitava" brisanjem odozdo + blagi zum.
-- Naslovi slajdova (u `d2.js`, `SLIDES`): Engineering / shaped [img] around / the challenge. · Software [img] / {development} / for real products. · Electronics / and code [img] that / make hardware work. · Robotic hand [img] / for automated / grocery handling. · Mechanics [img] / designed for / the whole system. (`[img]` = prozor, `{…}` = digitalni efekat, zelena iz brenda).
+- Tekst naslova, podnaslova i dugmadi slajdova se uzima TAČNO sa prototipa https://sigmoid-website-prototype.vercel.app/#home (desktop i telefon): Engineering shaped around the challenge. · Software built for products that run in the real world. · Electronics and code that make hardware work. · Robotic hand for automated grocery handling. · Mechanics designed as part of the whole system. Oznaka prvog slajda: „Engineering partner". U `d2.js` (`SLIDES`) `[img]` označava mesto prozora sa fotkom.
 - Iznad naslova `{ 01 / 05 — Sigmoid }`. Ispod: podnaslov (širi, ~62ch), pa dva dugmeta levo ispod njega.
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **Success Stories box** (krem): veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
-- Telefon: hero zauzima ceo ekran, tabovi i strelice slajdera su na DNU ekrana uređaja (ne gore; bez sata i natpisa tabova), oba dugmeta u jednom redu (bez strelica), a ispod red „Clients & success stories +" koji se na dodir otvori (15+, logotipi i najavni box).
+- Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni se sam pomeri u vidno polje); bez sata, oba dugmeta u jednom redu, sa strelicama, a ispod red „Clients & success stories +" koji se na dodir otvori (15+, logotipi i najavni box).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
