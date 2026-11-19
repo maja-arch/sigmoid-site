@@ -188,7 +188,8 @@
     const set = (open) => {
       menu.hidden = !open;
       menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.textContent = open ? 'Close' : 'Menu';
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open) requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('menu-open'))); else document.documentElement.classList.remove('menu-open');
       document.body.style.overflow = open ? 'hidden' : '';
     };
     menuBtn.addEventListener('click', () => set(menu.hidden));

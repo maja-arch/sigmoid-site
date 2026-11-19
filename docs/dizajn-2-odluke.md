@@ -3,6 +3,8 @@
 Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je probano i nije se svidelo, ne vraćati.
 
 ## Header
+- Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
+- Mobilni meni: bez okvira, veliki tekstualni linkovi (Oswald) sa malim zelenim brojem, ulaze jedan za drugim, zeleni underline na dodir; dole „Contact us" preko cele širine, email i LinkedIn ikonica.
 - Logo veći (30px visine, 26px na telefonu). Linkovi sa malim zelenim trouglom, „Contact us" kao pravougaono dugme.
 
 ## Hero (slajder)
