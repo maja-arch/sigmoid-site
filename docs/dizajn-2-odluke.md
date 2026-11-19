@@ -14,6 +14,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
+- Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
 - Credibility strip na svakom slajdu, dole desno: „15+ mechatronic and robotic systems…" + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.

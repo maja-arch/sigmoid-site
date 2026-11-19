@@ -2533,3 +2533,5 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .insight:hover .insight-title a:not(:hover){animation:none!important}
 /* credibility strip with logos on every slide */
 .hero-cred,.hero:not(.on-first) .hero-cred{opacity:1!important;visibility:visible!important;transform:none!important;display:flex!important}
+/* hero titles: every line aligned left, no indent on the second line */
+.hero-title .ln>span,.hero-title .ln:nth-child(2)>span{padding-left:0!important;margin-left:0!important}
