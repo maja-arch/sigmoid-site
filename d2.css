@@ -2430,3 +2430,6 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .xp:hover .xp-link .pill-txt-u,.xp:focus-visible .xp-link .pill-txt-u{animation:ul-redraw .7s var(--soft)!important}
 .xp:hover .xp-link .arr{transform:translateX(5px)!important}
 .xp .xp-link{margin-top:auto!important;padding-top:12px}
+/* industries: the light parts inside the tab icons in cream, like the card */
+.ind-tab .ind-tab-icon{color:var(--bone)!important}
+.ind-tab .ind-tab-icon .sw-rays path{stroke:var(--bone)!important}
