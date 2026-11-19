@@ -114,3 +114,10 @@ section.cookie.cookie :focus-visible{outline:2px solid var(--brown-d);outline-of
 section.cookie.cookie ::selection{background:#D9D6C9;color:var(--brown-d)}
 @keyframes ck-ul{0%{background-size:0% 1px}100%{background-size:100% 1px}}
 @media(max-width:560px){section.cookie.cookie{left:8px;right:8px;bottom:8px;width:auto;padding:14px 16px}}
+
+/* v3: brand bone (ticker) background, graphite button + link text */
+section.cookie.cookie{--cream:#D9D6C9;transition:opacity .45s cubic-bezier(.2,.7,.1,1),transform .6s cubic-bezier(.2,.7,.1,1),bottom .25s ease-out}
+section.cookie.cookie .cookie-accept{background:#98BF5A;color:#373636}
+section.cookie.cookie .cookie-accept:hover{background:#373636;color:#D9D6C9}
+section.cookie.cookie .cookie-reject{color:#373636}
+section.cookie.cookie .cookie-text a{color:#373636!important}

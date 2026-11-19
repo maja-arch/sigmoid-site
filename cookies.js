@@ -53,6 +53,7 @@
   const open = () => {
     lastFocus = document.activeElement;
     box.hidden = false;
+    lift();
     requestAnimationFrame(() => box.classList.add('is-open'));
   };
   const close = () => {
@@ -60,6 +61,16 @@
     setTimeout(() => { box.hidden = true; }, 350);
     if (lastFocus && lastFocus.focus && lastFocus !== document.body) lastFocus.focus();
   };
+
+  // keep the banner above the footer bar (Back to top etc.) when it scrolls into view
+  const bar = () => document.querySelector('.ft2-bottom, .ft-bar');
+  const lift = () => {
+    const b = bar(); if (box.hidden || !b) return;
+    const over = innerHeight - b.getBoundingClientRect().top;
+    box.style.bottom = over > 0 ? `${Math.round(over + 12)}px` : '';
+  };
+  addEventListener('scroll', lift, { passive: true });
+  addEventListener('resize', lift);
 
   box.addEventListener('click', (e) => {
     const act = e.target.closest('[data-act]')?.dataset.act;

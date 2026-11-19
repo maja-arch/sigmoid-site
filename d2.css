@@ -1916,3 +1916,71 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 #ways-to-start .start-row:hover .start-num,#ways-to-start .start-row:hover .start-more>span{color:var(--ink)}
 @media(max-width:1180px){#ways-to-start .start-list{grid-template-columns:repeat(2,minmax(0,1fr))}#ways-to-start .start-row{min-height:240px}}
 @media(max-width:600px){#ways-to-start .start-list{grid-template-columns:1fr}#ways-to-start .start-row{min-height:0}}
+
+
+/* =====================================================================
+   ROUND 22
+   ===================================================================== */
+/* ways to start: outline cards like expertise (big number, title, text) */
+#ways-to-start .start-row.card{background:rgba(55,54,54,.32)!important;clip-path:var(--facet);min-height:clamp(340px,28vw,440px);padding:16px!important;gap:0}
+#ways-to-start .start-row.card:before{background:var(--bg)}
+#ways-to-start .start-row.card:hover,#ways-to-start .start-row.card:focus-visible{background:rgba(55,54,54,.32)!important}
+#ways-to-start .start-num{margin:clamp(18px,2vw,30px) 0 clamp(14px,1.4vw,22px)!important;font:300 clamp(64px,6.2vw,112px)/.8 var(--display)!important;letter-spacing:-.01em;color:var(--ink)!important}
+#ways-to-start .start-main{gap:12px;justify-content:flex-start}
+#ways-to-start .start-title{font:400 clamp(22px,1.9vw,30px)/1.02 var(--display)!important;text-transform:uppercase}
+#ways-to-start .start-more>span{font:300 17px/1.45 var(--text)!important;color:var(--ink-2)!important}
+@media(max-width:600px){#ways-to-start .start-row.card{min-height:0}}
+
+/* our experts badge: smaller, green, thinner text */
+.people .talk-badge{width:clamp(120px,10vw,150px)!important;top:calc(-1 * clamp(44px,3.6vw,60px))!important}
+.people .talk-badge:before{background:var(--green)!important;inset:0!important}
+.people .talk-badge .badge-ring text{font:400 13px var(--text)!important;letter-spacing:.12em;fill:var(--ink)}
+.people .talk-badge .badge-core{background:var(--lime);width:54%}
+.people .talk-badge:hover .badge-core{background:var(--bg)}
+
+/* footer v3: big statement, two halves split by lines, robot box bottom-left */
+.ft3{--ft-line:rgba(55,54,54,.3);display:flex;flex-direction:column;padding:0!important}
+.ft3-big{margin:0;padding:clamp(36px,4.4vw,72px) clamp(20px,2.6vw,44px) clamp(22px,2.4vw,40px);font:400 clamp(52px,8.4vw,150px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink);border-bottom:1px solid var(--ft-line)}
+.ft3-mid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);border-bottom:1px solid var(--ft-line)}
+.ft3-left{display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:clamp(22px,2.6vw,44px);border-right:1px solid var(--ft-line)}
+.ft3-contact{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.ft3 .tab{color:var(--ink)!important;font-weight:700}
+.ft3-mail{font:400 clamp(28px,2.6vw,44px)/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0% 1px no-repeat;padding-bottom:4px;transition:background-size .6s var(--soft)}
+.ft3-mail:hover{background-size:100% 1px}
+.ft3-contact p{margin:0 0 8px;font:400 17px/1.5 var(--text)}
+.ft3-contact .ph-inline-dark{color:#8A2E22}
+.ft3-boxes{display:flex;align-items:flex-end;gap:8px}
+.ft3-robot{position:relative;width:clamp(190px,16vw,250px);aspect-ratio:1;border:1px solid var(--ft-line);overflow:hidden}
+.ft3 .ft3-robot .buddy{position:absolute!important;left:50%!important;top:50%!important;bottom:auto!important;width:80%!important;margin:0!important;transform:translate(-50%,-48%)!important;z-index:0!important}
+.ft3 .ft3-robot .buddy-body{width:100%!important}
+.ft3-box{display:grid;place-items:center;height:48px;padding:0 18px;border:1px solid var(--ft-line);font:500 13px var(--text);letter-spacing:.07em;text-transform:uppercase;transition:background-color var(--t-hover) var(--soft)}
+.ft3-box:hover{background:rgba(255,255,255,.35)}
+.ft3-right{display:grid;grid-template-columns:auto minmax(0,1fr);gap:32px clamp(28px,3.4vw,64px);padding:clamp(22px,2.6vw,44px)}
+.ft3-bignav{display:flex;flex-direction:column;gap:4px}
+.ft3-bignav a{font:400 clamp(28px,2.5vw,42px)/1.04 var(--display);text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);transition:color var(--t-hover) var(--soft)}
+.ft3-bignav a:hover{color:var(--card)}
+.ft3-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;align-content:start}
+.ft3-details div{display:flex;flex-direction:column;gap:9px}
+.ft3-details .tab{margin-bottom:4px}
+.ft3-details a{font:400 15px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.25em;transition:text-decoration-color var(--t-hover) var(--soft)}
+.ft3-details a:hover{text-decoration-color:var(--ink)}
+.ft3-bottom{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 32px!important;margin:0!important;padding:18px clamp(20px,2.6vw,44px)!important;border-top:0!important}
+.ft3-bottom .ft2-logo img{height:28px;width:auto;filter:brightness(.28) saturate(.6)}
+.ft3-bottom .ft2-legal{justify-content:center}
+.ft3-end{display:flex;align-items:center;gap:24px}
+.ft3-top{font-weight:500;background:linear-gradient(var(--ink),var(--ink)) 0 100%/100% 1px no-repeat;padding-bottom:2px}
+.ft3-top:hover{animation:ul-redraw .7s var(--soft)}
+@media(max-width:1180px){
+  .ft3-mid{grid-template-columns:1fr}
+  .ft3-left{border-right:0;border-bottom:1px solid var(--ft-line);flex-direction:row;align-items:flex-end;flex-wrap:wrap}
+  .ft3-bottom{grid-template-columns:1fr auto}
+  .ft3-bottom .ft2-legal{grid-column:1/-1;grid-row:2;justify-content:flex-start}
+}
+@media(max-width:700px){
+  .ft3-left{flex-direction:column;align-items:flex-start}
+  .ft3-right{grid-template-columns:1fr}
+  .ft3-details{grid-template-columns:1fr 1fr}
+  .ft3-bottom{grid-template-columns:1fr}
+  .ft3-end{flex-wrap:wrap;gap:10px 24px}
+}
+#ways-to-start .start-row.card{min-height:clamp(280px,22vw,330px)}
