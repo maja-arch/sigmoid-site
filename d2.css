@@ -1807,3 +1807,25 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 .ft2 .ft2-brand .buddy{width:clamp(300px,30vw,460px)!important;z-index:1!important;top:0}
 .ft2-word{z-index:2}
 @media(max-width:800px){.ft2-brand{padding-top:150px!important}.ft2-word{width:88%!important}.ft2 .ft2-brand .buddy{width:min(64vw,260px)!important}}
+
+
+/* =====================================================================
+   ROUND 19 · footer: round-17 look, robot centred and peeking up from
+   behind the separator, logo bottom-left, legal row + design credit
+   ===================================================================== */
+.ft2-grid{padding-bottom:0!important}
+.ft2-brand{--rw:clamp(260px,25vw,390px);position:relative;display:flex!important;align-items:flex-end;justify-content:flex-start!important;height:calc(var(--rw) * .74);padding:0!important;margin:clamp(24px,3vw,48px) 0 0!important;overflow:hidden}
+.ft2 .ft2-brand .buddy{position:absolute!important;left:50%!important;top:0!important;bottom:auto!important;width:var(--rw)!important;transform:translate(-50%,0)!important;margin:0!important;z-index:0!important}
+.ft2-brand .ft2-logo{position:relative;z-index:1;padding-bottom:clamp(14px,1.6vw,22px)}
+.ft2-brand .ft2-logo img{height:clamp(28px,2.4vw,38px)}
+.ft2-bottom{margin-top:0!important;justify-content:space-between;gap:12px 24px}
+.ft2-legal{display:flex;flex-wrap:wrap;gap:6px 22px;margin-left:0!important}
+.ft2-credit a{text-decoration:underline;text-underline-offset:.2em;text-decoration-color:rgba(55,54,54,.4);transition:text-decoration-color var(--t-hover) var(--soft)}
+.ft2-credit a:hover{text-decoration-color:var(--ink)}
+@media(max-width:800px){
+  .ft2-brand{--rw:min(60vw,260px);justify-content:center!important;height:calc(var(--rw) * .74 + 56px)}
+  .ft2-brand .ft2-logo{position:absolute;left:0;top:0;padding:0}
+  .ft2 .ft2-brand .buddy{top:64px!important}
+  .ft2-bottom{flex-direction:column;align-items:flex-start}
+  .ft2-bottom,.ft2 .buddy{padding-bottom:0}
+}
