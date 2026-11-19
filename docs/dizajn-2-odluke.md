@@ -57,6 +57,9 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dno: logo, © Sigmoid d.o.o., Privacy Policy, Terms of Use, Cookies, Landing page; „Design: Elder Design Studio" (https://www.weareelder.com/) i „Back to top ↑" (glatko na vrh).
 - Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu.
 
+## Tipografija
+- Svi naslovi Oswald Regular (400). Light (300) samo veliki brojevi/skraćenice (01, SW, 15+, 80%) i citati.
+
 ## Linkovi (svuda)
 - Na hover se underline iznova iscrta, na svim linkovima (i u footeru, i u cookie banneru).
 - Pozadinske vertikalne linije: nema linije skroz desno.

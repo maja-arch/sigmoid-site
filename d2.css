@@ -2535,3 +2535,7 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .hero-cred,.hero:not(.on-first) .hero-cred{opacity:1!important;visibility:visible!important;transform:none!important;display:flex!important}
 /* hero titles: every line aligned left, no indent on the second line */
 .hero-title .ln>span,.hero-title .ln:nth-child(2)>span{padding-left:0!important;margin-left:0!important}
+
+/* titles: all Oswald Regular; big numbers, abbreviations and quotes stay Light */
+.h2-long,.mod-title,.closing-title,.combine-big,h1,h2,h3{font-weight:400!important}
+.giant,.xp-abbr,.counter-num,.hcr-num,.start-num,.client-quote{font-weight:300!important}

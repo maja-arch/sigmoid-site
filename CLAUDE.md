@@ -40,7 +40,7 @@ The user (designer) writes in **Serbian**: always reply in Serbian, short and cl
 
 **Colours** (CSS variables): `--bg #F1F2F2` page (platinum) · `--ink #373636` text (graphite) · `--green #98BF5A` brand green · `--lime #DBE580` · `--bone #D9D6C9` cream (ticker, active states, boxes) · `--green-text #4F6E22` green text on light background.
 
-**Type:** Oswald for titles, Roboto for text.
+**Type:** Oswald for titles, Roboto for text. **All titles Oswald Regular (400)**; only big numbers/abbreviations (01, SW, 15+, 80%) and client quotes are Oswald Light (300).
 - **Titles are NOT all caps.** Normal case, as written in the text.
 - Section titles are all the same size; card titles are all the same size (`clamp(22px,1.9vw,30px)`); subtitles are all the same size (`clamp(18px,1.4vw,22px)`, weight 300).
 - Small labels above titles use curly braces: `{ Expertise }`, `{ 01 / 05 — Sigmoid }` — never `[ ]`.
