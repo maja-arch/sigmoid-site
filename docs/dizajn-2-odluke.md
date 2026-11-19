@@ -16,7 +16,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
-- Credibility strip samo na prvom slajdu, dole desno: „15+ mechatronic and robotic systems…" + 4 mesta za logotipe klijenata (placeholderi „Client logo" — zameniti pravim logotipima uz dozvolu klijenata).
+- Credibility strip samo na prvom slajdu, dole desno: „15+ mechatronic and robotic systems…" + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.
@@ -55,6 +55,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Desno: Expertise kao velika lista + kolone Working with us / Industries / Company. Hover: underline, bez bele.
 - Dno: logo, © Sigmoid d.o.o., Privacy Policy, Terms of Use, Cookies, Landing page; „Design: Elder Design Studio" (https://www.weareelder.com/) i „Back to top ↑" (glatko na vrh).
 - Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu.
+
+## Linkovi (svuda)
+- Na hover se underline iznova iscrta, na svim linkovima (i u footeru, i u cookie banneru).
+- Pozadinske vertikalne linije: nema linije skroz desno.
 
 ## Cookie banner
 - Krem pozadina, tamno braon tekst, manji tekst, niži. Samo „Accept" (dugme) i „Reject" (link). Ne prekriva footer bar ni pokretnu traku ispod heroja.

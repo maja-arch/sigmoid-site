@@ -2504,3 +2504,27 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
   .hero:not(.on-first) .hero-cred{display:none}
 }
 @media(min-width:1181px){.hero-news.hs{justify-self:end}}
+
+/* every link: the underline redraws on hover */
+.ft3-details a,.ft2-legal a,.ft3-mid p a,.ft2-credit a{text-decoration:none!important;padding-bottom:2px;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0% 1px no-repeat}
+.ft2-credit a{background-size:100% 1px}
+.ft3-details a:hover,.ft2-legal a:hover,.ft3-mid p a:hover,.ft2-credit a:hover,
+.ft3-details a:focus-visible,.ft2-legal a:focus-visible,.ft3-mid p a:focus-visible,.ft2-credit a:focus-visible{animation:ul-redraw .7s var(--soft) forwards}
+.ft3-bignav a:hover,.ft3-mail:hover,.insight-title a:hover,.insight:hover .insight-title a{animation:ul-redraw .7s var(--soft) forwards}
+.ft3-bignav a:hover,.ft3-mail:hover{background-size:100% 1px}
+section.cookie a{text-decoration:none!important;background:linear-gradient(var(--green),var(--green)) 0 100%/100% 1px no-repeat;padding-bottom:1px}
+section.cookie a:hover{animation:ul-redraw .7s var(--soft)}
+
+/* expertise cards: inner parts of the icon follow the card colour (no white sliver on hover) */
+.xp .xp-icon{transition:transform .8s var(--ease),color var(--t-hover) var(--soft)}
+.xp:hover .xp-icon{color:var(--bone)!important}
+.xp:hover .xp-icon .sw-rays path{stroke:var(--bone)!important}
+/* background grid: no line on the far right edge (retina screens showed a sliver) */
+body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
+
+/* credibility strip: real client logos, 3 per row (same on mobile, just smaller) */
+.hcr-logos{grid-template-columns:repeat(3,1fr)!important;gap:4px 10px!important}
+.hcr-logos li{height:40px!important;border:0!important}
+.hcr-logos img{display:block;width:auto;max-width:78%;max-height:26px;height:auto;opacity:.8}
+.hcr-logos li:nth-child(4) img,.hcr-logos li:nth-child(5) img{max-height:32px}
+@media(max-width:800px){.hcr-logos li{height:34px!important}.hcr-logos img{max-height:22px}.hcr-logos li:nth-child(4) img,.hcr-logos li:nth-child(5) img{max-height:28px}.hcr-proof{font-size:14px}}
