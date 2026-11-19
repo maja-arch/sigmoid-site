@@ -65,8 +65,13 @@
   // keep the banner above the footer bar (Back to top etc.) when it scrolls into view
   const bar = () => document.querySelector('.ft2-bottom, .ft-bar');
   const lift = () => {
-    const b = bar(); if (box.hidden || !b) return;
-    const over = innerHeight - b.getBoundingClientRect().top;
+    if (box.hidden) return;
+    let over = 0;
+    const b = bar();
+    if (b) over = Math.max(over, innerHeight - b.getBoundingClientRect().top);
+    // the moving text strip under the hero: while it sits at the bottom of the screen, stay above it
+    const tk = document.querySelector('.ticker');
+    if (tk) { const r = tk.getBoundingClientRect(); const zone = box.offsetHeight + 40; if (r.top < innerHeight && r.bottom > innerHeight - zone) over = Math.max(over, innerHeight - r.top); }
     box.style.bottom = over > 0 ? `${Math.round(over + 12)}px` : '';
   };
   addEventListener('scroll', lift, { passive: true });

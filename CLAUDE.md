@@ -55,6 +55,12 @@ Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--face
 
 **Digital effect:** words marked `<span class="scramble" data-scramble>` flicker through 0/1 and letters ("development", "Data Centers").
 
+**Outlines (cards, buttons, tags):** a real `border:1px solid transparent` with the line colour as the element background and the fill layer (`:before`/`:after`) at `inset:0`; corners cut with `var(--facetx)` (only the corners are clipped). Never go back to "fill layer inset by 1px" — it looks uneven and shimmers on scaled laptop screens (125%). Test at `deviceScaleFactor 1.25`.
+
+**Hero title:** each line is a mask for the entry animation; it has extra room below/above so letters like g, p, y are never cut. Check every slide when changing the title size.
+
+**Favicon:** the assembling ball, animated in `d2.js` (drawn on a canvas from the `.lopta-anim` paths).
+
 **Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse, on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
 
 ## Content still to replace before launch

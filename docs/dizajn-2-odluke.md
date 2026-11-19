@@ -14,6 +14,9 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
+- Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
+- Favicon: animirana lopta koja se sklapa.
+
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.
 - Kartica „How disciplines combine": „Example:" tanje (200), naslov primera 300 sa zelenim underline-om koji se iscrtava + strelica.
@@ -23,7 +26,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Sam prelazi na sledeću industriju na 7 s, klik takođe radi (resetuje tajmer), staje dok je miš iznad.
 
 ## Success Stories
-- Bez separatora. Linkovi „Read the story" zeleni underline.
+- Bez separatora. „Read the story": zeleni underline koji se iscrtava na hover + duga tanka strelica.
 
 ## What clients say
 - Veliki font citata. Strelice decagoni, hover samo krem, bez bordera.
@@ -32,15 +35,17 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Animirana „lopta" (poliedar se sklapa); ista ikonica i kao prva u brojačima.
 
 ## Possible ways to start
-- Naslov + podnaslov levo, dugme „See how we work" gore desno. 4 kartice jedna do druge (kao Expertise: veliki broj, naslov, tekst). Bez strelica.
+- Naslov + podnaslov levo, dugme „See how we work" gore desno. 4 kartice jedna do druge (kao Expertise: veliki broj, naslov, tekst). Bez strelica. Razmaci između kartica padaju tačno na linije u pozadini; brojevi 01–04 sa digitalnim efektom; manje praznog prostora na dnu.
 
 ## Our Experts
+- Biografija tačno 2 reda.
 - Okrugli bedž sa tekstom u krug („Talk to our engineering team"), zelen, robot u sredini (manji). Isti robot kao u footeru.
 
 ## Insights
 - Dugme „Read all insights". Linkovi „Read the article" zeleni underline koji se iscrtava + duga tanka strelica.
 
 ## What are you trying to solve?
+- Kraći tekstovi (oko 44 znaka u redu), više razmaka između delova kartice.
 - Dve fotke (kod na monitoru, serverski rekovi), bez inicijala LT/NP, kraći tekstovi, više vazduha. Linkovi „See how it works", „View related work".
 
 ## Footer
@@ -51,4 +56,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu.
 
 ## Cookie banner
-- Krem pozadina, tamno braon tekst, manji tekst, niži. Samo „Accept" (dugme) i „Reject" (link). Ne prekriva footer bar pri skrolu.
+- Krem pozadina, tamno braon tekst, manji tekst, niži. Samo „Accept" (dugme) i „Reject" (link). Ne prekriva footer bar ni pokretnu traku ispod heroja.

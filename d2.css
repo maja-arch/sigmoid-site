@@ -2437,3 +2437,52 @@ svg.ticon{overflow:hidden!important;shape-rendering:geometricPrecision}
 /* titles in normal case (no all caps) */
 :is(h1,h2,h3,.hero-title,.hn-title,.combine-big,.ind-tab-name,.ind-name,.client-quote,.start-title,.ft3-big,.ft3-mail,.ft3-bignav a,.menu .pill),
 :is(h1,h2,h3,.hero-title,.hn-title,.combine-big,.ind-tab-name,.ind-name,.client-quote,.start-title,.ft3-big,.ft3-bignav a) *{text-transform:none!important}
+
+
+/* =====================================================================
+   ROUND 33 · crisp outlines on every screen, story links, ways to start, experts, solve
+   ===================================================================== */
+/* Outlines: a real 1px border (the browser snaps it to whole screen pixels) instead of
+   "background + layer inset by 1px", which turned uneven and shimmered on scaled laptop screens.
+   The clip only cuts the corners; straight edges are left alone so they never get half-pixel blur. */
+*,*:before,*:after{
+  --facetx:polygon(calc(var(--c) + 3px) -3px,calc(100% - var(--c) - 3px) -3px,calc(100% + 3px) calc(var(--c) + 3px),calc(100% + 3px) calc(100% - var(--c) - 3px),calc(100% - var(--c) - 3px) calc(100% + 3px),calc(var(--c) + 3px) calc(100% + 3px),-3px calc(100% - var(--c) - 3px),-3px calc(var(--c) + 3px));
+}
+.card,.counter,.anim-tags li,.story-card .tags li,.ind-tab-tags span{border:1px solid transparent!important;clip-path:var(--facetx)!important}
+.card:before,.counter:before,.anim-tags li:before,.story-card .tags li:before,.ind-tab-tags span:before{inset:0!important;clip-path:var(--facetx)!important}
+.pill:not(.hd-nav .pill):not(.story-card .pill){border:1px solid transparent!important}
+.pill:not(.hd-nav .pill):not(.story-card .pill):after,.cookie .btn:after{inset:0!important}
+
+/* success stories: "Read the story" with the long arrow, underline redraws on hover */
+.story-card .pill{gap:10px!important}
+.story-card .pill .arr{display:inline-block!important;align-self:center;flex:none;width:30px;height:10px;background:currentColor!important;border:0!important;transform:none;transition:transform .45s var(--soft)!important;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 10'%3E%3Cpath d='M0 5H29M24.5.5 29 5l-4.5 4.5' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 10'%3E%3Cpath d='M0 5H29M24.5.5 29 5l-4.5 4.5' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.story-card .pill .arr:before,.story-card .pill .arr:after{display:none!important}
+.story-card:hover .pill .pill-txt-u,.story-card .pill:hover .pill-txt-u,.story-card .pill:focus-visible .pill-txt-u{animation:ul-redraw .7s var(--soft)!important}
+.story-card:hover .pill .arr,.story-card .pill:hover .arr{transform:translateX(5px)!important}
+
+/* possible ways to start: the gaps sit exactly on the background lines, less empty space at the bottom */
+@media(min-width:801px){
+  #ways-to-start .start-list{grid-template-columns:calc(25% - 4.5px) calc(25% - 8px) calc(25% - 8px) calc(25% - 3.5px)!important;column-gap:8px!important}
+}
+#ways-to-start .start-row{min-height:0!important;height:auto!important;padding-bottom:clamp(18px,1.6vw,24px)!important}
+#ways-to-start .start-main{gap:12px!important}
+#ways-to-start .start-num .scramble .bit{color:var(--green)}
+
+/* our experts: bio always two lines */
+.person-bio{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:2.9em;line-height:1.45!important;margin:0!important}
+
+/* what are you trying to solve: shorter text lines, more air between the parts */
+.way .way-facts{gap:clamp(26px,2.6vw,40px)!important}
+.way .way-facts dd{max-width:44ch}
+.way .way-facts>div{display:grid;gap:10px}
+.way{gap:clamp(28px,2.8vw,44px)!important}
+#ways-to-start .start-row.card{border:1px solid transparent!important}
+/* hero photo window: shorter, not so wide */
+.hw{width:1.3em!important}
+@media(max-width:800px){.hw{width:1.2em!important}}
+.person-bio{max-width:40ch}
+.way .way-facts dd{max-width:44ch!important}
+/* hero title: room for the parts of letters below/above the line (g, p, y, accents) */
+.hero-title .ln{padding:.08em 0 .2em!important;margin:-.08em 0 -.2em!important}

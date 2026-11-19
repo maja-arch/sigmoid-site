@@ -121,3 +121,5 @@ section.cookie.cookie .cookie-accept{background:#98BF5A;color:#373636}
 section.cookie.cookie .cookie-accept:hover{background:#373636;color:#D9D6C9}
 section.cookie.cookie .cookie-reject{color:#373636}
 section.cookie.cookie .cookie-text a{color:#373636!important}
+
+section.cookie.cookie{transition:bottom .45s cubic-bezier(.4,0,.2,1),opacity .35s,transform .35s}
