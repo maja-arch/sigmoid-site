@@ -32,9 +32,8 @@ The user (designer) writes in **Serbian**: always reply in Serbian, short and cl
    (PowerShell: `(Get-Content index.html) -replace '\?v=\d+', "?v=$([DateTimeOffset]::Now.ToUnixTimeSeconds())" | Set-Content index.html`).
 2. Check the page at 390px, 1280px and 1440px wide: nothing may stick out horizontally.
 3. Commit on `dizajn-2` with a short message describing the change.
-4. `git push` (origin/dizajn-2).
-5. `vercel deploy --prod --yes`, then confirm the live page shows the change.
-   (Needs the Vercel CLI and `vercel login`; the project link lives in `.vercel/`, which is not in git — on a new computer run `vercel link` and pick `sigmoid-dizajn-2`.)
+4. `git push` (origin/dizajn-2). **That is the deploy:** Vercel is connected to the GitHub repo and publishes every push to `dizajn-2` to production automatically (about a minute). No Vercel CLI needed. Pushes to other branches only make preview links.
+5. After ~1–2 minutes confirm the live page shows the change.
 6. Tell the user in Serbian what changed, by section.
 
 ## Design rules (agreed with the user)
