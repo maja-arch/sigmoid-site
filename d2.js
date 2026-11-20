@@ -44,6 +44,26 @@
   let active = 0, busy = false;
   if (hero && title && tabsEl) {
     title.innerHTML = linesOf(SLIDES[0]).map(lineHTML).join('');
+    // phone: the widest line of each title runs edge to edge; shrink only if the text strip would leave the screen
+    const fitTitle = () => {
+      title.style.removeProperty('font-size');
+      if (!phone.matches) return;
+      const spans = [...title.querySelectorAll('.ln>span')];
+      if (!spans.length) return;
+      const base = parseFloat(getComputedStyle(title).fontSize);
+      spans.forEach((s) => { s.style.display = 'inline-block'; s.style.whiteSpace = 'nowrap'; });
+      const widest = Math.max(...spans.map((s) => s.getBoundingClientRect().width));
+      spans.forEach((s) => { s.style.display = ''; });
+      const avail = title.clientWidth;
+      let fs = Math.min(base * avail / widest * 0.995, 110);
+      const tkh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tkh')) || 46;
+      const limit = Math.round(innerHeight - tkh) + 1;
+      for (let i = 0; i < 40; i++) {
+        title.style.setProperty('font-size', `${fs.toFixed(2)}px`, 'important');
+        if (hero.offsetHeight <= limit || fs <= base * 0.8) break;
+        fs *= 0.97;
+      }
+    };
     title.setAttribute('aria-label', SLIDES[0].lines.map(plain).join(' '));
     hero.style.setProperty('--slide-dur', `${DURATION}ms`);
     SLIDES.forEach((x) => { const im = new Image(); im.src = x.photo; });
@@ -127,6 +147,7 @@
       setTimeout(() => {
         title.classList.remove('is-out');
         title.innerHTML = linesOf(s).map(lineHTML).join('');
+        fitTitle();
         if (window.sigmoidScramble) title.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
         void title.offsetWidth;
         title.classList.add('is-in');
@@ -143,7 +164,9 @@
     tabs.forEach((t) => t.addEventListener('click', () => go(Number(t.dataset.i))));
     prevBtn.addEventListener('click', () => { if (active > 0) go(active - 1); });
     prevBtn.disabled = true;
-    phone.addEventListener('change', () => { title.innerHTML = linesOf(SLIDES[active]).map(lineHTML).join(''); title.classList.add('is-in'); });
+    fitTitle(); if (document.fonts) document.fonts.ready.then(fitTitle);
+    let ft; addEventListener('resize', () => { clearTimeout(ft); ft = setTimeout(fitTitle, 150); });
+    phone.addEventListener('change', () => { title.innerHTML = linesOf(SLIDES[active]).map(lineHTML).join(''); fitTitle(); title.classList.add('is-in'); });
     setV2();
     $('.hero-next').addEventListener('click', () => go(active + 1));
     const pause = (on) => hero.classList.toggle('is-paused', on);
@@ -183,7 +206,8 @@
         track.append(c);
         if (window.sigmoidScramble) c.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
       }
-      track.style.setProperty('--ticker-dur', `${(setW * perHalf) / 110}s`); // ~110px per second
+      const speed = matchMedia('(max-width: 800px)').matches ? 55 : 110; // px per second; slower on phones
+      track.style.setProperty('--ticker-dur', `${(setW * perHalf) / speed}s`);
       lastW = setW;
     };
     let lastW = 0;
