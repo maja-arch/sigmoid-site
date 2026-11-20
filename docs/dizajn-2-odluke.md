@@ -164,3 +164,8 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 ## Runda 74
 - Selekcija teksta na krem boxevima (Accumulated, najavni box, aktivni Industries tab, cookie) je lime cream, da se vidi.
 - Accumulated desno: kompaktni boxevi kao ranije (prirodna visina, poravnati gore, ne razvlače se do visine levog boxa); tekst 18px, broj do 52px.
+
+## Runda 75
+- Footer (DIM): „Let's build it." desno; boxevi zamenjeni — linkovi levo (na telefonu prvi), kontakt + robot desno (na telefonu ispod).
+- Back to top: bez underlinea, iscrtava se samo na hover. LinkedIn hover: samo opacity 80% (footer i meni, DIM) — bez plave.
+- „Tell us about your challenge": veliki naslov u dva reda, u drugom redu zelena tanka strelica između „your" i „challenge."; tekst, linkovi i forma počinju ispod „challenge." (desna polovina) na desktopu. Tamni band ostaje.
