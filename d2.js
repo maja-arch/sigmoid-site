@@ -348,7 +348,7 @@
         }).join('');
         f++;
         if (done < q.length) setTimeout(() => requestAnimationFrame(tick), 40);
-        else { el.textContent = word; el.classList.remove('is-run'); setTimeout(run, 2600); }
+        else { el.textContent = word; el.classList.remove('is-run'); if (!('once' in el.dataset)) setTimeout(run, 2600); }
       };
       tick();
     };

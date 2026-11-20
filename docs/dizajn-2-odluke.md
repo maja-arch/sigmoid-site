@@ -53,7 +53,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Desktop: tri boxa desno zajedno su visoka kao veliki box levo; tekst u njima veći (18–22px), brojevi veći. Telefon: isti veći tekst.
 
 ## Possible ways to start
-- Naslov + podnaslov levo, dugme „See how we work" gore desno. 4 kartice jedna do druge (kao Expertise: veliki broj, naslov, tekst). Bez strelica. Razmaci između kartica padaju tačno na linije u pozadini; brojevi 01–04 sa digitalnim efektom; manje praznog prostora na dnu.
+- Naslov + podnaslov levo, dugme „See how we work" gore desno. 4 kartice jedna do druge (kao Expertise: veliki broj, naslov, tekst). Bez strelica. Razmaci između kartica padaju tačno na linije u pozadini; brojevi 01–04 sa digitalnim efektom koji se desi SAMO JEDNOM kad se stigne do sekcije (bez ponavljanja); manje praznog prostora na dnu.
 
 ## Our Experts
 - Biografija tačno 2 reda.
