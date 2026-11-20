@@ -449,6 +449,9 @@
   const challenge = panel.querySelector('.ind-challenge-text');
   const cta = panel.querySelector('.ind-explore');
   const icons = [...panel.querySelectorAll('.ind-main-icon')];
+  const photo = panel.querySelector('.ind-photo img');
+  const PHOTOS = ['images/solve/server-racks.jpg', 'images/automation-intralogistics.jpg', 'images/bottleneck-detector.jpg', 'images/lyra.jpg'];
+  PHOTOS.forEach((p) => { const im = new Image(); im.src = p; });
   const GLYPHS = '0101010110ABCDEFGHKMNOPRSTUXZ';
   const decode = (el, word) => {
     if (reduce) { el.textContent = word; return; }
@@ -477,6 +480,7 @@
       cta.href = d.href;
       cta.querySelector('.pill-txt').textContent = d.cta;
       icons.forEach((ic, k) => ic.classList.toggle('is-on', k === i));
+      if (photo) photo.src = PHOTOS[i];
       if (d.name.startsWith('Data Centers')) {
         name.innerHTML = '<span class="scramble" data-scramble>Data Centers</span> / AI Infrastructure';
         if (window.sigmoidScramble) window.sigmoidScramble(name.querySelector('[data-scramble]'));

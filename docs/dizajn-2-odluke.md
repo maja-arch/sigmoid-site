@@ -111,3 +111,6 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Zvanični animirani simbol (images/symbol-anim.webp) na vrhu robotove antene (footer i bedž) i kao favicon (frejmovi iz images/favicon-sprite.png, smenjuju se kroz JS).
 - Centriran hero na desktopu je probano i ODBIJENO — hero ostaje poravnat levo, najavni box gore desno, dokaz ispod njega.
 - Širina sajta ostaje kao pre (uži container 1280px probano i ODBIJENO); razmak između boxeva 16px (telefon 12px); razmaci u 2 i 4 kolone padaju na sive linije u pozadini; veći unutrašnji razmak u karticama.
+- Container malo uži na desktopu (oko 50px sa strane). Nav linkovi razmaknutiji. Najavni box i dokaz pomereni malo od desne ivice. Naslovi slajdova +10px, gušći razmak slova; fotka u naslovu uža. Gornji članak u najavnom boxu krupniji (21–26px).
+- Oznake kao „Typical challenge", „Challenge / Sigmoid role / Outcome": regular sa zelenim trouglićem.
+- Industries: veliki box bez separatora, desno fotka industrije (menja se sa industrijom; Energy = privremena fotka Lyra); naslovi odvojeni od ikonica.
