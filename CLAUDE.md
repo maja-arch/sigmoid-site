@@ -71,7 +71,7 @@ Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--face
 
 **Hero title:** each line is a mask for the entry animation; it has extra room below/above so letters like g, p, y are never cut. Check every slide when changing the title size.
 
-**Favicon:** the assembling ball, animated in `d2.js` (drawn on a canvas from the `.lopta-anim` paths).
+**Logo / symbol (official animations from the client):** header uses `images/logo-anim.webp`; the robot's antenna tip (footer and badge) uses `images/symbol-anim.webp`; the favicon cycles frames from `images/favicon-sprite.png` in `d2.js`. Source GIFs were 6 MB each — never embed them directly.
 
 **Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse (no glow around the eyes), visor corners rounded like the ears (rx 10), plain forehead (no cap, no logo, no white highlight), on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
 

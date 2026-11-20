@@ -100,7 +100,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Runda „veliki pregled" (20.11.)
 - SVI boxevi i slike su pravougaoni (bez isečenih ćoškova); strelice slajdera/citata ostaju decagon.
-- Header: statični logo (logo-nav.svg), bez trouglića ispred linkova, linkovi 15.5px; zaglavlje bez pozadine, stoji na vrhu strane (ne prati skrol) — DIM.
+- Header: zvanični animirani logo (images/logo-anim.webp, iz GIF-a od klijenta; simbol se sklapa), bez trouglića ispred linkova, linkovi 15.5px; zaglavlje bez pozadine, stoji na vrhu strane (ne prati skrol) — DIM.
 - Hero desktop: naslov oko 7.4vw (do 140px); najavni box stalne visine (naslovi ograničeni na 3 / 2 reda, bez skakanja); dokaz u pravougaonom boxu iste širine ispod najavnog boxa; strelice outline, hover krem bez okvira; unutrašnji delovi ikonica u tabovima boje pozadine.
 - Expertise: naslov u 3 reda (desktop), manji inicijali, „See expertise"; „{ How disciplines combine }"; naslov kartice manji; tagovi pravougaoni sa animacijom okvira.
 - Industries: bez tagova u levim boxevima; levi stub širi (razmak pada na liniju u pozadini); manji brojevi, veći naslov desno; nove ikonice (Data Centers, Logistics, Manufacturing, Energy) sa animacijama: diskovi pulsiraju, strelice se okreću, šipke kao klipovi, munja treperi.
@@ -108,3 +108,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Insights: na hover samo zum fotke, bez obojenog sloja.
 - What are you trying to solve?: kompaktne kartice (fotka levo, tekst desno na desktopu), oznake regular sa zelenim trouglićem, veći naslovi.
 - Kontakt: „{ Start a conversation }", forma uža na svom panelu, „All fields are required." iznad dugmeta.
+- Zvanični animirani simbol (images/symbol-anim.webp) na vrhu robotove antene (footer i bedž) i kao favicon (frejmovi iz images/favicon-sprite.png, smenjuju se kroz JS).

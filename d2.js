@@ -592,31 +592,17 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   setInterval(step, 5200);
 })();
 
-/* favicon: the assembling ball from "Accumulated engineering experience", drawn frame by frame */
+/* favicon: the brand symbol animation (frames from the official animated symbol), drawn frame by frame */
 (() => {
-  const src = document.querySelector('svg.lopta-anim'); if (!src || !window.Path2D) return;
   let link = document.querySelector('link[rel~="icon"]');
   if (!link) { link = document.createElement('link'); link.rel = 'icon'; document.head.append(link); }
-  const parts = [...src.querySelectorAll('path')].map((p) => ({ path: new Path2D(p.getAttribute('d')), d: parseFloat(p.style.getPropertyValue('--d')) || 0 }));
-  const S = 64, cv = document.createElement('canvas'); cv.width = cv.height = S;
-  const ctx = cv.getContext('2d');
-  const CYCLE = 4.04;
-  const alpha = (t) => { // same keyframes as the css: 0-4% hidden, 16% shown, 94% shown, 100% hidden
-    if (t < 0) return 0;
-    const f = (t % CYCLE) / CYCLE;
-    if (f < .04) return 0; if (f < .16) return (f - .04) / .12; if (f < .94) return 1; return 1 - (f - .94) / .06;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sprite = new Image(); sprite.src = 'images/favicon-sprite.png';
+  sprite.onload = () => {
+    const N = Math.round(sprite.width / 64), cv = document.createElement('canvas'); cv.width = cv.height = 64;
+    const ctx = cv.getContext('2d'); let i = 0;
+    setInterval(() => { ctx.clearRect(0, 0, 64, 64); ctx.drawImage(sprite, i * 64, 0, 64, 64, 0, 0, 64, 64); link.type = 'image/png'; link.href = cv.toDataURL('image/png'); i = (i + 1) % N; }, 80);
   };
-  const draw = (t) => {
-    ctx.clearRect(0, 0, S, S);
-    ctx.save(); ctx.scale(S / 162, S / 162); ctx.translate(0, 2.5);
-    ctx.fillStyle = '#98BF5A';
-    parts.forEach((p) => { const a = alpha(t - p.d); if (a > 0) { ctx.globalAlpha = a; ctx.fill(p.path); } });
-    ctx.restore();
-    link.type = 'image/png'; link.href = cv.toDataURL('image/png');
-  };
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { draw(2); return; }
-  const t0 = performance.now();
-  setInterval(() => draw((performance.now() - t0) / 1000), 90);
 })();
 
 /* mobile: clients & success stories under the hero buttons open on tap */
