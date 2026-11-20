@@ -37,7 +37,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Industries
 - Telefon: veliki box prvi, ispod industrije kao kompaktni redovi (broj + naziv); na dodir se box promeni i stranica klizne do njega.
-- Desno tabovi; aktivni je **čisto krem**, bez okvira (odbijeno: preliv/„liquid" efekat). Svetli delovi ikonica krem.
+- Desktop: tabovi (mali boxevi) LEVO, veliki box DESNO; aktivni tab je **čisto krem**, bez okvira (odbijeno: preliv/„liquid" efekat). Svetli delovi ikonica krem.
 - Sam prelazi na sledeću industriju na 7 s, klik takođe radi (resetuje tajmer), staje dok je miš iznad.
 
 ## Success Stories

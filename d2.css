@@ -3021,3 +3021,9 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 @media(max-width:800px) and (max-height:760px){.hero.hv2{padding-top:calc(var(--hd) + 58px)!important}.hero.hv2 .hk-row .hs-toggle{top:calc(var(--hd) + 12px)!important}}
 @media(max-width:800px){.hero.hv2>.hs-toggle{position:absolute!important;top:calc(var(--hd) + 18px)!important;right:0!important;margin:0!important;z-index:6}}
 @media(max-width:800px) and (max-height:760px){.hero.hv2>.hs-toggle{top:calc(var(--hd) + 12px)!important}}
+/* DESKTOP: industries — small industry boxes on the left, the big panel on the right */
+@media(min-width:801px){
+  .module-ind{grid-template-columns:minmax(260px,302px) minmax(0,1fr)!important}
+  .module-ind .mod-side{order:0!important;grid-column:1!important;grid-row:1!important}
+  .module-ind .mod-main{order:1!important;grid-column:2!important;grid-row:1!important}
+}
