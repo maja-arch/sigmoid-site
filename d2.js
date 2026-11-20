@@ -55,7 +55,7 @@
       const widest = Math.max(...spans.map((s) => s.getBoundingClientRect().width));
       spans.forEach((s) => { s.style.display = ''; });
       const avail = title.clientWidth;
-      let fs = Math.min(base * avail / widest * 0.995, 110);
+      let fs = Math.min(base * avail / widest * 0.85, 60); // about 85% of the screen width
       const tkh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tkh')) || 46;
       const limit = Math.round(innerHeight - tkh) + 1;
       for (let i = 0; i < 40; i++) {
