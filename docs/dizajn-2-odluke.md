@@ -114,3 +114,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Container malo uži na desktopu (oko 50px sa strane). Nav linkovi razmaknutiji. Najavni box i dokaz pomereni malo od desne ivice. Naslovi slajdova +10px, gušći razmak slova; fotka u naslovu uža. Gornji članak u najavnom boxu krupniji (21–26px).
 - Oznake kao „Typical challenge", „Challenge / Sigmoid role / Outcome": regular sa zelenim trouglićem.
 - Industries: veliki box bez separatora, desno fotka industrije (menja se sa industrijom; Energy = privremena fotka Lyra); naslovi odvojeni od ikonica.
+
+## Runda 66 — telefon
+- Footer: LinkedIn na dodir samo opacity 80% (bez plave); robot gore desno, manji footer.
+- Dugmad sekcija (Success Stories, Insights, …) idu ispod sadržaja, ne ispod podnaslova.
+- Accumulated engineering experience: boxevi kao industries panel — broj levo, ikonica gore desno, tekst ispod.
+- Meni: mail ispod linkova (veći font), dole sat + Novi Sad i LinkedIn.
+- Robot: glava oktagon (zajednički crtež, pa važi i za desktop footer i bedž).
