@@ -110,4 +110,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Kontakt: „{ Start a conversation }", forma uža na svom panelu, „All fields are required." iznad dugmeta.
 - Zvanični animirani simbol (images/symbol-anim.webp) na vrhu robotove antene (footer i bedž) i kao favicon (frejmovi iz images/favicon-sprite.png, smenjuju se kroz JS).
 - Centriran hero na desktopu je probano i ODBIJENO — hero ostaje poravnat levo, najavni box gore desno, dokaz ispod njega.
-- Sajt na desktopu: sadržaj najviše 1280px širok; razmak između boxeva 16px (telefon 12px); razmaci u 2 i 4 kolone padaju na sive linije u pozadini; veći unutrašnji razmak u karticama.
+- Širina sajta ostaje kao pre (uži container 1280px probano i ODBIJENO); razmak između boxeva 16px (telefon 12px); razmaci u 2 i 4 kolone padaju na sive linije u pozadini; veći unutrašnji razmak u karticama.

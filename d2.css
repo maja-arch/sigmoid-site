@@ -3213,7 +3213,6 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
    CONTAINER + SPACING · narrower site (max 1280px content), more room between and inside boxes,
    gaps on the background lines wherever the grid allows (2 and 4 columns)
    ===================================================================== */
-@media(min-width:1181px){:root{--pad:max(44px,calc((100vw - 1280px) / 2))}}
 :root{--gap:16px}
 @media(max-width:800px){:root{--gap:12px}}
 /* grids */
@@ -3234,5 +3233,5 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .people .person,.people>.card{padding:clamp(14px,1.3vw,18px)!important}
 
 /* desktop hero back to the left-aligned layout; title capped so the longest line stays left of the latest box in the narrower container */
-@media(min-width:801px){.hv2 .hero-title{font-size:clamp(46px,min(7.2vw,96px),140px)!important}}
+@media(min-width:801px){.hv2 .hero-title{font-size:clamp(46px,7.4vw,140px)!important}}
 #ways-to-start .start-list{column-gap:16px!important}
