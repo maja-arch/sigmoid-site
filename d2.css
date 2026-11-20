@@ -3419,3 +3419,13 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .hd-nav .pill:hover,.hd-nav .pill:focus-visible{background-size:calc(100% - 24px) 1px!important}
   .hd-nav .pill:before,.hd-nav .pill:after{display:none!important}
 }
+/* same gap between a section title and its content as in Industries (28px) when the button moved below */
+#work>.block-head>h2{margin-bottom:28px!important}
+#work>.stories{margin-top:0!important}
+@media(max-width:800px){
+  section:has(>.block-head .head-cta)>.block-head>h2{margin-bottom:28px!important}
+  section:has(>.block-head .head-cta)>.block-head>.head-text{margin-bottom:28px!important}
+  section:has(>.block-head .head-cta)>.block-head>.head-text>.block-sub{margin-bottom:0!important}
+  section:has(>.block-head .head-cta)>.block-head+*{margin-top:0!important}
+}
+@media(min-width:801px){#ways-to-start>.block-head{margin-bottom:0!important}#ways-to-start>.block-head .block-sub{margin-bottom:0!important}#ways-to-start>.block-head+*{margin-top:28px!important}}
