@@ -109,3 +109,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - What are you trying to solve?: kompaktne kartice (fotka levo, tekst desno na desktopu), oznake regular sa zelenim trouglićem, veći naslovi.
 - Kontakt: „{ Start a conversation }", forma uža na svom panelu, „All fields are required." iznad dugmeta.
 - Zvanični animirani simbol (images/symbol-anim.webp) na vrhu robotove antene (footer i bedž) i kao favicon (frejmovi iz images/favicon-sprite.png, smenjuju se kroz JS).
+- Hero desktop: CENTRIRAN, naslov veliki (do 190px; prilagođava se i visini ekrana da se traka vidi), ispod centrirani podnaslov, dugmad i box sa dokazom; najavni box iza jezička uz desnu ivicu (kao na telefonu).
