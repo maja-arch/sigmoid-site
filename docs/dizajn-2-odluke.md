@@ -31,7 +31,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.
-- Kartica „How disciplines combine": „Example:" tanje (200), naslov primera 300 sa zelenim underline-om koji se iscrtava + strelica. Telefon: underline prati tekst kroz redove, strelica je odmah uz poslednju reč.
+- Kartica „How disciplines combine" (telefon: slika iznad preko cele širine, veći naslov ispod): „Example:" tanje (200), naslov primera 300 sa zelenim underline-om koji se iscrtava + strelica. Telefon: underline prati tekst kroz redove, strelica je odmah uz poslednju reč.
 
 ## Industries
 - Telefon: veliki box prvi, ispod industrije kao kompaktni redovi (broj + naziv); na dodir se box promeni i stranica klizne do njega.
