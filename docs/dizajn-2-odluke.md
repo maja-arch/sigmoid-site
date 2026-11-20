@@ -67,7 +67,8 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Levo: Contact (info@sigmoid.rs, Novi Sad, telefon primer), veliki robot desno u levom delu, LinkedIn ikonica (krem, hover tamna).
 - Desno: Expertise kao velika lista + kolone Working with us / Industries / Company. Hover: underline, bez bele.
 - Dno: logo, © Sigmoid d.o.o., Privacy Policy, Terms of Use, Cookies, Landing page; „Design: Elder Design Studio" (https://www.weareelder.com/) i „Back to top ↑" (glatko na vrh).
-- Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu.
+- Robot nosi grafitni kačket (šavovi, šilt napred), globus iz logoa je dugme na vrhu kačketa; oči bez sjaja; vizir sa malim zaobljenjem kao uši.
+- Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu; logo utisnut na čelu robota.
 
 ## Boje (iz brend fajla u Figmi)
 - Sigmoid Green #98BF5A · Midnight #26233C · Lime cream #DBE580 · Graphite #373636 · Bone #D9D6C9 · Platinum #F1F2F2 — sačuvane u `d2.css` pod tim imenima (`--sigmoid-green`, `--midnight`, `--lime-cream`, `--graphite`, `--bone`, `--platinum`).
