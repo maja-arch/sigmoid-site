@@ -2879,3 +2879,13 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .block-head:has(.head-cta){flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
   .block-head .head-cta{margin:0!important;align-self:flex-start!important}
 }
+
+
+/* PHONE ONLY: animated logo in the header (the globe assembles like the ball on the site) */
+.hd-logo-anim{display:none}
+@media(max-width:800px){
+  .hd-brand img{display:none!important}
+  .hd-logo-anim{display:block;height:26px;width:auto;fill:#98BF5A}
+  .hla-mark path{opacity:0;animation:lopta-in 4.04s cubic-bezier(.3,.1,.3,1) infinite;animation-delay:var(--d,0s)}
+}
+@media(max-width:800px) and (prefers-reduced-motion:reduce){.hla-mark path{animation:none;opacity:1}}
