@@ -6,6 +6,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Probano i ODBIJENO (ikonice + brojač + prelaz na skrol). Nema loadera.
 
 ## Header
+- Telefon: zaglavlje bez pozadine i zamućenja, stoji na vrhu strane i odlazi sa skrolom (ne vraća se pri skrolu nagore). Desktop: nepromenjeno.
 - Logo u zaglavlju (desktop i telefon): animirani globus — ista animacija kao favicon (isti delovi lopte, isti redosled i ritam, puna brend zelena); slova mirna.
 - Logo poravnat sa sadržajem ispod (ista leva ivica), na desktopu i telefonu.
 - Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
@@ -66,6 +67,8 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Upisani tekst i placeholderi u Robotu (desktop i telefon), oznake polja ostaju.
 - Polje za poruku je bar 2 reda na telefonu i raste dok se kuca.
 - Telefon: forma odvojena od uvodnog teksta (veći razmak).
+- Sva polja obavezna, zelena * pored oznake + napomena „All fields are required."
+- Greška: koralna boja (#FF9E8C) za liniju polja, oznaku i poruku ispod polja (ikonica !); poruke: ime, email (prazan / neispravan), opis; nestaje dok se ispravlja; fokus na prvo polje sa greškom.
 
 ## Footer
 - Zelena traka. Veliki tekst „Let's build it." (može se menjati).

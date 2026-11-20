@@ -342,11 +342,34 @@
   const sent = document.querySelector('.form-sent');
   const note = form.querySelector('.form-note');
   const btn = form.querySelector('.big-submit');
+  // per-field error state: message under the field, coral line, cleared while typing
+  const fields = [...form.querySelectorAll('input[required], textarea[required]')];
+  const MSG = {
+    name: { missing: 'Please enter your name.' },
+    email: { missing: 'Please enter your work email.', invalid: 'Please enter a valid email, like name@company.com.' },
+    challenge: { missing: 'Please tell us briefly what you are trying to develop or solve.' }
+  };
+  const check = (f) => {
+    const v = f.value.trim();
+    let msg = '';
+    if (!v) msg = MSG[f.name].missing;
+    else if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) msg = MSG[f.name].invalid;
+    const field = f.closest('.big-field');
+    field.classList.toggle('is-invalid', !!msg);
+    f.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    field.querySelector('.field-err').textContent = msg;
+    return !msg;
+  };
+  fields.forEach((f) => {
+    f.addEventListener('input', () => { if (f.closest('.big-field').classList.contains('is-invalid')) check(f); if (!form.querySelector('.is-invalid')) note.textContent = ''; });
+    f.addEventListener('blur', () => { if (f.closest('.big-field').classList.contains('is-invalid')) check(f); });
+  });
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.checkValidity()) {
-      note.textContent = 'Please fill in your name, a work email and a short description.';
-      form.querySelector(':invalid').focus();
+    const bad = fields.filter((f) => !check(f));
+    if (bad.length) {
+      note.textContent = bad.length > 1 ? 'Please fill in the highlighted fields.' : '';
+      bad[0].focus();
       return;
     }
     note.textContent = '';
@@ -363,7 +386,7 @@
     }, 900);
   });
   sent.querySelector('.sent-again').addEventListener('click', () => {
-    form.reset(); sent.hidden = true; form.hidden = false; form.querySelector('input').focus();
+    form.reset(); fields.forEach((f) => { f.closest('.big-field').classList.remove('is-invalid'); f.removeAttribute('aria-invalid'); f.closest('.big-field').querySelector('.field-err').textContent = ''; }); sent.hidden = true; form.hidden = false; form.querySelector('input').focus();
   });
 })();
 
