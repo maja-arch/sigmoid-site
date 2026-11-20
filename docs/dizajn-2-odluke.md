@@ -121,3 +121,8 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Accumulated engineering experience: boxevi kao industries panel — broj levo, ikonica gore desno, tekst ispod.
 - Meni: mail ispod linkova (veći font), dole sat + Novi Sad i LinkedIn.
 - Robot: glava dekagon (zajednički crtež, pa važi i za desktop footer i bedž).
+
+## Runda 67 — desktop
+- Nav linkovi 14px.
+- Najavni box i dokaz ponovo uz desnu ivicu (poravnati sa „Contact us").
+- „{ How disciplines combine }" box više nije celom širinom: zauzima kolone 3–4 (desna polovina), sadržaj složen jedno ispod drugog.

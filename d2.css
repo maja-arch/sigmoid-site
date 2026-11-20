@@ -3328,3 +3328,15 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 @media(max-width:800px){.ft3 .ft3-left{min-height:0!important;height:auto!important;padding-bottom:28px!important}}
 @media(max-width:800px){.ft3 .ft3-left{display:block!important}.ft3 .ft3-boxes{display:none!important}.ft3 .ft3-boxes .ft3-robot{display:block}}
 @media(max-width:800px){.ft3 .ft3-boxes{display:block!important;height:0!important;margin:0!important;padding:0!important}}
+
+/* =====================================================================
+   ROUND 67 · DESKTOP: nav 14px, latest box + proof back to the right edge,
+   "How disciplines combine" half width (columns 3–4)
+   ===================================================================== */
+@media(min-width:801px){
+  .hd-nav .pill{font-size:14px!important}
+  .hero-news.hs,.hv2>.hero-cred{margin-right:0!important}
+  .bento>.combine{grid-column:3/-1!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:22px!important}
+  .bento>.combine .combine-head{width:auto!important}
+  .bento>.combine .combine-side{width:auto!important;margin:0!important;padding:0!important;justify-self:auto!important}
+}
