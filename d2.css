@@ -3564,3 +3564,15 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .contact-band .big-form .big-submit{grid-column:1!important;grid-row:auto!important;justify-self:start!important}
   .contact-band .big-form .big-field>.tab{white-space:normal!important}
 }
+
+/* =====================================================================
+   ROUND 76
+   ===================================================================== */
+/* industries: "Different industry?" under the boxes, always visible (like the line under "What are you trying to solve?") */
+.ind-other-out{display:block!important;margin-top:clamp(20px,2.4vw,32px)!important;padding-top:0!important;border-top:0!important}
+.ind-other-out:before{display:none!important}
+/* our experts: name and role only */
+.person-role{margin:0;font:300 clamp(16px,1.2vw,18px)/1.4 var(--text);color:var(--ink)}
+.person .person-body{gap:6px!important}
+/* contact: links further from the text */
+.contact-band .closing-copy .closing-links{margin-top:clamp(22px,2vw,30px)!important}

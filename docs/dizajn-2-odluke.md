@@ -169,3 +169,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Footer: naslov desno + zamenjeni boxevi probano i ODBIJENO — footer ostaje kakav je bio.
 - Back to top: bez underlinea, iscrtava se samo na hover. LinkedIn hover: samo opacity 80% (footer i meni, DIM) — bez plave.
 - „Tell us about your challenge": ogroman naslov sa strelicom probano i ODBIJENO. Sada jednostavno i kompaktno (desktop): levo tag, naslov (36–56px), tekst i linkovi; desno forma (Name i Email u redu, opis, dugme). Visina ~385px.
+
+## Runda 76
+- Industries: „Different industry?…" ispod boxeva (van panela), uvek vidljivo.
+- Success Stories: bez oznake („01 / Logistics") iznad naslova.
+- Our Experts: samo ime i uloga (Leadership / Department lead / Senior engineer) — bez opisa, Expertise area i Worked on. Imena su i dalje primeri.
+- What are you trying to solve: tekstovi iz prototipa (duže verzije „Your situation" / „What Sigmoid takes on").
+- Kontakt: linkovi odmaknuti od teksta.
