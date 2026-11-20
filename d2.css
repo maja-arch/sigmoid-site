@@ -3053,3 +3053,18 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 @media(max-width:800px) and (max-height:760px){.hv2>.hero-cred{margin-top:10px!important}.hv2>.hero-cred .hcr-num{font-size:32px}.hv2>.hero-cred .hcr-text{font-size:14px}}
 /* no tag above the hero title (desktop and phone) */
 .hv2 .hk-row,.hv2 .hero-kicker{display:none!important}
+
+/* Accumulated engineering experience: the three proof boxes fill the height of the big box; bigger text; big ball static */
+.module-about{align-items:stretch!important}
+.module-about .about-proofs{display:flex!important;flex-direction:column;height:auto}
+.module-about .proofs{flex:1;display:grid!important;grid-template-rows:repeat(3,minmax(0,1fr));gap:var(--gap)!important}
+.module-about .counter{height:auto!important;min-height:0;align-items:center}
+.module-about .counter-label{font-size:clamp(18px,1.5vw,22px)!important;line-height:1.35!important}
+.module-about .counter-num{font-size:clamp(56px,4.6vw,76px)!important}
+.module-about .mod-main .lopta-anim path{animation:none!important;opacity:1!important;fill:var(--green)}
+@media(max-width:800px){
+  .module-about .proofs{grid-template-rows:none}
+  .module-about .counter{padding-top:22px!important;padding-bottom:22px!important}
+  .module-about .counter-label{font-size:17px!important}
+  .module-about .counter-num{font-size:48px!important}
+}
