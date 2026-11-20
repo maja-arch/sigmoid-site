@@ -176,6 +176,3 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Our Experts: samo ime i uloga probano i ODBIJENO — kartice ostaju sa ulogom, imenom, opisom, Expertise area i Worked on.
 - What are you trying to solve: tekstovi iz prototipa (duže verzije „Your situation" / „What Sigmoid takes on").
 - Kontakt: linkovi odmaknuti od teksta.
-
-## Runda 77 — desktop hero, novi raspored (inspiracija: grape.ua)
-- Naslov slajda gore; dole levo animirani poliedar (sklapa se); tekst i dugmad dole, od sredine; najavni box gore desno i dokaz dole desno ostaju; tabovi, strelice i sat ispod. Telefon nepromenjen.
