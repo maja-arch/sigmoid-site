@@ -3573,3 +3573,18 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .ind-other-out:before{display:none!important}
 /* contact: links further from the text */
 .contact-band .closing-copy .closing-links{margin-top:clamp(22px,2vw,30px)!important}
+
+/* =====================================================================
+   ROUND 77 · DESKTOP HERO, new layout: title at the top; at the bottom the
+   assembling polyhedron on the left and the text + buttons from the middle
+   ===================================================================== */
+.hero.hv2>.hero-mark{display:none}
+@media(min-width:801px){
+  .hero.hv2>.hero-main{grid-row:1!important;grid-column:1!important;align-self:start!important;padding-top:clamp(8px,2vh,28px)!important;margin:0!important}
+  .hero.hv2>.hero-side{grid-row:2!important;grid-column:1!important;align-self:end!important;justify-self:end!important;width:min(100%,clamp(440px,40vw,600px))!important;margin:0 clamp(16px,2vw,32px) 0 0!important;padding:0!important;display:flex!important;flex-direction:column!important;gap:clamp(18px,2vh,26px)!important}
+  .hero.hv2>.hero-side .hero-intro,.hero.hv2>.hero-side .hero-lede{margin:0!important;max-width:none!important}
+  .hero.hv2>.hero-side .hero-foot{margin:0!important}
+  .hero.hv2>.hero-mark{display:block;grid-row:2;grid-column:1;align-self:end;justify-self:start;margin-bottom:4px;pointer-events:none}
+  .hero.hv2>.hero-mark .hero-lopta{display:block;width:clamp(84px,7.6vw,120px);height:auto;fill:var(--green)}
+}
+@media(min-width:801px){.hero.hv2>.hero-mark{position:relative!important;inset:auto!important;width:auto!important;height:auto!important;transform:none!important;opacity:1!important;background:none!important;border:0!important;z-index:1}}
