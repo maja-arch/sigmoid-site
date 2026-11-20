@@ -272,14 +272,16 @@
   } else {
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (!e.isIntersecting) return;
-      const t = e.target;
+      // a block-head can be display:contents (button moved after the content) and then has no box: its title stands in for it
+      const t = e.target.matches('.block-head h2') ? e.target.closest('.block-head') : e.target;
       t.classList.add('in');
       $$('[data-count]', t).forEach(countUp);
       $$('.glitch', t).forEach((g) => setTimeout(() => glitch(g), 250));
       if (t.classList.contains('glitch')) glitch(t);
-      io.unobserve(t);
+      io.unobserve(e.target);
     }), { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
     targets.forEach((t) => io.observe(t));
+    $$('.block-head h2').forEach((h) => io.observe(h));
     const qio = new IntersectionObserver((es) => es.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add('in'); glitch(e.target); qio.unobserve(e.target); }
     }), { threshold: 0.6 });
