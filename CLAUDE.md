@@ -42,6 +42,8 @@ Copy (hero slide titles, subtitles, buttons, section texts) comes from the proto
 
 ## Desktop vs phone
 
+When the user writes **"DIM"** it means *desktop i mobile* — apply the change to both.
+
 Desktop is approved: when the user asks for phone changes, scope every CSS rule to `@media(max-width:800px)` and every JS change to the phone breakpoint. Do not change desktop unless the user explicitly asks for it. Phone hero titles use their own line breaks (`mlines` in `SLIDES`, same words as the prototype).
 
 ## Design rules (agreed with the user)

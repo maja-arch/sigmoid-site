@@ -666,3 +666,11 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
   const fit = () => { ta.style.height = 'auto'; ta.style.height = `${ta.scrollHeight}px`; };
   ta.addEventListener('input', fit); addEventListener('resize', fit);
 })();
+
+/* logo (header and footer) goes to the homepage; on the homepage itself it glides back to the top */
+document.querySelectorAll('.hd-brand, .ft2-logo').forEach((a) => a.addEventListener('click', (e) => {
+  const here = /(^|\/)(index\.html)?$/.test(location.pathname);
+  if (!here) return;
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}));
