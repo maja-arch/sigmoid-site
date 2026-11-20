@@ -3092,3 +3092,119 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 /* LinkedIn icon hover: official LinkedIn blue (DIM) */
 .ft3-contact .ft3-in,.menu-in{transition:color var(--t-hover) var(--soft),opacity var(--t-hover) var(--soft)!important}
 .ft3-contact .ft3-in:hover,.ft3-contact .ft3-in:focus-visible,.menu-in:hover,.menu-in:focus-visible{color:#0A66C2!important;opacity:1!important}
+
+/* =====================================================================
+   ROUND 60 · big review (DIM unless noted)
+   ===================================================================== */
+/* every box with cut corners becomes a plain rectangle (arrows keep their decagon) */
+*,*:before,*:after{--c:0px!important}
+.hs-toggle{clip-path:none!important}
+
+/* header: static logo, no triangles, slightly bigger links, no background, stays at the top of the page */
+.hd .hd-brand img.hd-logo{display:block!important;height:30px;width:auto}
+@media(max-width:800px){.hd .hd-brand img.hd-logo{height:26px}}
+.hd-nav .pill:after{display:none!important;content:none!important}
+.hd-nav .pill{font-size:15.5px!important}
+.hd{position:absolute!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;transform:none!important}
+.menu-open .hd{position:fixed!important}
+
+/* hero (desktop): much bigger titles; latest box and proof box share one width; proof in a rectangle box */
+@media(min-width:801px){
+  .hv2 .hero-title{font-size:clamp(48px,8.2vw,150px)!important}
+  .hero-news.hs,.hv2>.hero-cred{width:clamp(330px,26vw,390px)!important}
+}
+.hv2>.hero-cred{border:1px solid rgba(55,54,54,.32)!important;padding:16px 18px!important;background:transparent}
+.hv2>.hero-cred .hcr-text{font-size:15px!important;max-width:none!important}
+@media(max-width:800px){.hv2>.hero-cred{padding:12px 14px!important}.hv2>.hero-cred .hcr-text{font-size:14px!important}}
+/* latest box keeps the same height while it rotates (no jumping) */
+.hs .hn-lead .hn-title{min-height:calc(3 * 1.1em)}
+.hs .hn-lead .hs-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;line-height:1.1}
+.hs .hn-small .hn-title{min-height:calc(2 * 1.15em)}
+.hs .hn-small .hs-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;line-height:1.15}
+.hs .hs-tag{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* slider arrows: both outline; hover = brand cream, no outline */
+.hero.hv2 .hero-nav .hero-arrow{background:rgba(55,54,54,.55)!important}
+.hero.hv2 .hero-nav .hero-arrow:before{background:var(--bg)!important;inset:1px!important}
+.hero.hv2 .hero-nav .hero-arrow:hover:not(:disabled),.hero.hv2 .hero-nav .hero-arrow:hover:not(:disabled):before{background:var(--bone)!important}
+.hero.hv2 .hero-nav .hero-arrow:disabled{opacity:.4}
+/* slider tab icons: inner parts in the page colour, not cream */
+.hv2 .hero-tab .tab-ticon{color:var(--bg)!important}
+.hv2 .hero-tab .tab-ticon .sw-rays path{stroke:var(--bg)!important}
+
+/* expertise: section title in three lines (desktop), smaller initials, combine title smaller */
+.br-d{display:none}
+@media(min-width:801px){.br-d{display:inline}}
+.xp .xp-abbr{font-size:clamp(44px,4vw,60px)!important}
+@media(min-width:801px){.combine-big{font-size:clamp(34px,3.2vw,48px)!important}}
+
+/* industries: no tags in the industry boxes; left column wider so the gap sits on a background line; smaller numbers, bigger panel title */
+.ind-tab-tags{display:none!important}
+@media(min-width:801px){
+  .module-ind{grid-template-columns:calc(25% - 4.5px) minmax(0,1fr)!important;column-gap:8px!important}
+}
+.module-ind .giant{font-size:clamp(64px,6.2vw,96px)!important}
+#industries .module-ind .mod-main .mod-title{font-size:clamp(28px,3vw,44px)!important;line-height:1.02!important}
+/* industry icons (new, from the brand set) with their own motion */
+.ind-ic .ic-body,.ind-ic .ic-part{fill:var(--ink)}
+.ind-ic .ic-cut{fill:var(--ic-bg,var(--bg))}
+.ind-tab{--ic-bg:var(--bg)}
+.ind-tab[aria-selected=true]{--ic-bg:var(--bone)}
+.module-ind .mod-main{--ic-bg:var(--bg)}
+.ind-tab .ind-tab-icon.ind-ic{width:clamp(84px,7vw,112px)!important;height:auto!important;margin-top:6px}
+.ind-ic.mod-icon{width:40px!important;height:auto!important}
+.ic-dc .ic-part{animation:ic-dc 2.4s ease-in-out infinite;animation-delay:calc(var(--i) * .14s)}
+@keyframes ic-dc{0%,55%,100%{opacity:1}28%{opacity:.2}}
+.ic-lg .ic-spin{transform-box:view-box;transform-origin:131px 125px;animation:ic-lg 5s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes ic-lg{0%,15%{transform:rotate(0)}50%,65%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
+.ic-mf .ic-bar{transform-box:view-box;animation:ic-mf 1.4s ease-in-out infinite alternate}
+.ic-mf .ic-bar2{animation-delay:-1.4s}
+@keyframes ic-mf{from{transform:translateY(-16px)}to{transform:translateY(16px)}}
+.ic-en .ic-bolt{animation:ic-en 2.8s linear infinite}
+@keyframes ic-en{0%,60%,100%{opacity:1}64%{opacity:.15}68%{opacity:1}72%{opacity:.3}76%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.ind-ic *{animation:none!important}}
+
+/* accumulated engineering experience: no icon next to the title, title aligned with the text below */
+.module-about .mod-top .lopta-anim{display:none!important}
+.module-about .mod-top{gap:0!important}
+.module-about .mod-top .mod-title{margin-left:0!important}
+
+/* insights: photo zoom only, no coloured overlay */
+.insight-media:after{display:none!important}
+
+/* what are you trying to solve: compact cards — photo beside the text, regular labels with a small green triangle, bigger titles */
+#working .way .mod-title{font-size:clamp(26px,2.3vw,36px)!important;line-height:1.05!important}
+.way .way-facts dt,.way .way-facts dt.tab{font-weight:400!important;display:flex!important;align-items:center;gap:8px}
+.way .way-facts dt:before{content:"";flex:none;width:7px;height:7px;background:var(--green);clip-path:polygon(0 0,0 100%,100% 100%)}
+@media(min-width:801px){
+  .block-solve .way{display:grid!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto auto 1fr;column-gap:clamp(20px,2vw,32px)!important;row-gap:clamp(14px,1.4vw,20px)!important;align-items:start;padding:12px!important}
+  .block-solve .way .way-photo{grid-column:1;grid-row:1/4;margin:0!important;aspect-ratio:auto!important;height:100%;min-height:260px}
+  .block-solve .way .way-photo img{height:100%}
+  .block-solve .way>*:not(.way-photo){grid-column:2}
+  .block-solve .way .way-head{padding-top:8px}
+  .block-solve .way .way-facts{gap:14px!important}
+  .block-solve .way .way-facts dd{font-size:16px!important;line-height:1.45}
+  .block-solve .way .way-links{margin:0!important;padding-bottom:6px;align-self:end}
+}
+@media(max-width:800px){.block-solve .way .way-photo{aspect-ratio:16/8!important}.block-solve .way{gap:18px!important}}
+
+/* contact: narrower form on its own panel, required note above the button */
+.contact-band .big-form{background:rgba(241,242,242,.06);padding:clamp(22px,2.4vw,36px)!important}
+@media(min-width:801px){.contact-band .big-form{max-width:520px;width:100%;justify-self:end;margin-left:auto}}
+.contact-band .form-req{margin:4px 0 14px!important}
+@media(min-width:801px){.hv2 .hero-title{font-size:clamp(46px,7.4vw,140px)!important}}
+/* desktop hero: tighter so the text strip stays visible with the bigger titles */
+@media(min-width:801px){
+  .hero.hv2{padding-top:calc(var(--hd) + 14px)!important;padding-bottom:12px!important}
+  .hero-news.hs{padding:12px!important;gap:10px!important}
+  .hs .hn-media{aspect-ratio:16/8!important}
+  .hs .hn-small{padding-top:10px!important}
+  .hs .hn-thumb{width:54px!important;height:54px!important}
+  .hv2 .hero-side{margin-top:16px!important}
+  .hv2 .hero-nav{margin-top:18px!important}
+  .hv2>.hero-cred{padding:12px 16px!important}
+  .hv2>.hero-cred .hcr-num{font-size:clamp(40px,3.2vw,52px)!important}
+}
+@media(min-width:801px) and (max-height:800px){.hs .hn-media{aspect-ratio:16/6.4!important}.hv2 .hero-side{margin-top:10px!important}}
+.hv2>.hero-cred .hcr-text{max-width:36ch!important;text-wrap:balance}
+.hv2>.hero-cred .hcr-text{max-width:30ch!important}
+@media(max-width:800px){.hv2>.hero-cred{width:auto!important;align-self:stretch!important;justify-self:stretch!important;margin-left:0!important;margin-right:0!important}}
