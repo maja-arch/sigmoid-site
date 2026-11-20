@@ -136,3 +136,6 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Male oznake (Typical challenge, Challenge, Expertise area, Worked on, Your situation…): Roboto Regular, all caps, 12px, zeleni trouglić.
 - Insights: više mesta između taga i naslova. Back to top: debljina kao Privacy Policy.
 - Robot: vraćena glava od jutros (pravougaonik sa zasečenim uglovima), ali špicasti uglovi; uši takođe sa špicastim (zasečenim) uglovima; oči jednobojne svetlo zelene. (Oktagon/dekagon probano i odbijeno.)
+
+## Runda 69 — desktop kontakt
+- „Tell us about your challenge" kompaktno: naslov levo, tekst i linkovi desno u istom redu; forma u jednom redu ispod (Name · Work email · izazov · Send message), bez posebnog panela. Visina oko 470px umesto 700px. Telefon nepromenjen.

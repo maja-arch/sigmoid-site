@@ -3387,3 +3387,26 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .person-meta>.tab:before,#working dt:before{content:"";flex:none;width:7px;height:7px;background:var(--green);clip-path:polygon(0 0,0 100%,100% 100%)}
 /* testimonials: narrower measure so the short quotes sit on 2 lines and the long one on 3 */
 @media(min-width:801px){.client-quote{font-size:clamp(26px,2.1vw,38px)!important;max-width:21em!important}}
+
+/* =====================================================================
+   ROUND 69 · DESKTOP: compact contact band — title and text on one row,
+   the form in a single line underneath (Name · Email · Challenge · Send)
+   ===================================================================== */
+@media(min-width:801px){
+  .contact-band .contact-inner{display:block!important;padding-top:clamp(40px,4vw,64px)!important;padding-bottom:clamp(40px,4vw,64px)!important}
+  .contact-band .closing-copy{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,4vw,64px);align-items:end;max-width:none!important;width:auto!important;margin:0!important;padding:0!important}
+  .contact-band .closing-copy>.tab{grid-column:1/-1;margin-bottom:12px}
+  .contact-band .closing-copy .closing-title{grid-column:1;grid-row:2;margin:0!important}
+  .contact-band .closing-copy>p{grid-column:2;grid-row:2;align-self:end;margin:0 0 6px!important;max-width:44ch}
+  .contact-band .closing-copy .closing-links{grid-column:2;grid-row:3;margin-top:12px!important}
+  .contact-band .form-wrap{width:auto!important;max-width:none!important;margin:clamp(32px,3vw,48px) 0 0!important;padding:0!important;background:none!important;clip-path:none!important}
+  .contact-band .form-wrap:before,.contact-band .form-wrap:after{display:none!important}
+  .contact-band .big-form{max-width:none!important;margin:0!important;padding:0!important;background:none!important;clip-path:none!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,2fr) auto;column-gap:clamp(20px,2vw,32px);row-gap:14px;align-items:end}
+  .contact-band .big-form .big-field{margin:0!important;min-width:0}
+  .contact-band .big-form .big-submit{grid-column:4;grid-row:1;margin:0!important;align-self:end}
+  .contact-band .big-form .form-req{grid-column:1/-1;grid-row:2;margin:0!important}
+  .contact-band .big-form .form-note{grid-column:1/-1;grid-row:3;margin:0!important}
+  .contact-band .big-form .form-note:empty{display:none}
+  .contact-band .form-sent{padding:0!important}
+}
+@media(min-width:801px){.contact-band .big-form:before,.contact-band .big-form:after{display:none!important}.contact-band .big-form .big-field>.tab{white-space:nowrap}}
