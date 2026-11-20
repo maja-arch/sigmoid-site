@@ -76,8 +76,8 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Footer
 - Zelena traka. Veliki tekst „Let's build it." (može se menjati).
-- Levo: Contact (info@sigmoid.rs, Novi Sad, telefon primer), veliki robot desno u levom delu, LinkedIn: samo ikonica (bez boxa), ispod kontakt podataka (DIM) → https://www.linkedin.com/company/sigmoiddoo/home/ (isto i u mobilnom meniju).
-- Desno: Expertise kao velika lista + kolone Working with us / Industries / Company. Hover: underline, bez bele.
+- Levo: Contact (info@sigmoid.rs, Novi Sad, telefon primer), veliki robot desno u levom delu (na telefonu upola manji, centriran), LinkedIn: zvanični LinkedIn znak (kvadrat sa „in"), bez boxa, ispod kontakt podataka (DIM); isti znak u mobilnom meniju → https://www.linkedin.com/company/sigmoiddoo/home/ (isto i u mobilnom meniju).
+- Desno: Expertise kao velika lista + kolone Working with us / Industries / Company. Hover: underline koji prati tekst red po red (nikad šire od reči), iscrtava se iznova; bez bele.
 - Dno: logo (vodi na početnu; na početnoj glatko na vrh), © Sigmoid d.o.o., Privacy Policy, Terms of Use, Cookies (bez „Landing page"); „Design: Elder Design Studio" (https://www.weareelder.com/) i „Back to top ↑" (glatko na vrh).
 - Robot: čisto čelo, oči bez sjaja, vizir sa malim zaobljenjem kao uši, globus iz logoa na anteni.
 - Odbijeno: veliki „sigmoid" logo/wordmark preko footera; robot stilizovan „flat" po brendu; logo utisnut na čelu robota; kačket na robotu.

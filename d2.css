@@ -3074,3 +3074,18 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .ft3-contact .ft3-in svg{width:26px;height:26px;fill:currentColor}
 .ft3-contact .ft3-in:hover{opacity:.65;background:none!important}
 .ft3-contact .ft3-in{position:static!important;inset:auto!important;transform:none!important;align-self:flex-start!important;justify-self:start!important;order:0!important}
+
+/* footer links: the underline follows the text, line by line (never wider than the words) — DIM */
+.ft3-details a,.ft3-bignav a{background:none!important;animation:none!important;width:auto!important}
+.ft3-details a .lk,.ft3-bignav a .lk{padding-bottom:2px;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0% 1px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ft3-details a:hover .lk,.ft3-details a:focus-visible .lk,.ft3-bignav a:hover .lk,.ft3-bignav a:focus-visible .lk{animation:ul-redraw .7s var(--soft) forwards}
+/* official LinkedIn logo (square with "in"), plain, no box around it in the footer */
+.ft3-contact .ft3-in svg{width:28px!important;height:28px!important}
+.menu-in{background:none!important;clip-path:none!important;width:auto!important;height:auto!important}
+.menu-in svg{width:28px!important;height:28px!important}
+.menu-in:hover{background:none!important;color:var(--ink)!important;opacity:.65}
+/* PHONE: footer robot half the size */
+@media(max-width:800px){
+  .ft3 .ft3-robot,.ft3 .ft3-robot .buddy,.ft3 .ft3-robot .buddy .robot{width:157px!important;height:auto!important;max-width:157px!important}
+  .ft3 .ft3-robot{margin:8px auto 0!important;transform:none!important}
+}
