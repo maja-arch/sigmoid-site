@@ -135,4 +135,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Accumulated: levi box krem; brojke desno više nisu boxevi nego lista sa linijama (da ne deluju klikabilno). Sve linije boja 0.32 graphite.
 - Male oznake (Typical challenge, Challenge, Expertise area, Worked on, Your situation…): Roboto Regular, all caps, 12px, zeleni trouglić.
 - Insights: više mesta između taga i naslova. Back to top: debljina kao Privacy Policy.
-- Robot: vraćena glava od jutros (pravougaonik sa zasečenim uglovima), ali špicasti uglovi; uši kao pre; oči jednobojne svetlo zelene. (Oktagon/dekagon probano i odbijeno.)
+- Robot: vraćena glava od jutros (pravougaonik sa zasečenim uglovima), ali špicasti uglovi; uši takođe sa špicastim (zasečenim) uglovima; oči jednobojne svetlo zelene. (Oktagon/dekagon probano i odbijeno.)
