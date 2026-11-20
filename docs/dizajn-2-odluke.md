@@ -173,6 +173,6 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 ## Runda 76
 - Industries: „Different industry?…" ispod boxeva (van panela), uvek vidljivo.
 - Success Stories: bez oznake („01 / Logistics") iznad naslova.
-- Our Experts: samo ime i uloga (Leadership / Department lead / Senior engineer) — bez opisa, Expertise area i Worked on. Imena su i dalje primeri.
+- Our Experts: samo ime i uloga probano i ODBIJENO — kartice ostaju sa ulogom, imenom, opisom, Expertise area i Worked on.
 - What are you trying to solve: tekstovi iz prototipa (duže verzije „Your situation" / „What Sigmoid takes on").
 - Kontakt: linkovi odmaknuti od teksta.
