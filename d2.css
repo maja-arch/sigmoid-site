@@ -3068,3 +3068,9 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .module-about .counter-label{font-size:17px!important}
   .module-about .counter-num{font-size:48px!important}
 }
+
+/* footer LinkedIn: just the icon, under the contact details (DIM) */
+.ft3-contact .ft3-in{display:inline-flex!important;align-items:center;justify-content:flex-start;width:auto!important;height:auto!important;margin-top:16px;padding:4px 0;background:none!important;clip-path:none!important;color:var(--ink)!important;grid-column:auto!important;grid-row:auto!important;transition:opacity var(--t-hover) var(--soft)}
+.ft3-contact .ft3-in svg{width:26px;height:26px;fill:currentColor}
+.ft3-contact .ft3-in:hover{opacity:.65;background:none!important}
+.ft3-contact .ft3-in{position:static!important;inset:auto!important;transform:none!important;align-self:flex-start!important;justify-self:start!important;order:0!important}
