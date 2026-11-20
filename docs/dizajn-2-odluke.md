@@ -176,3 +176,4 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Our Experts: samo ime i uloga probano i ODBIJENO — kartice ostaju sa ulogom, imenom, opisom, Expertise area i Worked on.
 - What are you trying to solve: tekstovi iz prototipa (duže verzije „Your situation" / „What Sigmoid takes on").
 - Kontakt: linkovi odmaknuti od teksta.
+- Grape-stil hero (naslov gore, poliedar dole levo, tekst od sredine) probano i ODBIJENO — vraćen prethodni hero.
