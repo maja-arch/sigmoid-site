@@ -3429,3 +3429,24 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   section:has(>.block-head .head-cta)>.block-head+*{margin-top:0!important}
 }
 @media(min-width:801px){#ways-to-start>.block-head{margin-bottom:0!important}#ways-to-start>.block-head .block-sub{margin-bottom:0!important}#ways-to-start>.block-head+*{margin-top:28px!important}}
+
+/* =====================================================================
+   ROUND 71 · industries tabs hover: no dark outline — a light cream tint,
+   the name slides in behind a small green triangle, number turns green
+   ===================================================================== */
+@media(hover:hover){
+  .module-ind .ind-tab:not([aria-selected=true]):hover{background:rgba(55,54,54,.32)!important}
+  .module-ind .ind-tab:not([aria-selected=true]):before{transition:background-color .3s var(--soft)}
+  .module-ind .ind-tab:not([aria-selected=true]):hover:before{background-color:color-mix(in srgb,var(--bone) 45%,var(--bg))!important}
+  .module-ind .ind-tab .ind-tab-name{position:relative;transition:transform .35s var(--soft)}
+  .module-ind .ind-tab .ind-tab-name:before{content:"";position:absolute;left:-14px;top:50%;width:7px;height:7px;margin-top:-3px;background:var(--green);clip-path:polygon(0 0,0 100%,100% 100%);opacity:0;transition:opacity .3s var(--soft)}
+  .module-ind .ind-tab:not([aria-selected=true]):hover .ind-tab-name{transform:translateX(14px)}
+  .module-ind .ind-tab:not([aria-selected=true]):hover .ind-tab-name:before{opacity:1}
+  .module-ind .ind-tab:not([aria-selected=true]):hover .ind-tab-num{color:var(--green-text)!important}
+}
+/* industries panel (desktop): no icon at the top right — the photo takes that place, from the top of the box */
+@media(min-width:801px){
+  .module-ind .mod-main .ind-main-icon,.module-ind .mod-main .ind-main-icon.is-on{display:none!important}
+  .module-ind .mod-main .mod-top{grid-column:1!important;grid-template-columns:auto minmax(0,1fr)!important}
+  .module-ind .mod-main .ind-photo{grid-column:2!important;grid-row:1/span 6!important}
+}
