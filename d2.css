@@ -3089,3 +3089,6 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .ft3 .ft3-robot,.ft3 .ft3-robot .buddy,.ft3 .ft3-robot .buddy .robot{width:157px!important;height:auto!important;max-width:157px!important}
   .ft3 .ft3-robot{margin:8px auto 0!important;transform:none!important}
 }
+/* LinkedIn icon hover: official LinkedIn blue (DIM) */
+.ft3-contact .ft3-in,.menu-in{transition:color var(--t-hover) var(--soft),opacity var(--t-hover) var(--soft)!important}
+.ft3-contact .ft3-in:hover,.ft3-contact .ft3-in:focus-visible,.menu-in:hover,.menu-in:focus-visible{color:#0A66C2!important;opacity:1!important}
