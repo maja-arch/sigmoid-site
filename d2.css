@@ -3027,3 +3027,6 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .module-ind .mod-side{order:0!important;grid-column:1!important;grid-row:1!important}
   .module-ind .mod-main{order:1!important;grid-column:2!important;grid-row:1!important}
 }
+/* slider tab icons stay still (desktop and phone) */
+.hero-tab .tab-ticon,.hero-tab .tab-ticon *{animation:none!important}
+.hero-tab .tab-ticon .sw-rays{stroke-dashoffset:0!important}
