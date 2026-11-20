@@ -71,7 +71,7 @@ Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--face
 
 **Favicon:** the assembling ball, animated in `d2.js` (drawn on a canvas from the `.lopta-anim` paths).
 
-**Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse (no glow around the eyes), visor corners rounded like the ears (rx 10), a graphite cap with seams and a front brim, the logo globe on top of the cap as its button (no logo on the forehead, no white highlight), on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
+**Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse (no glow around the eyes), visor corners rounded like the ears (rx 10), plain forehead (no cap, no logo, no white highlight), on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
 
 ## Content still to replace before launch
 
