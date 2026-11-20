@@ -26,7 +26,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
 - Telefon: najduži red naslova zauzima oko 85% širine ekrana (font se računa po slajdu, najviše 60px), a smanji se i ako bi pokretna traka ispala ispod ekrana.
-- Telefon: pokretna traka ide upola sporije (55 px/s; desktop 110 px/s).
+- Pokretna traka: 70 px/s, ista brzina na desktopu i telefonu.
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
 - Credibility strip na svakom slajdu, dole desno: broj + tekst se menja sa slajdom (4 discipline · 80% · 4 industrije · 15+ sistema · 3 discipline — zameniti proverenim podacima kad stignu) + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.

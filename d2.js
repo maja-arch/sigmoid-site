@@ -206,7 +206,7 @@
         track.append(c);
         if (window.sigmoidScramble) c.querySelectorAll('[data-scramble]').forEach(window.sigmoidScramble);
       }
-      const speed = matchMedia('(max-width: 800px)').matches ? 55 : 110; // px per second; slower on phones
+      const speed = 70; // px per second, same on desktop and phone
       track.style.setProperty('--ticker-dur', `${(setW * perHalf) / speed}s`);
       lastW = setW;
     };
