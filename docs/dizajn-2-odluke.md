@@ -120,7 +120,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dugmad sekcija (Success Stories, Insights, …) idu ispod sadržaja, ne ispod podnaslova.
 - Accumulated engineering experience: boxevi kao industries panel — broj levo, ikonica gore desno, tekst ispod.
 - Meni: mail ispod linkova (veći font), dole sat + Novi Sad i LinkedIn.
-- Robot: glava dekagon (zajednički crtež, pa važi i za desktop footer i bedž).
+- Robot: glava i uši dekagon, oči jednobojne svetlo zelene #C2E08A (zajednički crtež, pa važi i za desktop footer i bedž).
 
 ## Runda 67 — desktop
 - Nav linkovi 14px.
