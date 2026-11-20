@@ -10,6 +10,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Logo u zaglavlju (desktop i telefon): animirani globus — ista animacija kao favicon (isti delovi lopte, isti redosled i ritam, puna brend zelena); slova mirna.
 - Logo poravnat sa sadržajem ispod (ista leva ivica), na desktopu i telefonu.
 - Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
+- Mobilni meni: sat „Novi Sad { … }" iznad dugmeta Contact us (u heroju na telefonu nema sata).
 - Mobilni meni: bez okvira, veliki tekstualni linkovi (Oswald) sa malim brojem (14px, boja teksta), ulaze jedan za drugim, zeleni underline na dodir; dole „Contact us" normalne dužine, email i LinkedIn ikonica.
 - Logo veći (30px visine, 26px na telefonu). Linkovi sa malim zelenim trouglom, „Contact us" kao pravougaono dugme.
 
@@ -20,7 +21,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, samo iznad AKTIVNOG taba (prethodni tabovi bez linije), sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **najavni box „Latest"** (krem) — smenjuju se Success Stories i Insights: veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
-- Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni je pun, ostali bledi; aktivni se sam pomeri na sredinu vidnog dela); bez sata, oba dugmeta jedno ispod drugog, preko cele širine, 12px, sa strelicama, najavni box je sakriven iza malog krem jezička sa strelicom i ikonicom vesti, uz desnu ivicu ekrana u liniji oznake iznad naslova; na dodir izlazi s desne strane i izgleda kao na desktopu (zatvara se na ×); ispod dugmadi je red „Clients & partners +" koji se na dodir otvori (15+ i logotipi). Sadržaj hero-a je spušten ka dnu, blizu tabova.
+- Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni je pun, ostali bledi; aktivni se sam pomeri na sredinu vidnog dela); bez sata, oba dugmeta jedno pored drugog (iste visine; tekst može u 2 reda, 12px, strelica desno), najavni box je sakriven iza malog krem jezička sa strelicom i ikonicom vesti, uz desnu ivicu ekrana u liniji oznake iznad naslova; na dodir izlazi s desne strane i izgleda kao na desktopu (zatvara se na ×); ispod dugmadi je red „Clients & partners +" koji se na dodir otvori (15+ i logotipi). Sadržaj hero-a je spušten ka dnu, blizu tabova.
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.

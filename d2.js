@@ -524,9 +524,9 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
 
 /* hero clock: local time in Novi Sad */
 (() => {
-  const t = document.querySelector('.hero-clock time'); if (!t) return;
+  const ts = [...document.querySelectorAll('.hero-clock time, .menu-clock time')]; if (!ts.length) return;
   const f = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-  const tick = () => { t.textContent = f.format(new Date()).replace(/:/g, ' : '); };
+  const tick = () => { const v = f.format(new Date()).replace(/:/g, ' : '); ts.forEach((t) => { t.textContent = v; }); };
   tick(); setInterval(tick, 1000);
 })();
 

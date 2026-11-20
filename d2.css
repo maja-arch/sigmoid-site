@@ -2966,3 +2966,17 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .hd{position:absolute!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;transform:none!important}
   .menu-open .hd{position:fixed!important}
 }
+
+
+/* PHONE: hero buttons side by side again (label may wrap to two lines, arrow on the right); clock in the menu */
+.menu-clock{display:none}
+@media(max-width:800px){
+  .hv2 .hero-foot{flex-direction:row!important;gap:8px!important}
+  .hero.hv2 .hero-foot .pill.pill.pill.pill{flex:1 1 0!important;width:auto!important;min-width:0!important;height:auto!important;min-height:52px;padding:10px 12px!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;white-space:normal!important;text-align:left;line-height:1.25!important;font-size:12px!important;letter-spacing:.06em!important}
+  .hv2 .hero-foot .pill-txt{overflow:visible!important;text-overflow:clip!important;white-space:normal!important}
+  .hv2 .hero-foot .pill .arr{flex:none;width:20px!important;margin-left:6px!important}
+  .menu-clock{display:flex;gap:12px;font:500 12px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .menu-clock time{font-variant-numeric:tabular-nums}
+}
+@media(max-width:800px) and (max-height:760px){.hero.hv2 .hero-foot .pill.pill.pill.pill{min-height:46px;padding:8px 10px!important}}
+@media(max-width:800px){.hv2 .hero-foot{align-items:stretch!important}}
