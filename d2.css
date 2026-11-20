@@ -3410,3 +3410,12 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .contact-band .form-sent{padding:0!important}
 }
 @media(min-width:801px){.contact-band .big-form:before,.contact-band .big-form:after{display:none!important}.contact-band .big-form .big-field>.tab{white-space:nowrap}}
+
+/* =====================================================================
+   ROUND 70 · DESKTOP nav: green underline that draws in on every hover
+   ===================================================================== */
+@media(min-width:801px){
+  .hd-nav .pill,.hd-nav .pill:hover,.hd-nav .pill:focus-visible{background:linear-gradient(var(--green),var(--green)) 12px calc(100% - 8px)/0 1px no-repeat!important;transition:background-size .5s var(--soft)!important;color:var(--ink)!important}
+  .hd-nav .pill:hover,.hd-nav .pill:focus-visible{background-size:calc(100% - 24px) 1px!important}
+  .hd-nav .pill:before,.hd-nav .pill:after{display:none!important}
+}

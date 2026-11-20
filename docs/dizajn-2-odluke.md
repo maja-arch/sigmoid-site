@@ -139,3 +139,6 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 
 ## Runda 69 — desktop kontakt
 - „Tell us about your challenge" kompaktno: naslov levo, tekst i linkovi desno u istom redu; forma u jednom redu ispod (Name · Work email · izazov · Send message), bez posebnog panela. Visina oko 470px umesto 700px. Telefon nepromenjen.
+
+## Runda 70 — navigacija
+- Hover na linkove u navigaciji: tanka zelena linija ispod teksta koja se iscrtava pri svakom hoveru (bez krem pozadine).
