@@ -145,3 +145,11 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Razmak između naslova sekcije (ili podnaslova) i sadržaja: svuda 28px, kao kod Industries (desktop i telefon).
 - Industries tabovi hover: bez tamnog okvira — svetla krem nijansa, naziv se pomeri udesno iza zelenog trouglića, broj zelen.
 - Industries panel (desktop): bez ikonice gore desno; fotka kreće od vrha boxa.
+
+## Runda 72
+- Najavni box: naslovi se nikad ne seku (bez ograničenja broja redova), desktop i telefon. Box malo spušten na desktopu.
+- Box sa dokazom u heroju: popuna boje pozadine sajta (Platinum).
+- Accumulated: levi box bez bordera (krem); desno ponovo tri boxa; veći razmak ikonica–tekst; tekst u boxevima 16–18px.
+- Possible ways to start: manji brojevi (48–80px).
+- Our Experts: više razmaka između slike i sadržaja i ispod imena.
+- What are you trying to solve: linkovi odmah posle teksta, isti razmak u obe kartice.

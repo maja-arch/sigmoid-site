@@ -3450,3 +3450,39 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .module-ind .mod-main .mod-top{grid-column:1!important;grid-template-columns:auto minmax(0,1fr)!important}
   .module-ind .mod-main .ind-photo{grid-column:2!important;grid-row:1/span 6!important}
 }
+
+/* =====================================================================
+   ROUND 72 · review (desktop + phone)
+   ===================================================================== */
+/* latest box: titles are never cut — no line clamp, any length wraps fully */
+.hs .hn-lead .hs-t,.hs .hn-small .hs-t,.hero.hv2 .hero-news.hs .hs-t{display:block!important;-webkit-line-clamp:unset!important;line-clamp:none!important;overflow:visible!important;white-space:normal!important;text-overflow:clip!important;max-width:100%}
+.hs .hn-title{overflow-wrap:break-word;min-width:0}
+.hs .hn-small-text{min-width:0;flex:1}
+/* proof box: filled with the page colour (grid lines don't show through) */
+.hv2>.hero-cred{background:var(--bg)!important}
+/* latest box a little lower (desktop) */
+@media(min-width:801px){.hero-news.hs{margin-top:clamp(16px,2.2vh,32px)!important}}
+
+/* accumulated: no border on the left box; the figures back in three boxes; more room between icon and text; smaller text */
+.module-about .mod-main{background:transparent!important;border-color:transparent!important}
+@media(min-width:801px){
+  .module-about .counters{gap:16px!important}
+  .module-about .counter,.module-about .counter:last-child{background:rgba(55,54,54,.32)!important;border:1px solid transparent!important;clip-path:var(--facetx)!important}
+  .module-about .counter:before{display:block!important;content:""!important;position:absolute!important;inset:0!important;z-index:-1!important;background:var(--bg)!important}
+  .module-about .counter{position:relative;isolation:isolate;column-gap:clamp(20px,1.8vw,28px)!important}
+}
+.module-about .counter .counter-label{font-size:clamp(16px,1.2vw,18px)!important}
+
+/* possible ways to start: smaller numbers */
+#ways-to-start .start-num{font-size:clamp(48px,4.4vw,80px)!important}
+
+/* our experts: content away from the photo, room under the name (as in insights) */
+.person-body{padding-top:clamp(12px,1.2vw,18px)!important;gap:12px!important}
+.person-name{margin-bottom:4px!important}
+.person-meta{margin-top:4px}
+
+/* what are you trying to solve: links right after the text, same gap in every card */
+@media(min-width:801px){
+  .block-solve .way{grid-template-rows:auto auto auto!important;align-content:start!important}
+  .block-solve .way .way-links{align-self:start!important;margin-top:0!important}
+}
