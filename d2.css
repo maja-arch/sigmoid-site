@@ -2900,3 +2900,28 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .hla-mark path{fill:#98BF5A;opacity:0;animation:hla-in 4.04s linear infinite!important;animation-delay:var(--d,0s)!important}
 @keyframes hla-in{0%,4%{opacity:0}16%,94%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.hla-mark path{animation:none!important;opacity:1}}
+
+/* =====================================================================
+   READABILITY · no text below 12px (labels, tags, small links); phone hero buttons stacked
+   ===================================================================== */
+.tab,dt.tab,.hn-top,.hn-top span,.hs-tag,.hn-link,.hn-small .hn-link,.hn-link .pill-txt-u,
+.tags li,.anim-tags li,.story-card .tags li,.ind-tab-tags span,.chips li{font-size:12px!important}
+@media(max-width:800px){
+  .hv2 .hero-tab-label,.hv2 .hero-tab-num,.hero.hv2 .hero-tabs .hero-tab:not(.x) .hero-tab-label{font-size:12px!important}
+  /* hero buttons: one under the other, full width, 12px, arrows at the end */
+  .hv2 .hero-foot{flex-direction:column!important;flex-wrap:nowrap!important;gap:8px!important}
+  .hero.hv2 .hero-foot .pill.pill.pill.pill{flex:none!important;width:100%!important;justify-content:space-between!important;padding-left:20px!important;padding-right:20px!important;font-size:12px!important;letter-spacing:.07em!important;height:48px!important}
+  .hv2 .hero-foot .pill .arr{width:26px!important;margin-left:12px!important}
+}
+/* short phones: tighter hero so the moving text strip still shows with stacked buttons */
+@media(max-width:800px) and (max-height:760px){
+  .hv2 .hero-title{font-size:11.2vw!important}
+  .hk-row{gap:8px!important}
+  .hs-toggle{height:30px!important}
+  .hv2 .hero-lede{font-size:14.5px!important;line-height:1.35!important}
+  .hv2 .hero-side{margin-top:10px!important;gap:10px!important}
+  .hv2 .hero-foot{gap:6px!important}
+  .hero.hv2 .hero-foot .pill.pill.pill.pill{height:42px!important}
+  .hero-more-btn{margin-top:6px!important;padding:10px 0!important}
+  .hv2 .hero-nav{margin-top:6px!important}
+}

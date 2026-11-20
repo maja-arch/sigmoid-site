@@ -54,6 +54,8 @@ Desktop is approved: when the user asks for phone changes, scope every CSS rule 
 - Small labels above titles use curly braces: `{ Expertise }`, `{ 01 / 05 — Sigmoid }` — never `[ ]`.
 - Every button text starts with a verb ("Read all insights", "See how we work", "Learn about Sigmoid").
 
+**Readability (WCAG AA checked):** No text below 12px anywhere (labels, tags, small links included); body text 16px+. Contrast passes 4.5:1 everywhere.
+
 **Buttons:** plain **rectangles with sharp 90° corners** (no cut corners, no pointed ends, no rounding).
 Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--facet`).
 
@@ -69,7 +71,7 @@ Slider/quote arrows stay decagons. Cards and boxes keep the cut corners (`--face
 
 **Favicon:** the assembling ball, animated in `d2.js` (drawn on a canvas from the `.lopta-anim` paths).
 
-**Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse (no glow around the eyes), on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
+**Robot (footer + "Our Experts" badge):** one shared drawing (`#robotArt`, the badge uses `<use href="#robotArt">`). Green, glossy, head with cut corners, dark visor, eyes follow the mouse (no glow around the eyes), visor corners rounded like the ears (rx 10), the logo globe faintly embossed on the forehead (no white highlight), on the antenna the logo polyhedron with the same assembling animation as in "Accumulated engineering experience". It must not fall or wobble.
 
 ## Content still to replace before launch
 
