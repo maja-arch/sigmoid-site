@@ -21,7 +21,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dole: strelice levo (decagoni, krem), tabovi sa animiranim ikonicama (aktivna ikonica NIJE zelena), linija napretka **1px**, samo iznad AKTIVNOG taba (prethodni tabovi bez linije), sat „Novi Sad { … }" desno. Nema separatora preko širine.
 - Gore desno **najavni box „Latest"** (krem) — smenjuju se Success Stories i Insights: veća priča sa slikom + manja ispod, sam se menja na ~5 s, lep prelaz (naslov klizne, slika se otvori odozdo), link samo „Read →", pauza na hover. Bez brojača (01/04). Donji članak ima veći naslov (16–19px).
 - Hero je toliko nizak da se na desktopu na dnu vidi pokretna traka (ticker).
-- Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni je pun, ostali bledi; aktivni se sam pomeri na sredinu vidnog dela); bez sata, oba dugmeta jedno pored drugog (iste visine; tekst može u 2 reda, 12px, strelica desno), najavni box je sakriven iza malog krem jezička sa strelicom i ikonicom vesti, uz desnu ivicu ekrana u liniji oznake iznad naslova; na dodir izlazi s desne strane i izgleda kao na desktopu (zatvara se na ×); ispod dugmadi je red „Clients & partners +" koji se na dodir otvori (15+ i logotipi). Sadržaj hero-a je spušten ka dnu, blizu tabova.
+- Telefon: hero je visok tačno toliko da se pokretna traka vidi na dnu ekrana na svakom telefonu; tabovi i strelice su na dnu hero-a, strelice LEVO, tabovi SA NAZIVIMA u redu koji se prevlači (aktivni je pun, ostali bledi; aktivni se sam pomeri na sredinu vidnog dela); bez sata, oba dugmeta jedno pored drugog (iste visine; tekst može u 2 reda, 12px, strelica desno), najavni box je sakriven iza malog krem jezička sa strelicom i ikonicom vesti, fiksno gore desno uz ivicu ekrana (ne pomera se sa slajdovima), sadržaj hero-a spušten ispod njega; na dodir izlazi s desne strane i izgleda kao na desktopu (zatvara se na ×); ispod dugmadi je red „Clients & partners +" koji se na dodir otvori (15+ i logotipi). Sadržaj hero-a je spušten ka dnu, blizu tabova.
 - Odbijeno: velika ikonica kao pozadina; fotka preko celog ekrana; fotka sa leve strane stopljena u pozadinu; podnaslov i dugmad preko fotke; „up next" kartica; krem panel.
 
 - Svi redovi naslova poravnati levo, bez uvlačenja drugog reda.
@@ -29,7 +29,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Pokretna traka: 70 px/s, ista brzina na desktopu i telefonu.
 - Prozor sa fotkom u naslovu je uži (oko 1,3 visine slova u širinu). Ništa u naslovu ne sme da bude zasečeno.
 - Favicon: animirana lopta koja se sklapa.
-- Credibility strip na svakom slajdu, dole desno: broj + tekst se menja sa slajdom (4 discipline · 80% · 4 industrije · 15+ sistema · 3 discipline — zameniti proverenim podacima kad stignu) + 6 logotipa klijenata/partnera (Orox, FANUC, HTEC, ZTractor, Chubby Buttons, Fond za inovacionu delatnost), 3 u redu i na telefonu.
+- Dokaz (broj + tekst, menja se sa slajdom) BEZ logotipa: desktop levo u redu sa dugmadima, telefon ispod dugmadi. (Logotipi u heroju odbijeni.)
 
 ## Expertise
 - Kartice: link „See this expertise" sa zelenim underline-om i strelicom (ne dugme). Hover kartice: krem, bez bordera.

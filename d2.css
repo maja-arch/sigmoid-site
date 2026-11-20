@@ -2994,3 +2994,30 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .combine-photo{width:100%!important;height:auto!important;aspect-ratio:16/10;object-fit:cover;--c:12px}
   .combine-big{font-size:clamp(40px,12vw,52px)!important;line-height:.98!important}
 }
+
+
+/* hero proof: number + text only (no logos), in the left column under the buttons (desktop and phone) */
+.hv2 .hero-side .hero-cred{grid-column:auto!important;grid-row:auto!important;justify-self:auto!important;align-self:flex-start!important;width:auto!important;max-width:520px!important;margin:clamp(22px,2.2vw,30px) 0 0!important;padding:0!important;opacity:1!important;visibility:visible!important;transform:none!important;display:block!important}
+.hv2 .hero-side .hcr-proof{gap:14px;font-size:15px}
+.hv2 .hero-side .hcr-num{font-size:clamp(36px,3vw,48px)}
+@media(max-width:800px){
+  .hv2 .hero-side .hero-cred{margin-top:18px!important}
+  .hv2 .hero-side .hcr-proof{font-size:14px}
+  .hv2 .hero-side .hcr-num{font-size:38px}
+}
+@media(max-width:800px) and (max-height:760px){.hv2 .hero-side .hero-cred{margin-top:10px!important}.hv2 .hero-side .hcr-num{font-size:32px}}
+@media(min-width:801px){
+  .hv2 .hero-side{display:grid!important;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:clamp(24px,3vw,48px);row-gap:clamp(18px,1.8vw,26px)!important}
+  .hv2 .hero-side .hero-intro{grid-column:1/-1}
+  .hv2 .hero-side .hero-foot{grid-column:1}
+  .hv2 .hero-side .hero-cred{grid-column:2!important;margin:0!important;max-width:340px!important;align-self:center!important}
+}
+/* PHONE: the latest-box toggle sits at a fixed spot (does not move with the slides); hero content starts lower */
+@media(max-width:800px){
+  .hero.hv2 .hk-row .hs-toggle{position:absolute!important;top:calc(var(--hd) + 18px)!important;right:0!important;margin:0!important;z-index:6}
+  .hk-row{gap:0!important}
+  .hero.hv2{padding-top:calc(var(--hd) + 76px)!important}
+}
+@media(max-width:800px) and (max-height:760px){.hero.hv2{padding-top:calc(var(--hd) + 58px)!important}.hero.hv2 .hk-row .hs-toggle{top:calc(var(--hd) + 12px)!important}}
+@media(max-width:800px){.hero.hv2>.hs-toggle{position:absolute!important;top:calc(var(--hd) + 18px)!important;right:0!important;margin:0!important;z-index:6}}
+@media(max-width:800px) and (max-height:760px){.hero.hv2>.hs-toggle{top:calc(var(--hd) + 12px)!important}}
