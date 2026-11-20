@@ -166,6 +166,6 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Accumulated desno: kompaktni boxevi kao ranije (prirodna visina, poravnati gore, ne razvlače se do visine levog boxa); tekst 18px, broj do 52px.
 
 ## Runda 75
-- Footer (DIM): „Let's build it." desno; boxevi zamenjeni — linkovi levo (na telefonu prvi), kontakt + robot desno (na telefonu ispod).
+- Footer: naslov desno + zamenjeni boxevi probano i ODBIJENO — footer ostaje kakav je bio.
 - Back to top: bez underlinea, iscrtava se samo na hover. LinkedIn hover: samo opacity 80% (footer i meni, DIM) — bez plave.
-- „Tell us about your challenge": veliki naslov u dva reda, u drugom redu zelena tanka strelica između „your" i „challenge."; tekst, linkovi i forma počinju ispod „challenge." (desna polovina) na desktopu. Tamni band ostaje.
+- „Tell us about your challenge": ogroman naslov sa strelicom probano i ODBIJENO. Sada jednostavno i kompaktno (desktop): levo tag, naslov (36–56px), tekst i linkovi; desno forma (Name i Email u redu, opis, dugme). Visina ~385px.

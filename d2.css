@@ -3543,39 +3543,24 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 /* =====================================================================
    ROUND 75
    ===================================================================== */
-/* footer: big line on the right; the two boxes swapped (links left, contact + robot right) — desktop and phone */
-.ft3-big{text-align:right!important}
-.ft3-mid .ft3-right{order:-1}
-@media(min-width:801px){
-  .ft3 .ft3-mid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)!important}
-  .ft3 .ft3-left{border-right:0!important;border-left:1px solid var(--ft-line,rgba(55,54,54,.3))!important}
-}
-@media(max-width:800px){
-  .ft3 .ft3-left{border-bottom:0!important;border-top:1px solid var(--ft-line,rgba(55,54,54,.3))!important}
-}
 /* Back to top: no underline at rest, it draws in on hover */
 .ft3-top{background-size:0 1px!important;transition:background-size .5s var(--soft)!important;animation:none!important}
 .ft3-top:hover,.ft3-top:focus-visible{background-size:100% 1px!important}
 /* LinkedIn: hover only dims to 80% (footer and menu, desktop and phone) */
 .ft3-contact .ft3-in:hover,.ft3-contact .ft3-in:focus-visible,.ft3-contact .ft3-in:active,.menu-in:hover,.menu-in:focus-visible,.menu-in:active{color:var(--ink)!important;opacity:.8!important}
 
-/* contact band: a big two-line statement with an arrow between the words; text and form start under "challenge" */
-.contact-band .closing-title{display:block;font:400 clamp(44px,12.4vw,64px)/.9 var(--display)!important;letter-spacing:-.02em;margin:10px 0 22px!important;max-width:none!important}
-.contact-band .ct-line{display:block;white-space:nowrap}
-.contact-band .ct-arr{display:inline-block;width:.9em;height:.32em;vertical-align:.14em;margin:0 .12em;color:var(--green)}
+/* contact band (desktop): simple and compact — title, text and links on the left, the form on the right */
 @media(min-width:801px){
-  .contact-band .closing-copy{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:clamp(24px,3vw,48px)!important;align-items:start!important}
-  .contact-band .closing-copy>.tab{grid-column:1/-1!important;grid-row:1!important;margin-bottom:clamp(14px,1.4vw,22px)!important}
-  .contact-band .closing-copy .closing-title{grid-column:1/-1!important;grid-row:2!important;font-size:clamp(72px,10.6vw,190px)!important;line-height:.88!important;margin:0 0 clamp(36px,3.6vw,60px)!important}
-  .contact-band .ct-line2{display:flex;align-items:center;gap:0}
-  .contact-band .ct-line2 .ct-arr{flex:1;max-width:3.2em;min-width:1.2em;height:.4em;margin:0 .35em;vertical-align:middle}
-  .contact-band .closing-copy>p{grid-column:2!important;grid-row:3!important;margin:0!important;max-width:40ch!important;font-size:clamp(18px,1.4vw,22px)!important}
-  .contact-band .closing-copy .closing-links{grid-column:2!important;grid-row:4!important;margin-top:14px!important}
-  .contact-band .form-wrap{margin:clamp(28px,2.6vw,40px) 0 0 calc(50% + clamp(12px,1.5vw,24px))!important;width:auto!important}
-  .contact-band .big-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:clamp(16px,1.6vw,24px)!important;row-gap:22px!important}
+  .contact-band .contact-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:clamp(32px,4vw,72px)!important;align-items:start!important;padding:clamp(36px,3.6vw,56px) clamp(32px,4vw,72px)!important}
+  .contact-band .closing-copy{display:block!important}
+  .contact-band .closing-copy>.tab{display:block;margin-bottom:12px!important}
+  .contact-band .closing-copy .closing-title{font-size:clamp(36px,3.6vw,56px)!important;line-height:.95!important;margin:0 0 16px!important;max-width:14ch!important}
+  .contact-band .closing-copy>p{margin:0!important;max-width:40ch!important}
+  .contact-band .closing-copy .closing-links{margin-top:14px!important}
+  .contact-band .form-wrap{margin:0!important;width:auto!important}
+  .contact-band .big-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:clamp(16px,1.6vw,24px)!important;row-gap:20px!important}
   .contact-band .big-form .big-field:nth-of-type(3){grid-column:1/-1!important}
-  .contact-band .big-form .form-req{grid-column:1/-1!important;grid-row:auto!important}
+  .contact-band .big-form .form-req,.contact-band .big-form .form-note{grid-column:1/-1!important;grid-row:auto!important}
   .contact-band .big-form .big-submit{grid-column:1!important;grid-row:auto!important;justify-self:start!important}
-  .contact-band .big-form .form-note{grid-column:1/-1!important;grid-row:auto!important}
   .contact-band .big-form .big-field>.tab{white-space:normal!important}
 }
