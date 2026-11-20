@@ -481,10 +481,7 @@
       cta.querySelector('.pill-txt').textContent = d.cta;
       icons.forEach((ic, k) => ic.classList.toggle('is-on', k === i));
       if (photo) photo.src = PHOTOS[i];
-      if (d.name.startsWith('Data Centers')) {
-        name.innerHTML = '<span class="scramble" data-scramble>Data Centers</span> / AI Infrastructure';
-        if (window.sigmoidScramble) window.sigmoidScramble(name.querySelector('[data-scramble]'));
-      } else decode(name, d.name);
+      name.textContent = d.name;
       panel.classList.remove('is-swap');
     }, reduce ? 0 : 260);
   };

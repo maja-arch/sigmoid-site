@@ -120,9 +120,19 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Dugmad sekcija (Success Stories, Insights, …) idu ispod sadržaja, ne ispod podnaslova.
 - Accumulated engineering experience: boxevi kao industries panel — broj levo, ikonica gore desno, tekst ispod.
 - Meni: mail ispod linkova (veći font), dole sat + Novi Sad i LinkedIn.
-- Robot: glava i uši dekagon, oči jednobojne svetlo zelene #C2E08A (zajednički crtež, pa važi i za desktop footer i bedž).
+- Robot (kasnije zamenjeno u rundi 68): glava i uši dekagon (zajednički crtež, pa važi i za desktop footer i bedž).
 
 ## Runda 67 — desktop
 - Nav linkovi 14px.
 - Najavni box i dokaz ponovo uz desnu ivicu (poravnati sa „Contact us").
 - „{ How disciplines combine }" box više nije celom širinom: zauzima kolone 3–4 (desna polovina), sadržaj složen jedno ispod drugog.
+
+## Runda 68 — desktop
+- Najavni box: isti razmak između naslova gornjeg članka i „Read" (nema rezervisanog 3. reda).
+- Industries panel: veća ikonica, desna ivica poravnata sa fotkom; „Explore…" dugme širine teksta; bez digitalnog efekta u naslovu panela.
+- Success Stories: dugme ispod 4 boxa, levo; tekst u karticama 16px.
+- Citati: uža mera teksta (kratki u 2 reda, dugi u 3); visina boxa se ne menja između citata.
+- Accumulated: levi box krem; brojke desno više nisu boxevi nego lista sa linijama (da ne deluju klikabilno). Sve linije boja 0.32 graphite.
+- Male oznake (Typical challenge, Challenge, Expertise area, Worked on, Your situation…): Roboto Regular, all caps, 12px, zeleni trouglić.
+- Insights: više mesta između taga i naslova. Back to top: debljina kao Privacy Policy.
+- Robot: vraćena glava od jutros (pravougaonik sa zasečenim uglovima), ali špicasti uglovi; uši kao pre; oči jednobojne svetlo zelene. (Oktagon/dekagon probano i odbijeno.)

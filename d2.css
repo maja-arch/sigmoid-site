@@ -3340,3 +3340,50 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .bento>.combine .combine-head{width:auto!important}
   .bento>.combine .combine-side{width:auto!important;margin:0!important;padding:0!important;justify-self:auto!important}
 }
+
+/* =====================================================================
+   ROUND 68 · DESKTOP review
+   ===================================================================== */
+@media(min-width:801px){
+  /* latest box: always the same gap between the top title and "Read" (no reserved 3rd line) */
+  .hs .hn-lead .hn-title,.hero-news.hs .hn-lead .hn-title{min-height:0!important}
+  .hero-news.hs .hn-lead .hn-link{margin-top:14px!important}
+
+  /* industries panel: bigger icon, right edge on the photo's right edge; short explore button */
+  .module-ind .mod-main .mod-top{padding-right:0!important}
+  .module-ind .ind-ic.mod-icon{width:clamp(56px,4.4vw,72px)!important;height:auto!important;justify-self:end;align-self:start}
+  .module-ind .ind-explore{width:auto!important;max-width:100%!important;justify-self:start!important;align-self:start!important;grid-column:auto}
+
+  /* success stories: the button after the four boxes, on the left */
+  #work{display:flex!important;flex-direction:column}
+  #work>.block-head{display:contents!important}
+  #work>.block-head>h2{margin-bottom:clamp(28px,3vw,48px)}
+  #work .head-cta{order:99;align-self:flex-start;margin-top:clamp(24px,2.4vw,36px)!important}
+  .story-card dd{font-size:16px!important}
+
+  /* testimonials: the box keeps the height of the longest quote */
+  .q-slides{display:grid!important}
+  .q-slide,.q-slide.is-active{position:relative!important;inset:auto!important;grid-area:1/1}
+
+  /* accumulated: left box cream; the figures are a plain list (no boxes) so they don't read as buttons */
+  .module-about .mod-main:before{background:var(--bone)!important}
+  .module-about .counters{gap:0!important}
+  .module-about .counter{background:var(--bg)!important;clip-path:none!important;border:0!important;border-top:1px solid rgba(55,54,54,.32)!important;box-shadow:none!important}
+  .module-about .counter:last-child{border-bottom:1px solid rgba(55,54,54,.32)!important}
+  .module-about .counter:before,.module-about .counter:after{display:none!important}
+
+  /* insights: a little more room between the tag and the title */
+  .insight>.tab{margin-bottom:10px!important}
+
+  /* footer: Back to top same weight as Privacy Policy */
+  .ft3-top{font-weight:400!important}
+}
+/* all borders one colour (as the Accumulated box) */
+.counter{background-color:rgba(55,54,54,.32)}
+
+/* small labels everywhere: Roboto Regular, all caps, same size; green triangle in front */
+.ind-challenge>.tab,.story-card dt,.story-card dt.tab,.person-meta>.tab,#working dt,#working dt.tab{font:400 12px/1.3 Roboto,sans-serif!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:var(--ink)!important}
+.person-meta>.tab,#working dt{display:flex!important;align-items:center;gap:8px}
+.person-meta>.tab:before,#working dt:before{content:"";flex:none;width:7px;height:7px;background:var(--green);clip-path:polygon(0 0,0 100%,100% 100%)}
+/* testimonials: narrower measure so the short quotes sit on 2 lines and the long one on 3 */
+@media(min-width:801px){.client-quote{font-size:clamp(26px,2.1vw,38px)!important;max-width:21em!important}}
