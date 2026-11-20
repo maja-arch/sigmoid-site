@@ -6,7 +6,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Probano i ODBIJENO (ikonice + brojač + prelaz na skrol). Nema loadera.
 
 ## Header
-- Logo u zaglavlju (desktop i telefon): animirani globus — 28 delova se sklapa u krug, kao lopta; slova mirna.
+- Logo u zaglavlju (desktop i telefon): animirani globus — ista animacija kao favicon (isti delovi lopte, isti redosled i ritam, puna brend zelena); slova mirna.
 - Logo poravnat sa sadržajem ispod (ista leva ivica), na desktopu i telefonu.
 - Na tabletu i telefonu: hamburger sa 2 crtice, bez kruga; na klik postaje X.
 - Mobilni meni: bez okvira, veliki tekstualni linkovi (Oswald) sa malim brojem (14px, boja teksta), ulaze jedan za drugim, zeleni underline na dodir; dole „Contact us" normalne dužine, email i LinkedIn ikonica.
