@@ -3486,3 +3486,40 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
   .block-solve .way{grid-template-rows:auto auto auto!important;align-content:start!important}
   .block-solve .way .way-links{align-self:start!important;margin-top:0!important}
 }
+
+/* =====================================================================
+   ROUND 73
+   ===================================================================== */
+/* every green-underlined link redraws its underline on hover — story titles like insight titles */
+.story-title a{text-decoration:none!important;background:linear-gradient(var(--green),var(--green)) 0 100%/0% 1px no-repeat!important;transition:background-size .6s var(--soft)}
+.story-card:hover .story-title a,.story-title a:hover,.story-title a:focus-visible{background-size:100% 1px!important;animation:ul-redraw .7s var(--soft) forwards}
+.story-card:hover .story-title a:not(:hover){animation:none!important}
+.menu-mailrow .menu-mail:hover,.menu-mailrow .menu-mail:focus-visible{animation:ul-redraw .7s var(--soft)}
+
+/* success stories: "Sigmoid role" on one line; tags further from the text above */
+.story-facts>div{grid-template-columns:clamp(112px,9vw,124px) minmax(0,1fr)!important}
+.story-facts dt{white-space:nowrap}
+.story-card .tags{margin-top:clamp(14px,1.4vw,20px)!important}
+
+/* accumulated: figures like this morning (icon, text, number), a bit smaller */
+.module-about .counter .counter-label{font-size:clamp(17px,1.35vw,19.5px)!important}
+@media(min-width:801px){
+  .module-about .counter{column-gap:clamp(16px,1.4vw,22px)!important;padding-top:clamp(14px,1.2vw,20px)!important;padding-bottom:clamp(14px,1.2vw,20px)!important}
+  .module-about .counter .counter-num{font-size:clamp(48px,4.4vw,76px)!important}
+}
+
+/* insights: button below the articles on the left; smaller article boxes */
+@media(min-width:801px){
+  #insights{display:flex!important;flex-direction:column}
+  #insights>.block-head{display:contents!important}
+  #insights>.block-head>h2{margin-bottom:28px!important}
+  #insights .head-cta{order:99;align-self:flex-start;margin-top:clamp(24px,2.4vw,36px)!important}
+  .insight{padding:clamp(16px,1.4vw,22px)!important;gap:10px!important}
+  .insight-media{aspect-ratio:2/1!important}
+}
+
+/* what are you trying to solve: no separators, no "01 / Partner" labels; content starts higher, same in both boxes */
+.block-solve .way-facts{border-top:0!important;padding-top:0!important}
+.block-solve .way-head .tab{display:none!important}
+.block-solve .way-head,.block-solve .way-head>div{border:0!important;padding-bottom:0!important;margin-bottom:0!important}
+.block-solve .way-head:after,.block-solve .way-head:before{display:none!important}

@@ -153,3 +153,10 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Possible ways to start: manji brojevi (48–80px).
 - Our Experts: više razmaka između slike i sadržaja i ispod imena.
 - What are you trying to solve: linkovi odmah posle teksta, isti razmak u obe kartice.
+
+## Runda 73
+- Svi linkovi sa zelenim underlineom ga ponovo iscrtavaju na hover (i naslovi u Success Stories).
+- Success Stories: „Sigmoid role" u jednom redu; tagovi odmaknuti od teksta.
+- Accumulated: boxevi kao jutros (ikonica, tekst, broj), malo manji (tekst ~19px, broj do 76px).
+- Insights: zeleno dugme ispod članaka levo; manji boxevi (fotka 2:1, manji padding).
+- What are you trying to solve: bez separatora i bez oznaka „01 / Partner"; sadržaj kreće više, isto u oba boxa.
