@@ -160,3 +160,7 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Accumulated: boxevi kao jutros (ikonica, tekst, broj), malo manji (tekst ~19px, broj do 76px).
 - Insights: zeleno dugme ispod članaka levo; manji boxevi (fotka 2:1, manji padding).
 - What are you trying to solve: bez separatora i bez oznaka „01 / Partner"; sadržaj kreće više, isto u oba boxa.
+
+## Runda 74
+- Selekcija teksta na krem boxevima (Accumulated, najavni box, aktivni Industries tab, cookie) je lime cream, da se vidi.
+- Accumulated desno: kompaktni boxevi kao ranije (prirodna visina, poravnati gore, ne razvlače se do visine levog boxa); tekst 18px, broj do 52px.

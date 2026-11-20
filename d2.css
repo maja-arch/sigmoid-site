@@ -3523,3 +3523,19 @@ body:before{clip-path:inset(0 4px 0 0)!important;border-right:0!important}
 .block-solve .way-head .tab{display:none!important}
 .block-solve .way-head,.block-solve .way-head>div{border:0!important;padding-bottom:0!important;margin-bottom:0!important}
 .block-solve .way-head:after,.block-solve .way-head:before{display:none!important}
+
+/* =====================================================================
+   ROUND 74
+   ===================================================================== */
+/* text selection must show on cream (bone) boxes too: lime cream highlight there */
+.module-about .mod-main ::selection,.module-about .mod-main::selection,.hero-news.hs ::selection,.ind-tab[aria-selected=true] ::selection,.cookie ::selection{background:var(--lime-cream)!important;color:var(--ink)!important}
+
+/* accumulated (desktop): the figure boxes compact as before — natural height, top aligned, not stretched to the big box */
+@media(min-width:801px){
+  .module-about .about-proofs,.module-about .counters{align-self:start!important;height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important}
+  .module-about .counters{gap:16px!important}
+  .module-about .counter{flex:none!important;height:auto!important;min-height:0!important;padding:16px 18px!important;column-gap:16px!important;align-items:center!important}
+  .module-about .counter .counter-label{font-size:18px!important}
+  .module-about .counter .counter-num{font-size:clamp(44px,3.6vw,52px)!important}
+  .module-about .counter .counter-icon{width:48px!important;height:48px!important}
+}
