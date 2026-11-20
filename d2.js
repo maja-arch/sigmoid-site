@@ -612,3 +612,10 @@ document.querySelectorAll('[data-to-top]').forEach((a) => a.addEventListener('cl
     if (first) first.querySelector('a')?.focus({ preventScroll: true });
   });
 })();
+
+/* contact form: the message field grows with what is typed */
+(() => {
+  const ta = document.querySelector('.contact-band textarea'); if (!ta) return;
+  const fit = () => { ta.style.height = 'auto'; ta.style.height = `${ta.scrollHeight}px`; };
+  ta.addEventListener('input', fit); addEventListener('resize', fit);
+})();

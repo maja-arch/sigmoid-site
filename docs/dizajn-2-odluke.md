@@ -62,6 +62,11 @@ Stanje dogovoreno sa korisnicom (novembar 2026). „Odbijeno" znači: to je prob
 - Kraći tekstovi (oko 44 znaka u redu), više razmaka između delova kartice.
 - Dve fotke (kod na monitoru, serverski rekovi), bez inicijala LT/NP, kraći tekstovi, više vazduha. Linkovi „See how it works", „View related work".
 
+## Kontakt forma (Tell us about your challenge)
+- Upisani tekst i placeholderi u Robotu (desktop i telefon), oznake polja ostaju.
+- Polje za poruku je bar 2 reda na telefonu i raste dok se kuca.
+- Telefon: forma odvojena od uvodnog teksta (veći razmak).
+
 ## Footer
 - Zelena traka. Veliki tekst „Let's build it." (može se menjati).
 - Levo: Contact (info@sigmoid.rs, Novi Sad, telefon primer), veliki robot desno u levom delu, LinkedIn ikonica (krem, hover tamna).
